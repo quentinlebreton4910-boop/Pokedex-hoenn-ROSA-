@@ -1,0 +1,3485 @@
+[
+  {
+    "id": 1,
+    "name": "Treecko",
+    "types": [
+      "Grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/252.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/252.png",
+    "evolution": "Niv. 16 → Grovyle → Niv. 36 → Sceptile",
+    "location": "Starter (choix initial) / échange",
+    "method": "Starter (choix initial) / échange",
+    "egg": "Oui",
+    "family": 1,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 2,
+    "name": "Grovyle",
+    "types": [
+      "Grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/253.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/253.png",
+    "evolution": "Niv. 36 → Sceptile",
+    "location": "Évolution de Treecko au niveau 16",
+    "method": "Évolution de Treecko au niveau 16",
+    "egg": "Oui",
+    "family": 1,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 3,
+    "name": "Sceptile",
+    "types": [
+      "Grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/254.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/254.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Évolution de Grovyle au niveau 36",
+    "method": "Évolution de Grovyle au niveau 36",
+    "egg": "Oui",
+    "family": 1,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 4,
+    "name": "Torchic",
+    "types": [
+      "Fire"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/255.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/255.png",
+    "evolution": "Niv. 16 → Combusken → Niv. 36 → Blaziken",
+    "location": "Starter (choix initial) / échange",
+    "method": "Starter (choix initial) / échange",
+    "egg": "Oui",
+    "family": 2,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 5,
+    "name": "Combusken",
+    "types": [
+      "Fire",
+      "Fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/256.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/256.png",
+    "evolution": "Niv. 36 → Blaziken",
+    "location": "Évolution de Torchic au niveau 16",
+    "method": "Évolution de Torchic au niveau 16",
+    "egg": "Oui",
+    "family": 2,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 6,
+    "name": "Blaziken",
+    "types": [
+      "Fire",
+      "Fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/257.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/257.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Évolution de Combusken au niveau 36",
+    "method": "Évolution de Combusken au niveau 36",
+    "egg": "Oui",
+    "family": 2,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 7,
+    "name": "Mudkip",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/258.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/258.png",
+    "evolution": "Niv. 16 → Marshtomp → Niv. 36 → Swampert",
+    "location": "Starter (choix initial) / échange",
+    "method": "Starter (choix initial) / échange",
+    "egg": "Oui",
+    "family": 3,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 8,
+    "name": "Marshtomp",
+    "types": [
+      "Water",
+      "Ground"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/259.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/259.png",
+    "evolution": "Niv. 36 → Swampert",
+    "location": "Évolution de Mudkip au niveau 16",
+    "method": "Évolution de Mudkip au niveau 16",
+    "egg": "Oui",
+    "family": 3,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 9,
+    "name": "Swampert",
+    "types": [
+      "Water",
+      "Ground"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/260.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/260.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Évolution de Marshtomp au niveau 36",
+    "method": "Évolution de Marshtomp au niveau 36",
+    "egg": "Oui",
+    "family": 3,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 10,
+    "name": "Poochyena",
+    "types": [
+      "Dark"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/261.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/261.png",
+    "evolution": "Niv. 18 → Mightyena",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 4,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 11,
+    "name": "Mightyena",
+    "types": [
+      "Dark"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/262.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/262.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 4,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 12,
+    "name": "Zigzagoon",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/263.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/263.png",
+    "evolution": "Niv. 20 → Linoone",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 5,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 13,
+    "name": "Linoone",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/264.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/264.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 5,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 14,
+    "name": "Wurmple",
+    "types": [
+      "Bug"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/265.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/265.png",
+    "evolution": "Niv. 7 → Silcoon/Cascoon → Niv. 10 → Beautifly/Dustox",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 6,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 15,
+    "name": "Silcoon",
+    "types": [
+      "Bug"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/266.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/266.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 6,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 16,
+    "name": "Beautifly",
+    "types": [
+      "Bug",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/267.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/267.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 6,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 17,
+    "name": "Cascoon",
+    "types": [
+      "Bug"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/268.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/268.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 6,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 18,
+    "name": "Dustox",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/269.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/269.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 6,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 19,
+    "name": "Lotad",
+    "types": [
+      "Water",
+      "Grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/270.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/270.png",
+    "evolution": "Pierre Eau → Lombre → Pierre Eau → Ludicolo",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 7,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 20,
+    "name": "Lombre",
+    "types": [
+      "Water",
+      "Grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/271.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/271.png",
+    "evolution": "Pierre Eau → Ludicolo",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 7,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 21,
+    "name": "Ludicolo",
+    "types": [
+      "Water",
+      "Grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/272.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/272.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 7,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 22,
+    "name": "Seedot",
+    "types": [
+      "Grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/273.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/273.png",
+    "evolution": "Pierre Plante → Nuzleaf → Pierre Plante → Shiftry",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 8,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 23,
+    "name": "Nuzleaf",
+    "types": [
+      "Grass",
+      "Dark"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/274.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/274.png",
+    "evolution": "Pierre Plante → Shiftry",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 8,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 24,
+    "name": "Shiftry",
+    "types": [
+      "Grass",
+      "Dark"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/275.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/275.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 8,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 25,
+    "name": "Taillow",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/276.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/276.png",
+    "evolution": "Niv. 22 → Swellow",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 9,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 26,
+    "name": "Swellow",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/277.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/277.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 9,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 27,
+    "name": "Wingull",
+    "types": [
+      "Water",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/278.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/278.png",
+    "evolution": "Niv. 25 → Pelipper",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 10,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 28,
+    "name": "Pelipper",
+    "types": [
+      "Water",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/279.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/279.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 10,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 29,
+    "name": "Ralts",
+    "types": [
+      "Psychic",
+      "Fairy"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/280.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/280.png",
+    "evolution": "Niv. 20 → Kirlia → Niv. 30 → Gardevoir / Kirlia mâle + Pierre Aube → Gallade",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 11,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 30,
+    "name": "Kirlia",
+    "types": [
+      "Psychic",
+      "Fairy"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/281.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/281.png",
+    "evolution": "Niv. 30 → Gardevoir / mâle + Pierre Aube → Gallade",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 11,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 31,
+    "name": "Gardevoir",
+    "types": [
+      "Psychic",
+      "Fairy"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/282.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/282.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 11,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 32,
+    "name": "Gallade",
+    "types": [
+      "Psychic",
+      "Fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/475.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/475.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Kirlia mâle + Pierre Aube",
+    "method": "Kirlia mâle + Pierre Aube",
+    "egg": "Oui",
+    "family": 11,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 33,
+    "name": "Surskit",
+    "types": [
+      "Bug",
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/283.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/283.png",
+    "evolution": "Niv. 22 → Masquerain",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 12,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 34,
+    "name": "Masquerain",
+    "types": [
+      "Bug",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/284.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/284.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 12,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 35,
+    "name": "Shroomish",
+    "types": [
+      "Grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/285.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/285.png",
+    "evolution": "Niv. 23 → Breloom",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 13,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 36,
+    "name": "Breloom",
+    "types": [
+      "Grass",
+      "Fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/286.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/286.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 13,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 37,
+    "name": "Slakoth",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/287.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/287.png",
+    "evolution": "Niv. 18 → Vigoroth → Niv. 36 → Slaking",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 14,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 38,
+    "name": "Vigoroth",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/288.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/288.png",
+    "evolution": "Niv. 36 → Slaking",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 14,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 39,
+    "name": "Slaking",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/289.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/289.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 14,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 40,
+    "name": "Abra",
+    "types": [
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/63.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/63.png",
+    "evolution": "Niv. 16 → Kadabra → Échange → Alakazam",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 15,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 41,
+    "name": "Kadabra",
+    "types": [
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/64.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/64.png",
+    "evolution": "Échange → Alakazam",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 15,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 42,
+    "name": "Alakazam",
+    "types": [
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/65.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 15,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 43,
+    "name": "Nincada",
+    "types": [
+      "Bug",
+      "Ground"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/290.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/290.png",
+    "evolution": "Niv. 20 → Ninjask (+ emplacement libre + Poké Ball → Shedinja)",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 16,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 44,
+    "name": "Ninjask",
+    "types": [
+      "Bug",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/291.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/291.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 16,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 45,
+    "name": "Shedinja",
+    "types": [
+      "Bug",
+      "Ghost"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/292.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/292.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 16,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 46,
+    "name": "Whismur",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/293.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/293.png",
+    "evolution": "Niv. 20 → Loudred → Niv. 40 → Exploud",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 17,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 47,
+    "name": "Loudred",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/294.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/294.png",
+    "evolution": "Niv. 40 → Exploud",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 17,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 48,
+    "name": "Exploud",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/295.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/295.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 17,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 49,
+    "name": "Makuhita",
+    "types": [
+      "Fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/296.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/296.png",
+    "evolution": "Niv. 24 → Hariyama",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 18,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 50,
+    "name": "Hariyama",
+    "types": [
+      "Fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/297.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/297.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 18,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 51,
+    "name": "Goldeen",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/118.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/118.png",
+    "evolution": "Niv. 33 → Seaking",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 52,
+    "name": "Seaking",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/119.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/119.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 53,
+    "name": "Magikarp",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/129.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/129.png",
+    "evolution": "Niv. 20 → Gyarados",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 19,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 54,
+    "name": "Gyarados",
+    "types": [
+      "Water",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/130.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/130.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 19,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 55,
+    "name": "Azurill",
+    "types": [
+      "Normal",
+      "Fairy"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/298.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/298.png",
+    "evolution": "Bonheur → Marill",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 20,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 56,
+    "name": "Marill",
+    "types": [
+      "Water",
+      "Fairy"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/183.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/183.png",
+    "evolution": "Niv. 18 → Azumarill",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 20,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 57,
+    "name": "Azumarill",
+    "types": [
+      "Water",
+      "Fairy"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/184.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/184.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 20,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 58,
+    "name": "Geodude",
+    "types": [
+      "Rock",
+      "Ground"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/74.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/74.png",
+    "evolution": "Niv. 25 → Graveler → Échange → Golem",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 21,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 59,
+    "name": "Graveler",
+    "types": [
+      "Rock",
+      "Ground"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/75.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/75.png",
+    "evolution": "Échange → Golem",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 21,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 60,
+    "name": "Golem",
+    "types": [
+      "Rock",
+      "Ground"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/76.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/76.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 21,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 61,
+    "name": "Nosepass",
+    "types": [
+      "Rock"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/299.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/299.png",
+    "evolution": "Niveau supérieur au Mont Mémorial? → Probopass",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 62,
+    "name": "Probopass",
+    "types": [
+      "Rock",
+      "Steel"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/476.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/476.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Nosepass → niveau supérieur dans une zone magnétique",
+    "method": "Nosepass → niveau supérieur dans une zone magnétique",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 63,
+    "name": "Skitty",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/300.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/300.png",
+    "evolution": "Pierre Lune → Delcatty",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 22,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 64,
+    "name": "Delcatty",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/301.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/301.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 22,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 65,
+    "name": "Zubat",
+    "types": [
+      "Poison",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/41.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/41.png",
+    "evolution": "Niv. 22 → Golbat → Bonheur → Crobat",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 23,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 66,
+    "name": "Golbat",
+    "types": [
+      "Poison",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/42.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/42.png",
+    "evolution": "Bonheur → Crobat",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 23,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 67,
+    "name": "Crobat",
+    "types": [
+      "Poison",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/169.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/169.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 23,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 68,
+    "name": "Tentacool",
+    "types": [
+      "Water",
+      "Poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/72.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/72.png",
+    "evolution": "Niv. 30 → Tentacruel",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 24,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 69,
+    "name": "Tentacruel",
+    "types": [
+      "Water",
+      "Poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/73.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/73.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 24,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 70,
+    "name": "Sableye",
+    "types": [
+      "Dark",
+      "Ghost"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/302.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/302.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 71,
+    "name": "Mawile",
+    "types": [
+      "Steel",
+      "Fairy"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/303.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/303.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 72,
+    "name": "Aron",
+    "types": [
+      "Steel",
+      "Rock"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/304.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/304.png",
+    "evolution": "Niv. 32 → Lairon → Niv. 42 → Aggron",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 25,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 73,
+    "name": "Lairon",
+    "types": [
+      "Steel",
+      "Rock"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/305.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/305.png",
+    "evolution": "Niv. 42 → Aggron",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 25,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 74,
+    "name": "Aggron",
+    "types": [
+      "Steel",
+      "Rock"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/306.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/306.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 25,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 75,
+    "name": "Machop",
+    "types": [
+      "Fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/66.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/66.png",
+    "evolution": "Niv. 28 → Machoke → Échange → Machamp",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 26,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 76,
+    "name": "Machoke",
+    "types": [
+      "Fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/67.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/67.png",
+    "evolution": "Échange → Machamp",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 26,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 77,
+    "name": "Machamp",
+    "types": [
+      "Fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/68.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/68.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 26,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 78,
+    "name": "Meditite",
+    "types": [
+      "Fighting",
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/307.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/307.png",
+    "evolution": "Niv. 37 → Medicham",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 27,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 79,
+    "name": "Medicham",
+    "types": [
+      "Fighting",
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/308.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/308.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 27,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 80,
+    "name": "Electrike",
+    "types": [
+      "Electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/309.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/309.png",
+    "evolution": "Niv. 26 → Manectric",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 28,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 81,
+    "name": "Manectric",
+    "types": [
+      "Electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/310.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/310.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 28,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 82,
+    "name": "Plusle",
+    "types": [
+      "Electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/311.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/311.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 83,
+    "name": "Minun",
+    "types": [
+      "Electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/312.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/312.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 84,
+    "name": "Magnemite",
+    "types": [
+      "Electric",
+      "Steel"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/81.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/81.png",
+    "evolution": "Niv. 30 → Magneton → Route 110? Zone spéciale → Magnezone",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 29,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 85,
+    "name": "Magneton",
+    "types": [
+      "Electric",
+      "Steel"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/82.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/82.png",
+    "evolution": "Zone magnétique spéciale → Magnezone",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 29,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 86,
+    "name": "Magnezone",
+    "types": [
+      "Electric",
+      "Steel"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/462.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/462.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Magneton → niveau supérieur dans une zone magnétique",
+    "method": "Magneton → niveau supérieur dans une zone magnétique",
+    "egg": "Oui",
+    "family": 29,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 87,
+    "name": "Voltorb",
+    "types": [
+      "Electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/100.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/100.png",
+    "evolution": "Niv. 30 → Electrode",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 30,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 88,
+    "name": "Electrode",
+    "types": [
+      "Electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/101.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/101.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 30,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 89,
+    "name": "Volbeat",
+    "types": [
+      "Bug"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/313.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/313.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 90,
+    "name": "Illumise",
+    "types": [
+      "Bug"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/314.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/314.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 91,
+    "name": "Oddish",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/43.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/43.png",
+    "evolution": "Niv. 21 → Gloom → Pierre Plante → Vileplume / Pierre Soleil → Bellossom",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 31,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 92,
+    "name": "Gloom",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/44.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/44.png",
+    "evolution": "Pierre Plante → Vileplume / Pierre Soleil → Bellossom",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 31,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 93,
+    "name": "Vileplume",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/45.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/45.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 31,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 94,
+    "name": "Bellossom",
+    "types": [
+      "Grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/182.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/182.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 31,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 95,
+    "name": "Doduo",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/84.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/84.png",
+    "evolution": "Niv. 31 → Dodrio",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 32,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 96,
+    "name": "Dodrio",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/85.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/85.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 32,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 97,
+    "name": "Budew",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/406.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/406.png",
+    "evolution": "Bonheur (jour) → Roselia → Pierre Éclat → Roserade",
+    "location": "Bonheur le jour → Roselia",
+    "method": "Bonheur le jour → Roselia",
+    "egg": "Oui",
+    "family": 33,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 98,
+    "name": "Roselia",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/315.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/315.png",
+    "evolution": "Pierre Éclat → Roserade",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 33,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 99,
+    "name": "Roserade",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/407.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/407.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Roselia + Pierre Éclat",
+    "method": "Roselia + Pierre Éclat",
+    "egg": "Oui",
+    "family": 33,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 100,
+    "name": "Gulpin",
+    "types": [
+      "Poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/316.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/316.png",
+    "evolution": "Niv. 26 → Swalot",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 34,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 101,
+    "name": "Swalot",
+    "types": [
+      "Poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/317.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/317.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 34,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 102,
+    "name": "Carvanha",
+    "types": [
+      "Water",
+      "Dark"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/318.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/318.png",
+    "evolution": "Niv. 30 → Sharpedo",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 35,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 103,
+    "name": "Sharpedo",
+    "types": [
+      "Water",
+      "Dark"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/319.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/319.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 35,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 104,
+    "name": "Wailmer",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/320.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/320.png",
+    "evolution": "Niv. 40 → Wailord",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 36,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 105,
+    "name": "Wailord",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/321.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/321.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 36,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 106,
+    "name": "Numel",
+    "types": [
+      "Fire",
+      "Ground"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/322.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/322.png",
+    "evolution": "Niv. 33 → Camerupt",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 37,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 107,
+    "name": "Camerupt",
+    "types": [
+      "Fire",
+      "Ground"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/323.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/323.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 37,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 108,
+    "name": "Slugma",
+    "types": [
+      "Fire"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/218.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/218.png",
+    "evolution": "Niv. 38 → Magcargo",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 38,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 109,
+    "name": "Magcargo",
+    "types": [
+      "Fire",
+      "Rock"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/219.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/219.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 38,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 110,
+    "name": "Torkoal",
+    "types": [
+      "Fire"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/324.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/324.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 111,
+    "name": "Grimer",
+    "types": [
+      "Poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/88.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/88.png",
+    "evolution": "Niv. 38 → Muk",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 39,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 112,
+    "name": "Muk",
+    "types": [
+      "Poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/89.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/89.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 39,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 113,
+    "name": "Koffing",
+    "types": [
+      "Poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/109.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/109.png",
+    "evolution": "Niv. 35 → Weezing",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 40,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 114,
+    "name": "Weezing",
+    "types": [
+      "Poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/110.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/110.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 40,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 115,
+    "name": "Spoink",
+    "types": [
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/325.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/325.png",
+    "evolution": "Niv. 32 → Grumpig",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 41,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 116,
+    "name": "Grumpig",
+    "types": [
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/326.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/326.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 41,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 117,
+    "name": "Sandshrew",
+    "types": [
+      "Ground"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/27.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/27.png",
+    "evolution": "Niv. 22 → Sandslash",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 42,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 118,
+    "name": "Sandslash",
+    "types": [
+      "Ground"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/28.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/28.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 42,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 119,
+    "name": "Spinda",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/327.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/327.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 120,
+    "name": "Skarmory",
+    "types": [
+      "Steel",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/227.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/227.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 121,
+    "name": "Trapinch",
+    "types": [
+      "Ground"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/328.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/328.png",
+    "evolution": "Niv. 35 → Vibrava → Niv. 45 → Flygon",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 43,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 122,
+    "name": "Vibrava",
+    "types": [
+      "Ground",
+      "Dragon"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/329.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/329.png",
+    "evolution": "Niv. 45 → Flygon",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 43,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 123,
+    "name": "Flygon",
+    "types": [
+      "Ground",
+      "Dragon"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/330.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/330.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 43,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 124,
+    "name": "Cacnea",
+    "types": [
+      "Grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/331.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/331.png",
+    "evolution": "Niv. 32 → Cacturne",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 44,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 125,
+    "name": "Cacturne",
+    "types": [
+      "Grass",
+      "Dark"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/332.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/332.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 44,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 126,
+    "name": "Swablu",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/333.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/333.png",
+    "evolution": "Niv. 35 → Altaria",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 45,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 127,
+    "name": "Altaria",
+    "types": [
+      "Dragon",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/334.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/334.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 45,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 128,
+    "name": "Zangoose",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/335.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/335.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 129,
+    "name": "Seviper",
+    "types": [
+      "Poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/336.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/336.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 130,
+    "name": "Lunatone",
+    "types": [
+      "Rock",
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/337.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/337.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 131,
+    "name": "Solrock",
+    "types": [
+      "Rock",
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/338.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/338.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 132,
+    "name": "Barboach",
+    "types": [
+      "Water",
+      "Ground"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/339.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/339.png",
+    "evolution": "Niv. 30 → Whiscash",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 46,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 133,
+    "name": "Whiscash",
+    "types": [
+      "Water",
+      "Ground"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/340.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/340.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 46,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 134,
+    "name": "Corphish",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/341.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/341.png",
+    "evolution": "Niv. 30 → Crawdaunt",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 47,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 135,
+    "name": "Crawdaunt",
+    "types": [
+      "Water",
+      "Dark"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/342.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/342.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 47,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 136,
+    "name": "Baltoy",
+    "types": [
+      "Ground",
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/343.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/343.png",
+    "evolution": "Niv. 36 → Claydol",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 48,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 137,
+    "name": "Claydol",
+    "types": [
+      "Ground",
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/344.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/344.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 48,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 138,
+    "name": "Lileep",
+    "types": [
+      "Rock",
+      "Grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/345.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/345.png",
+    "evolution": "Niv. 40 → Cradily",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 49,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 139,
+    "name": "Cradily",
+    "types": [
+      "Rock",
+      "Grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/346.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/346.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 49,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 140,
+    "name": "Anorith",
+    "types": [
+      "Rock",
+      "Bug"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/347.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/347.png",
+    "evolution": "Niv. 40 → Armaldo",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 50,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 141,
+    "name": "Armaldo",
+    "types": [
+      "Rock",
+      "Bug"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/348.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/348.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 50,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 142,
+    "name": "Igglybuff",
+    "types": [
+      "Normal",
+      "Fairy"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/174.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/174.png",
+    "evolution": "Bonheur → Jigglypuff → Pierre Lune → Wigglytuff",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 51,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 143,
+    "name": "Jigglypuff",
+    "types": [
+      "Normal",
+      "Fairy"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/39.png",
+    "evolution": "Pierre Lune → Wigglytuff",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 51,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 144,
+    "name": "Wigglytuff",
+    "types": [
+      "Normal",
+      "Fairy"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/40.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/40.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 51,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 145,
+    "name": "Feebas",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/349.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/349.png",
+    "evolution": "Beauté élevée → Milotic",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 52,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 146,
+    "name": "Milotic",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/350.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/350.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 52,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 147,
+    "name": "Castform",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/351.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/351.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 148,
+    "name": "Staryu",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/120.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/120.png",
+    "evolution": "Pierre Eau → Starmie",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 53,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 149,
+    "name": "Starmie",
+    "types": [
+      "Water",
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/121.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/121.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 53,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 150,
+    "name": "Kecleon",
+    "types": [
+      "Normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/352.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/352.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 151,
+    "name": "Shuppet",
+    "types": [
+      "Ghost"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/353.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/353.png",
+    "evolution": "Niv. 37 → Banette",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 54,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 152,
+    "name": "Banette",
+    "types": [
+      "Ghost"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/354.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/354.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 54,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 153,
+    "name": "Duskull",
+    "types": [
+      "Ghost"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/355.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/355.png",
+    "evolution": "Niv. 37 → Dusclops → Échange avec Tissu Fauche → Dusknoir",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 55,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 154,
+    "name": "Dusclops",
+    "types": [
+      "Ghost"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/356.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/356.png",
+    "evolution": "Échange + Tissu Fauche → Dusknoir",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 55,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 155,
+    "name": "Dusknoir",
+    "types": [
+      "Ghost"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/477.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/477.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Dusclops + Tissu Fauche, par échange",
+    "method": "Dusclops + Tissu Fauche, par échange",
+    "egg": "Oui",
+    "family": 55,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 156,
+    "name": "Tropius",
+    "types": [
+      "Grass",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/357.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/357.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 157,
+    "name": "Chingling",
+    "types": [
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/433.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/433.png",
+    "evolution": "Bonheur (nuit) → Chimecho",
+    "location": "Bonheur la nuit → Chimecho",
+    "method": "Bonheur la nuit → Chimecho",
+    "egg": "Oui",
+    "family": 56,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 158,
+    "name": "Chimecho",
+    "types": [
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/358.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/358.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 56,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 159,
+    "name": "Absol",
+    "types": [
+      "Dark"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/359.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/359.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 160,
+    "name": "Vulpix",
+    "types": [
+      "Fire"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/37.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/37.png",
+    "evolution": "Pierre Feu → Ninetales",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 57,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 161,
+    "name": "Ninetales",
+    "types": [
+      "Fire"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/38.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/38.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 57,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 162,
+    "name": "Pichu",
+    "types": [
+      "Electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/172.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/172.png",
+    "evolution": "Bonheur → Pikachu → Pierre Foudre → Raichu",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 58,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 163,
+    "name": "Pikachu",
+    "types": [
+      "Electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/25.png",
+    "evolution": "Pierre Foudre → Raichu",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 58,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 164,
+    "name": "Raichu",
+    "types": [
+      "Electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/26.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/26.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 58,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 165,
+    "name": "Psyduck",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/54.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/54.png",
+    "evolution": "Niv. 33 → Golduck",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 59,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 166,
+    "name": "Golduck",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/55.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/55.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 59,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 167,
+    "name": "Wynaut",
+    "types": [
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/360.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/360.png",
+    "evolution": "Niv. 15 → Wobbuffet",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 60,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 168,
+    "name": "Wobbuffet",
+    "types": [
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/202.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/202.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 60,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 169,
+    "name": "Natu",
+    "types": [
+      "Psychic",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/177.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/177.png",
+    "evolution": "Niv. 25 → Xatu",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 61,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 170,
+    "name": "Xatu",
+    "types": [
+      "Psychic",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/178.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/178.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 61,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 171,
+    "name": "Girafarig",
+    "types": [
+      "Normal",
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/203.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/203.png",
+    "evolution": "Niv. 32? → aucune évolution dans ROSA",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 172,
+    "name": "Phanpy",
+    "types": [
+      "Ground"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/231.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/231.png",
+    "evolution": "Niv. 25 → Donphan",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 62,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 173,
+    "name": "Donphan",
+    "types": [
+      "Ground"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/232.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/232.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 62,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 174,
+    "name": "Pinsir",
+    "types": [
+      "Bug"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/127.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/127.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 175,
+    "name": "Heracross",
+    "types": [
+      "Bug",
+      "Fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/214.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/214.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 176,
+    "name": "Rhyhorn",
+    "types": [
+      "Ground",
+      "Rock"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/111.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/111.png",
+    "evolution": "Niv. 42 → Rhydon → Échange + Protecteur → Rhyperior",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 63,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 177,
+    "name": "Rhydon",
+    "types": [
+      "Ground",
+      "Rock"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/112.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/112.png",
+    "evolution": "Échange + Protecteur → Rhyperior",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 63,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 178,
+    "name": "Rhyperior",
+    "types": [
+      "Ground",
+      "Rock"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/464.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/464.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Échange de Rhydon tenant Protecteur",
+    "method": "Échange de Rhydon tenant Protecteur",
+    "egg": "Oui",
+    "family": 63,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 179,
+    "name": "Snorunt",
+    "types": [
+      "Ice"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/361.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/361.png",
+    "evolution": "Niv. 42 → Glalie / femelle + Pierre Aube → Froslass",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 64,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 180,
+    "name": "Glalie",
+    "types": [
+      "Ice"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/362.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/362.png",
+    "evolution": "—",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 64,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 181,
+    "name": "Froslass",
+    "types": [
+      "Ice",
+      "Ghost"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/478.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/478.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Snorunt femelle + Pierre Aube",
+    "method": "Snorunt femelle + Pierre Aube",
+    "egg": "Oui",
+    "family": 64,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 182,
+    "name": "Spheal",
+    "types": [
+      "Ice",
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/363.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/363.png",
+    "evolution": "Niv. 32 → Sealeo → Niv. 44 → Walrein",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 65,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 183,
+    "name": "Sealeo",
+    "types": [
+      "Ice",
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/364.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/364.png",
+    "evolution": "Niv. 44 → Walrein",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 65,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 184,
+    "name": "Walrein",
+    "types": [
+      "Ice",
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/365.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/365.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 65,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 185,
+    "name": "Clamperl",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/366.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/366.png",
+    "evolution": "Échange + Dent Océan → Huntail / Échange + Écaille Océan → Gorebyss",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 66,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 186,
+    "name": "Huntail",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/367.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/367.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Évolution de Clamperl par échange",
+    "method": "Évolution de Clamperl par échange",
+    "egg": "Oui",
+    "family": 66,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 187,
+    "name": "Gorebyss",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/368.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/368.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Évolution de Clamperl par échange",
+    "method": "Évolution de Clamperl par échange",
+    "egg": "Oui",
+    "family": 66,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 188,
+    "name": "Relicanth",
+    "types": [
+      "Water",
+      "Rock"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/369.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/369.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 189,
+    "name": "Corsola",
+    "types": [
+      "Water",
+      "Rock"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/222.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/222.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 190,
+    "name": "Chinchou",
+    "types": [
+      "Water",
+      "Electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/170.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/170.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 191,
+    "name": "Lanturn",
+    "types": [
+      "Water",
+      "Electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/171.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/171.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 192,
+    "name": "Luvdisc",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/370.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/370.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 193,
+    "name": "Horsea",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/116.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/116.png",
+    "evolution": "Niv. 32 → Seadra → Échange + Écaille Draco → Kingdra",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 67,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 194,
+    "name": "Seadra",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/117.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/117.png",
+    "evolution": "Échange + Écaille Draco → Kingdra",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 67,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 195,
+    "name": "Kingdra",
+    "types": [
+      "Water",
+      "Dragon"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/230.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/230.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Évolution de Seadra par échange",
+    "method": "Évolution de Seadra par échange",
+    "egg": "Oui",
+    "family": 67,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 196,
+    "name": "Bagon",
+    "types": [
+      "Dragon"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/371.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/371.png",
+    "evolution": "Niv. 30 → Shelgon → Niv. 50 → Salamence",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 68,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 197,
+    "name": "Shelgon",
+    "types": [
+      "Dragon"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/372.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/372.png",
+    "evolution": "Niv. 50 → Salamence",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 68,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 198,
+    "name": "Salamence",
+    "types": [
+      "Dragon",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/373.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/373.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 68,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 199,
+    "name": "Beldum",
+    "types": [
+      "Steel",
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/374.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/374.png",
+    "evolution": "Niv. 20 → Metang → Niv. 45 → Metagross",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 69,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 200,
+    "name": "Metang",
+    "types": [
+      "Steel",
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/375.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/375.png",
+    "evolution": "Niv. 45 → Metagross",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 69,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 201,
+    "name": "Metagross",
+    "types": [
+      "Steel",
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/376.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/376.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Consulte la fiche de localisation pour les rencontres ROSA.",
+    "method": "Capture sauvage / évolution / échange selon le Pokémon.",
+    "egg": "Oui",
+    "family": 69,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 202,
+    "name": "Regirock",
+    "types": [
+      "Rock"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/377.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/377.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Ruines Désert — interaction",
+    "method": "Ruines Désert — interaction",
+    "egg": "Non",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 203,
+    "name": "Regice",
+    "types": [
+      "Ice"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/378.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/378.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Grotte Island Cave — interaction",
+    "method": "Grotte Island Cave — interaction",
+    "egg": "Non",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 204,
+    "name": "Registeel",
+    "types": [
+      "Steel"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/379.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/379.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Tombeau Antique — interaction",
+    "method": "Tombeau Antique — interaction",
+    "egg": "Non",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 205,
+    "name": "Latias",
+    "types": [
+      "Dragon",
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/380.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/380.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Île du Sud — cadeau dans Saphir Alpha",
+    "method": "Île du Sud — cadeau dans Saphir Alpha",
+    "egg": "Non",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 206,
+    "name": "Latios",
+    "types": [
+      "Dragon",
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/381.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/381.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Île du Sud — cadeau dans Rubis Oméga",
+    "method": "Île du Sud — cadeau dans Rubis Oméga",
+    "egg": "Non",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 207,
+    "name": "Kyogre",
+    "types": [
+      "Water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/382.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/382.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Grotte Origine — interaction dans Saphir Alpha",
+    "method": "Grotte Origine — interaction dans Saphir Alpha",
+    "egg": "Non",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 208,
+    "name": "Groudon",
+    "types": [
+      "Ground"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/383.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/383.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Grotte Origine — interaction dans Rubis Oméga",
+    "method": "Grotte Origine — interaction dans Rubis Oméga",
+    "egg": "Non",
+    "family": 0,
+    "requiredForCompletion": true,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 209,
+    "name": "Rayquaza",
+    "types": [
+      "Dragon",
+      "Flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/384.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/384.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Pilier Céleste — sommet, scénario de l'Épisode Delta",
+    "method": "Pilier Céleste — sommet, scénario de l'Épisode Delta",
+    "egg": "Non",
+    "family": 0,
+    "requiredForCompletion": false,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 210,
+    "name": "Jirachi",
+    "types": [
+      "Steel",
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/385.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/385.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Distribution/événement",
+    "method": "Distribution/événement",
+    "egg": "Non",
+    "family": 0,
+    "requiredForCompletion": false,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  },
+  {
+    "id": 211,
+    "name": "Deoxys",
+    "types": [
+      "Psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/386.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/386.png",
+    "evolution": "Voir la famille d'évolution dans la fiche — pas d'évolution directe.",
+    "location": "Pilier Céleste — sommet, après l'Épisode Delta",
+    "method": "Pilier Céleste — sommet, après l'Épisode Delta",
+    "egg": "Non",
+    "family": 0,
+    "requiredForCompletion": false,
+    "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
+  }
+]

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#e3350d"><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css">
+<title>Pokédex Hoenn — ROSA</title></head><body>
+<header class="top"><div><div class="brand">POKÉDEX <span>HOENN</span></div><small>Rubis Oméga · Saphir Alpha</small></div>
+<button id="themeBtn" class="iconBtn" aria-label="Changer de thème">☾</button></header>
+<main>
+<section class="progressCard"><div class="progressHead"><strong id="progressText">0 / 211</strong><strong id="percent">0%</strong></div><div class="bar"><i id="bar"></i></div><div class="subprogress"><span id="obtainedCount">0 obtenus</span><span id="todoCount">211 à faire</span></div></section>
+<div class="search"><span>⌕</span><input id="search" placeholder="Rechercher un Pokémon ou un numéro…"></div>
+<div class="filters" id="filters">
+<button class="active" data-filter="all">Tous</button><button data-filter="obtained">✅ Obtenus</button><button data-filter="progress">🔄 En cours</button><button data-filter="missing">❌ Manquants</button><button data-filter="impossible">🚫 Impossible</button><button data-filter="favorite">⭐ Épinglés</button><button data-filter="shiny">✨ Shiny</button>
+</div>
+<section id="grid" class="grid"></section>
+</main>
+<div id="modal" class="modal hidden"><div class="modalBox"><button id="close" class="close">×</button><div id="detail"></div></div></div>
+<nav class="bottom"><button id="exportBtn">⬆️ Exporter</button><label>⬇️ Importer<input id="importFile" type="file" accept="application/json" hidden></label><button id="resetBtn">↺ Réinitialiser</button></nav>
+<script src="script.js"></script></body></html>
