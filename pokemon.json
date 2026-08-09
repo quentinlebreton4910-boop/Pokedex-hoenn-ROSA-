@@ -703,7 +703,7 @@
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/290.png",
     "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/290.png",
     "evolution": "Niv. 20 → Ninjask (+ emplacement libre + Poké Ball → Shedinja)",
-    "location": "	Route 116",
+    "location": "Route 116",
     "method": "Capture sauvage",
     "egg": "Oui",
     "family": 16,
