@@ -1001,3 +1001,18 @@ body.dark .actions button {
         height: 76px;
     }
 }
+
+.evolutionLink {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    color: #e3350d;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.evolutionLink:hover {
+    text-decoration: underline;
+}
