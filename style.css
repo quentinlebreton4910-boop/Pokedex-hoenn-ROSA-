@@ -1,0 +1,1003 @@
+/* =========================================
+   POKÉDEX HOENN ROSA — V4
+========================================= */
+
+:root {
+    --red: #e3350d;
+    --red-dark: #b51f0a;
+    --blue: #35aeea;
+    --green: #22a06b;
+    --yellow: #f5c542;
+
+    --bg: #f1f3f6;
+    --card: #ffffff;
+    --text: #1c2025;
+    --muted: #737a83;
+    --border: #e1e4e8;
+
+    --shadow:
+        0 5px 18px rgba(0,0,0,.10);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 20% 0%,
+            #ffffff 0,
+            #f1f3f6 45%,
+            #e7e9ed 100%
+        );
+
+    color: var(--text);
+
+    transition:
+        background .25s,
+        color .25s;
+}
+
+/* =========================================
+   MODE SOMBRE
+========================================= */
+
+body.dark {
+    --bg: #101216;
+    --card: #1b1f26;
+    --text: #f2f4f7;
+    --muted: #a5adb8;
+    --border: #303640;
+
+    background:
+        radial-gradient(
+            circle at 20% 0%,
+            #252b35 0,
+            #101216 55%
+        );
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.top {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 70px;
+    padding: 12px 18px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--red),
+            var(--red-dark)
+        );
+
+    box-shadow:
+        0 4px 14px rgba(0,0,0,.22);
+}
+
+.top h1 {
+    margin: 0;
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.top small {
+    opacity: .85;
+}
+
+.top > div {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+/* =========================================
+   BOUTONS HEADER
+========================================= */
+
+.iconBtn {
+    width: 42px;
+    height: 42px;
+
+    border: 0;
+    border-radius: 50%;
+
+    color: white;
+    background: rgba(255,255,255,.18);
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition:
+        transform .15s,
+        background .15s;
+}
+
+.iconBtn:hover {
+    background: rgba(255,255,255,.28);
+    transform: scale(1.05);
+}
+
+.iconBtn:active {
+    transform: scale(.94);
+}
+
+/* =========================================
+   CONTENEUR PRINCIPAL
+========================================= */
+
+main {
+    width: min(1100px, 100%);
+    margin: auto;
+
+    padding:
+        18px
+        14px
+        50px;
+}
+
+/* =========================================
+   MESSAGE INSTALLATION
+========================================= */
+
+.installHint {
+    margin-bottom: 14px;
+
+    padding: 12px 14px;
+
+    border-radius: 14px;
+
+    background: #e8f5ff;
+    color: #14506d;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,.05);
+}
+
+body.dark .installHint {
+    background: #172b38;
+    color: #bfeaff;
+}
+
+/* =========================================
+   PROGRESSION
+========================================= */
+
+.progressCard {
+    position: relative;
+
+    padding: 18px;
+
+    margin-bottom: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--card),
+            rgba(255,255,255,.92)
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+}
+
+body.dark .progressCard {
+    background:
+        linear-gradient(
+            145deg,
+            #1c2129,
+            #171a20
+        );
+}
+
+/* petit élément Pokédex */
+
+.progressCard::before {
+    content: "";
+
+    display: block;
+
+    width: 44px;
+    height: 44px;
+
+    margin-bottom: 9px;
+
+    border-radius: 50%;
+
+    background: #58d9ff;
+
+    border:
+        5px solid #eafaff;
+
+    box-shadow:
+        inset 0 0 0 2px #1683a7,
+        0 3px 7px rgba(0,0,0,.15);
+}
+
+.progressCard h2 {
+    margin: 0 0 5px;
+
+    font-size: 20px;
+}
+
+.progressCard .subprogress {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+/* =========================================
+   BARRE DE PROGRESSION
+========================================= */
+
+.bar {
+    width: 100%;
+    height: 15px;
+
+    margin-top: 13px;
+
+    overflow: hidden;
+
+    border:
+        2px solid var(--border);
+
+    border-radius: 99px;
+
+    background: #eef0f3;
+}
+
+.bar i {
+    display: block;
+
+    width: 0%;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--green),
+            #42c98b
+        );
+
+    transition:
+        width .35s ease;
+}
+
+/* =========================================
+   RECHERCHE
+========================================= */
+
+.searchBox {
+    position: relative;
+
+    margin-bottom: 13px;
+}
+
+#search {
+    width: 100%;
+
+    padding:
+        14px
+        16px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 15px;
+
+    outline: none;
+
+    color: var(--text);
+    background: var(--card);
+
+    font-size: 15px;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,.05);
+
+    transition:
+        border .2s,
+        box-shadow .2s;
+}
+
+#search:focus {
+    border-color: var(--red);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(227,53,13,.12);
+}
+
+#search::placeholder {
+    color: var(--muted);
+}
+
+/* =========================================
+   FILTRES
+========================================= */
+
+.filters {
+    display: flex;
+
+    gap: 7px;
+
+    margin-bottom: 17px;
+
+    overflow-x: auto;
+
+    padding-bottom: 3px;
+
+    scrollbar-width: none;
+}
+
+.filters::-webkit-scrollbar {
+    display: none;
+}
+
+.filters button {
+    flex:
+        0 0 auto;
+
+    padding:
+        9px
+        13px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 999px;
+
+    color: var(--text);
+
+    background: var(--card);
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        .15s;
+}
+
+.filters button:hover {
+    transform: translateY(-1px);
+}
+
+.filters button.active {
+    color: white;
+
+    border-color: var(--red);
+
+    background: var(--red);
+
+    box-shadow:
+        0 3px 8px
+        rgba(227,53,13,.25);
+}
+
+/* =========================================
+   GRILLE
+========================================= */
+
+#grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(145px, 1fr)
+        );
+
+    gap: 12px;
+}
+
+/* =========================================
+   CARTE POKÉMON
+========================================= */
+
+.card {
+    position: relative;
+
+    min-width: 0;
+
+    padding: 12px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    background: var(--card);
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,.07);
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition:
+        transform .15s,
+        box-shadow .15s;
+}
+
+.card:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 9px 22px
+        rgba(0,0,0,.13);
+}
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    background: var(--red);
+}
+
+.card.done::before {
+    background: var(--green);
+}
+
+/* =========================================
+   FAVORI
+========================================= */
+
+.card .fav {
+    position: absolute;
+
+    top: 9px;
+    right: 9px;
+
+    width: 32px;
+    height: 32px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.9);
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    z-index: 2;
+}
+
+body.dark .card .fav {
+    background:
+        rgba(0,0,0,.35);
+}
+
+/* =========================================
+   NUMÉRO
+========================================= */
+
+.num {
+    color: var(--muted);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    margin-bottom: 4px;
+}
+
+/* =========================================
+   SPRITE
+========================================= */
+
+.card > img {
+    display: block;
+
+    width: 105px;
+    height: 105px;
+
+    object-fit: contain;
+
+    margin:
+        4px
+        auto
+        7px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #eef7ff 0,
+            #eef7ff 43%,
+            transparent 44%
+        );
+}
+
+/* =========================================
+   NOM
+========================================= */
+
+.name {
+    text-align: center;
+
+    font-size: 16px;
+
+    font-weight: 900;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.name sup {
+    color: var(--yellow);
+
+    font-size: 10px;
+}
+
+/* =========================================
+   TYPES
+========================================= */
+
+.types {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+
+    margin:
+        7px
+        0;
+}
+
+.type {
+    display: inline-block;
+
+    padding:
+        4px
+        8px;
+
+    border-radius: 999px;
+
+    background: #edf0f3;
+
+    color: #454c54;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+body.dark .type {
+    background: #2a3039;
+    color: #d9dee5;
+}
+
+/* =========================================
+   BOUTONS DE STATUT
+========================================= */
+
+.state {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    margin-top: 8px;
+}
+
+.state button {
+    width: 34px;
+    height: 32px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition:
+        transform .12s;
+}
+
+.state button:active {
+    transform: scale(.9);
+}
+
+.got {
+    background: #d8f3e7;
+    color: #14734b;
+}
+
+.doing {
+    background: #fff0c2;
+    color: #856600;
+}
+
+.nope {
+    background: #ffd9d9;
+    color: #a61b1b;
+}
+
+/* =========================================
+   BADGES
+========================================= */
+
+.completedBadge,
+.shinyBadge,
+.dateBadge {
+    text-align: center;
+
+    margin-top: 6px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+.completedBadge {
+    color: var(--green);
+}
+
+.shinyBadge {
+    color: #a87800;
+}
+
+.dateBadge {
+    color: var(--muted);
+}
+
+/* =========================================
+   MODALE
+========================================= */
+
+#modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px;
+
+    background:
+        rgba(0,0,0,.58);
+
+    backdrop-filter:
+        blur(5px);
+}
+
+#modal.hidden {
+    display: none;
+}
+
+#detail {
+    position: relative;
+
+    width:
+        min(
+            520px,
+            100%
+        );
+
+    max-height:
+        90vh;
+
+    overflow-y: auto;
+
+    padding: 16px;
+
+    border-radius: 22px;
+
+    color: var(--text);
+
+    background: var(--card);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.35);
+}
+
+/* =========================================
+   HERO DÉTAIL
+========================================= */
+
+.detailHero {
+    padding: 16px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eef7ff,
+            #ffffff
+        );
+}
+
+body.dark .detailHero {
+    background:
+        linear-gradient(
+            145deg,
+            #202a35,
+            #191c22
+        );
+}
+
+.detailHero img {
+    width: 180px;
+    height: 180px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin: auto;
+}
+
+.detailHero h2 {
+    margin:
+        5px
+        0
+        7px;
+
+    font-size: 25px;
+}
+
+.detailNumber {
+    color: var(--muted);
+
+    font-weight: 800;
+}
+
+/* =========================================
+   DÉTAILS
+========================================= */
+
+.detail {
+    padding:
+        10px
+        3px;
+}
+
+.detail p {
+    line-height: 1.55;
+
+    padding-bottom: 8px;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+.detail b {
+    font-weight: 850;
+}
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.actions {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            1fr
+        );
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+.actions button {
+    min-height: 45px;
+
+    border: 0;
+
+    border-radius: 12px;
+
+    background: #edf0f3;
+
+    color: var(--text);
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform .12s;
+}
+
+body.dark .actions button {
+    background: #2a3039;
+}
+
+.actions button:hover {
+    transform:
+        translateY(-1px);
+}
+
+/* =========================================
+   BOUTON FERMER
+========================================= */
+
+#close {
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    z-index: 3;
+
+    width: 38px;
+    height: 38px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    color: white;
+
+    background: var(--red);
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+}
+
+/* =========================================
+   AUCUN RÉSULTAT
+========================================= */
+
+.empty {
+    grid-column: 1 / -1;
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-weight: 700;
+}
+
+/* =========================================
+   RESPONSIVE TÉLÉPHONE
+========================================= */
+
+@media (max-width: 600px) {
+
+    main {
+        padding:
+            12px
+            10px
+            35px;
+    }
+
+    #grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: 9px;
+    }
+
+    .card {
+        padding: 9px;
+    }
+
+    .card > img {
+        width: 88px;
+        height: 88px;
+    }
+
+    .name {
+        font-size: 14px;
+    }
+
+    .actions {
+        grid-template-columns:
+            1fr;
+    }
+
+    #detail {
+        max-height: 94vh;
+
+        border-radius: 19px;
+    }
+
+    .detailHero img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* =========================================
+   TRÈS PETITS ÉCRANS
+========================================= */
+
+@media (max-width: 360px) {
+
+    #grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+    }
+
+    .card > img {
+        width: 76px;
+        height: 76px;
+    }
+}
