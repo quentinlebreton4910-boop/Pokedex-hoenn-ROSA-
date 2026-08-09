@@ -300,6 +300,38 @@ function render() {
 /* =========================
    FICHE DÉTAILLÉE
 ========================= */
+function evolutionLinks(pokemon) {
+
+    if (!pokemon.family) {
+        return pokemon.evolution || "Aucune information";
+    }
+
+    const family = P.filter(
+        p => p.family === pokemon.family
+    );
+
+    if (family.length <= 1) {
+        return pokemon.evolution || "Aucune évolution";
+    }
+
+    return family
+        .map(p => {
+
+            if (p.id === pokemon.id) {
+                return `<strong>${p.name}</strong>`;
+            }
+
+            return `
+                <button
+                    class="evolutionLink"
+                    onclick="event.stopPropagation(); openDetail(${p.id})"
+                >
+                    ${p.name}
+                </button>
+            `;
+        })
+        .join(" → ");
+}
 
 function openDetail(id) {
 
@@ -322,9 +354,7 @@ function openDetail(id) {
     const currentState =
         getPokemonState(id);
 
-    const evolution =
-        pokemon.evolution ||
-        "Aucune information";
+    const evolution = evolutionLinks(pokemon);
 
     const location =
         pokemon.location ||
