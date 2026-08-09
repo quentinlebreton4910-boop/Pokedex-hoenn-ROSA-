@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#e3350d"
+    >
+
+    <meta
+        name="description"
+        content="Pokédex Hoenn ROSA — suivi de progression"
+    >
+
+    <title>
+        Pokédex Hoenn — ROSA
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+</head>
+
+<body>
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header class="top">
+
+    <div>
+
+        <h1>
+            Pokédex Hoenn
+        </h1>
+
+        <small>
+            Rubis Oméga / Saphir Alpha
+        </small>
+
+    </div>
+
+    <div>
+
+        <button
+            id="installBtn"
+            class="iconBtn"
+            hidden
+            aria-label="Installer l'application"
+            title="Installer l'application"
+        >
+            📱
+        </button>
+
+        <button
+            id="themeBtn"
+            class="iconBtn"
+            aria-label="Changer de thème"
+            title="Changer de thème"
+        >
+            ☾
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================
+     CONTENU
+===================================== -->
+
+<main>
+
+    <!-- INSTALLATION -->
+
+    <div
+        id="installHint"
+        class="installHint"
+        hidden
+    >
+        📱 Tu peux installer le Pokédex
+        sur l'écran d'accueil de ton téléphone.
+    </div>
+
+
+    <!-- =================================
+         PROGRESSION
+    ================================== -->
+
+    <section class="progressCard">
+
+        <h2>
+            Progression du Pokédex
+        </h2>
+
+        <div class="subprogress">
+
+            <span id="progressText">
+                0 / 211
+            </span>
+
+            <span>
+                —
+            </span>
+
+            <span id="percent">
+                0%
+            </span>
+
+        </div>
+
+        <div class="bar">
+
+            <i
+                id="bar"
+                style="width:0%"
+            ></i>
+
+        </div>
+
+        <div
+            style="
+                display:flex;
+                justify-content:space-between;
+                margin-top:10px;
+                font-size:13px;
+                color:var(--muted);
+            "
+        >
+
+            <span id="obtainedCount">
+                0 obtenus
+            </span>
+
+            <span id="todoCount">
+                211 à faire
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         RECHERCHE
+    ================================== -->
+
+    <div class="searchBox">
+
+        <input
+            id="search"
+            type="search"
+            placeholder="🔍 Rechercher un Pokémon ou un numéro..."
+            autocomplete="off"
+            spellcheck="false"
+        >
+
+    </div>
+
+
+    <!-- =================================
+         FILTRES
+    ================================== -->
+
+    <div
+        id="filters"
+        class="filters"
+    >
+
+        <button
+            class="active"
+            data-filter="all"
+        >
+            Tous
+        </button>
+
+        <button
+            data-filter="missing"
+        >
+            ❓ Manquants
+        </button>
+
+        <button
+            data-filter="progress"
+        >
+            🔄 En cours
+        </button>
+
+        <button
+            data-filter="obtained"
+        >
+            ✅ Obtenus
+        </button>
+
+        <button
+            data-filter="impossible"
+        >
+            🚫 Impossible
+        </button>
+
+        <button
+            data-filter="favorite"
+        >
+            ⭐ Favoris
+        </button>
+
+        <button
+            data-filter="shiny"
+        >
+            ✨ Shiny
+        </button>
+
+    </div>
+
+
+    <!-- =================================
+         ACTIONS
+    ================================== -->
+
+    <div
+        style="
+            display:flex;
+            gap:8px;
+            margin-bottom:16px;
+            flex-wrap:wrap;
+        "
+    >
+
+        <button
+            id="exportBtn"
+            type="button"
+            style="
+                padding:9px 13px;
+                border:1px solid var(--border);
+                border-radius:10px;
+                background:var(--card);
+                color:var(--text);
+                font-weight:700;
+            "
+        >
+            📤 Exporter
+        </button>
+
+        <label
+            for="importFile"
+            style="
+                padding:9px 13px;
+                border:1px solid var(--border);
+                border-radius:10px;
+                background:var(--card);
+                color:var(--text);
+                font-weight:700;
+                cursor:pointer;
+            "
+        >
+            📥 Importer
+        </label>
+
+        <input
+            id="importFile"
+            type="file"
+            accept=".json,application/json"
+            hidden
+        >
+
+        <button
+            id="resetBtn"
+            type="button"
+            style="
+                padding:9px 13px;
+                border:1px solid var(--border);
+                border-radius:10px;
+                background:var(--card);
+                color:var(--text);
+                font-weight:700;
+            "
+        >
+            🗑️ Réinitialiser
+        </button>
+
+    </div>
+
+
+    <!-- =================================
+         LISTE POKÉMON
+    ================================== -->
+
+    <section id="grid">
+
+        <div class="empty">
+            Chargement du Pokédex...
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================
+     MODALE POKÉMON
+===================================== -->
+
+<div
+    id="modal"
+    class="hidden"
+    aria-hidden="true"
+>
+
+    <div id="detail">
+
+    <button
+        id="close"
+        type="button"
+        aria-label="Fermer"
+    >
+        ×
+    </button>
+
+    Chargement...
+
+</div>
+</div>
+
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+<script
+    src="script.js"
+    defer
+></script>
+
+</body>
+
+</html>
