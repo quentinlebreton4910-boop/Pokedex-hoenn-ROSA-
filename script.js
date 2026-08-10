@@ -442,14 +442,21 @@ function openDetail(id) {
 
             <div class="actions">
 
-                <button
-                    onclick="
-                        markObtained(${id});
-                        closeDetail()
-                    "
-                >
-                    ✅ Obtenu
-                </button>
+    <button
+        class="mapButton"
+        onclick="openMap(${id})"
+    >
+        🗺️ MAP
+    </button>
+
+    <button
+        onclick="
+            markObtained(${id});
+            closeDetail()
+        "
+    >
+        ✅ Obtenu
+    </button>
 
                 <button
                     onclick="
@@ -733,88 +740,86 @@ function openDetail(id) {
 
             <div class="actions">
 
-                <button
-                    onclick="
-                        openMap(P.find(p => p.id === ${id}))
-                    "
-                >
-                    🗺️ MAP
-                </button>
+    <button
+        class="mapButton"
+        onclick="openMap(${id})"
+    >
+        🗺️ MAP
+    </button>
 
-                <button
-                    onclick="
-                        markObtained(${id});
-                        closeDetail()
-                    "
-                >
-                    ✅ Obtenu
-                </button>
+    <button
+        onclick="
+            markObtained(${id});
+            closeDetail()
+        "
+    >
+        ✅ Obtenu
+    </button>
 
-                <button
-                    onclick="
-                        setState(${id},{
-                            status:'progress'
-                        });
-                        closeDetail()
-                    "
-                >
-                    🔄 En cours
-                </button>
+    <button
+        onclick="
+            setState(${id},{
+                status:'progress'
+            });
+            closeDetail()
+        "
+    >
+        🔄 En cours
+    </button>
 
-                <button
-                    onclick="
-                        setState(${id},{
-                            status:'impossible'
-                        });
-                        closeDetail()
-                    "
-                >
-                    🚫 Impossible
-                </button>
+    <button
+        onclick="
+            setState(${id},{
+                status:'impossible'
+            });
+            closeDetail()
+        "
+    >
+        🚫 Impossible
+    </button>
 
-                <button
-                    onclick="
-                        setState(${id},{
-                            favorite: !favorite(${id})
-                        })
-                    "
-                >
-                    ⭐ ${
-                        favorite(id)
-                            ? "Retirer des favoris"
-                            : "Ajouter aux favoris"
-                    }
-                </button>
+    <button
+        onclick="
+            setState(${id},{
+                favorite: !favorite(${id})
+            })
+        "
+    >
+        ⭐ ${
+            favorite(id)
+                ? "Retirer des favoris"
+                : "Ajouter aux favoris"
+        }
+    </button>
 
-                <button
-                    onclick="
-                        setState(${id},{
-                            shiny: !shiny(${id})
-                        })
-                    "
-                >
-                    ✨ Shiny :
-                    ${
-                        shiny(id)
-                            ? "oui"
-                            : "non"
-                    }
-                </button>
+    <button
+        onclick="
+            setState(${id},{
+                shiny: !shiny(${id})
+            })
+        "
+    >
+        ✨ Shiny :
+        ${
+            shiny(id)
+                ? "oui"
+                : "non"
+        }
+    </button>
 
-                <button
-                    onclick="
-                        setState(${id},{
-                            status:'missing',
-                            obtainedDate:null
-                        });
-                        closeDetail()
-                    "
-                >
-                    ↩️ Réinitialiser
-                </button>
+    <button
+        onclick="
+            setState(${id},{
+                status:'missing',
+                obtainedDate:null
+            });
+            closeDetail()
+        "
+    >
+        ↩️ Réinitialiser
+    </button>
 
-            </div>
-
+</div>
         </div>
     `;
 
@@ -822,20 +827,108 @@ function openDetail(id) {
         }
 
 /* =========================
+   CARTE DE HOENN
+========================= */
+
+function openMap(id) {
+
+    const pokemon = P.find(
+        p => p.id === id
+    );
+
+    if (!pokemon) return;
+
+    const location =
+        pokemon.location ||
+        "Lieu inconnu";
+
+    $("#mapContent").innerHTML = `
+
+        <div class="mapHeader">
+
+            <h2>🗺️ Carte de Hoenn</h2>
+
+            <button
+                class="mapClose"
+                onclick="closeMap()"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <p class="mapPokemonName">
+            ${pokemon.name}
+        </p>
+
+        <div class="mapImageContainer">
+
+            <img
+                class="hoennMap"
+                src="hoenn-map.png"
+                alt="Carte de Hoenn"
+            >
+
+        </div>
+
+        <div class="mapLocations">
+
+            <b>📍 Lieux où trouver ${pokemon.name} :</b>
+
+            <br><br>
+
+            ${location}
+
+        </div>
+
+    `;
+
+    $("#mapModal").classList.remove("hidden");
+}
+
+
+function closeMap() {
+
+    if ($("#mapModal")) {
+        $("#mapModal").classList.add("hidden");
+    }
+
+}
+
+
+/* =========================
    FERMETURE FICHE
 ========================= */
 
 function closeDetail() {
 
-    // Ferme la carte si elle est ouverte
-    closeMap();
-
-    // Ferme la fiche Pokémon
-    if ($("#modal")) {
+    if ($("#modal"))
         $("#modal").classList.add("hidden");
-    }
 
     render();
+}
+
+if ($("#close"))
+    $("#close").onclick = closeDetail;
+
+if ($("#modal")) {
+    $("#modal").onclick = event => {
+        if (event.target.id === "modal") {
+            closeDetail();
+        }
+    };
+}
+
+if ($("#mapModal")) {
+
+    $("#mapModal").onclick = event => {
+
+        if (event.target.id === "mapModal") {
+            closeMap();
+        }
+
+    };
+
 }
 
 
