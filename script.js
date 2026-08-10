@@ -507,6 +507,305 @@ function openDetail(id) {
                         setState(${id},{
                             status:'missing',
                             obtainedDate:null
+function evolutionLinks(pokemon) {
+
+    if (!pokemon.family) {
+        return pokemon.evolution || "Aucune information";
+    }
+
+    const family = P.filter(
+        p => p.family === pokemon.family
+    );
+
+    if (family.length <= 1) {
+        return pokemon.evolution || "Aucune évolution";
+    }
+
+    return family
+        .map(p => {
+
+            if (p.id === pokemon.id) {
+                return `<strong>${p.name}</strong>`;
+            }
+
+            return `
+                <button
+                    class="evolutionLink"
+                    onclick="event.stopPropagation(); openDetail(${p.id})"
+                >
+                    ${p.name}
+                </button>
+            `;
+        })
+        .join(" → ");
+}
+
+
+/* =========================
+   CARTE DE HOENN
+========================= */
+
+function openMap(pokemon) {
+
+    // Création de la fenêtre de carte
+    const mapOverlay =
+        document.createElement("div");
+
+    mapOverlay.id = "mapOverlay";
+
+    mapOverlay.innerHTML = `
+        <div class="mapWindow">
+
+            <button
+                class="mapClose"
+                onclick="closeMap()"
+            >
+                ✕
+            </button>
+
+            <h2>
+                🗺️ Carte de Hoenn
+            </h2>
+
+            <p class="mapPokemonName">
+                ${pokemon.name}
+            </p>
+
+            <img
+                src="map-hoenn.png"
+                class="hoennMap"
+                alt="Carte de Hoenn"
+            >
+
+        </div>
+    `;
+
+    // Style de la fenêtre directement en JavaScript
+    mapOverlay.style.position = "fixed";
+    mapOverlay.style.inset = "0";
+    mapOverlay.style.zIndex = "9999";
+    mapOverlay.style.background = "rgba(0,0,0,0.75)";
+    mapOverlay.style.display = "flex";
+    mapOverlay.style.alignItems = "center";
+    mapOverlay.style.justifyContent = "center";
+    mapOverlay.style.padding = "20px";
+    mapOverlay.style.boxSizing = "border-box";
+
+    document.body.appendChild(mapOverlay);
+
+    // Fermer en cliquant autour de la carte
+    mapOverlay.onclick = event => {
+
+        if (event.target === mapOverlay) {
+            closeMap();
+        }
+
+    };
+}
+
+
+/* =========================
+   FERMER LA CARTE
+========================= */
+
+function closeMap() {
+
+    const map =
+        document.getElementById("mapOverlay");
+
+    if (map) {
+        map.remove();
+    }
+}
+
+
+/* =========================
+   FICHE DÉTAILLÉE
+========================= */
+
+function openDetail(id) {
+
+    const pokemon =
+        P.find(p => p.id === id);
+
+    if (!pokemon) return;
+
+    const currentStatus =
+        status(id);
+
+    const isShiny =
+        shiny(id);
+
+    const image =
+        isShiny
+            ? pokemon.shiny
+            : pokemon.sprite;
+
+    const currentState =
+        getPokemonState(id);
+
+    const evolution =
+        evolutionLinks(pokemon);
+
+    const location =
+        pokemon.location ||
+        "Information indisponible";
+
+    const method =
+        pokemon.method ||
+        "Information indisponible";
+
+    const egg =
+        pokemon.egg ||
+        "Information indisponible";
+
+    $("#detail").innerHTML = `
+
+        <div class="detailHero">
+
+            <div class="detailNumber">
+                #${String(pokemon.id).padStart(3, "0")}
+            </div>
+
+            <img
+                src="${image}"
+                alt="${pokemon.name}"
+            >
+
+            <h2>
+                ${pokemon.name}
+            </h2>
+
+            <div class="types">
+                ${
+                    (pokemon.types || [])
+                        .map(
+                            type =>
+                                `<span class="type">${type}</span>`
+                        )
+                        .join("")
+                }
+            </div>
+
+        </div>
+
+        <div class="detail">
+
+            <p>
+                <b>🌳 Évolution :</b><br>
+                ${evolution}
+            </p>
+
+            <p>
+                <b>📍 Où l'obtenir :</b><br>
+                ${location}
+            </p>
+
+            <p>
+                <b>🎣 Méthode :</b><br>
+                ${method}
+            </p>
+
+            <p>
+                <b>🥚 Œuf :</b><br>
+                ${egg}
+            </p>
+
+            <p>
+                <b>📖 Complétion :</b><br>
+                ${
+                    pokemon.requiredForCompletion
+                        ? "Compte parmi les 208 Pokémon requis."
+                        : "Non requis pour compléter le Pokédex régional."
+                }
+            </p>
+
+            ${
+                currentState.obtainedDate
+                    ? `
+                    <p>
+                        <b>📅 Obtenu le :</b><br>
+                        ${formatDate(currentState.obtainedDate)}
+                    </p>
+                    `
+                    : ""
+            }
+
+            <div class="actions">
+
+                <button
+                    onclick="
+                        openMap(P.find(p => p.id === ${id}))
+                    "
+                >
+                    🗺️ MAP
+                </button>
+
+                <button
+                    onclick="
+                        markObtained(${id});
+                        closeDetail()
+                    "
+                >
+                    ✅ Obtenu
+                </button>
+
+                <button
+                    onclick="
+                        setState(${id},{
+                            status:'progress'
+                        });
+                        closeDetail()
+                    "
+                >
+                    🔄 En cours
+                </button>
+
+                <button
+                    onclick="
+                        setState(${id},{
+                            status:'impossible'
+                        });
+                        closeDetail()
+                    "
+                >
+                    🚫 Impossible
+                </button>
+
+                <button
+                    onclick="
+                        setState(${id},{
+                            favorite: !favorite(${id})
+                        })
+                    "
+                >
+                    ⭐ ${
+                        favorite(id)
+                            ? "Retirer des favoris"
+                            : "Ajouter aux favoris"
+                    }
+                </button>
+
+                <button
+                    onclick="
+                        setState(${id},{
+                            shiny: !shiny(${id})
+                        })
+                    "
+                >
+                    ✨ Shiny :
+                    ${
+                        shiny(id)
+                            ? "oui"
+                            : "non"
+                    }
+                </button>
+
+                <button
+                    onclick="
+                        setState(${id},{
+                            status:'missing',
+                            obtainedDate:null
                         });
                         closeDetail()
                     "
@@ -520,7 +819,7 @@ function openDetail(id) {
     `;
 
     $("#modal").classList.remove("hidden");
-}
+        }
 
 /* =========================
    FERMETURE FICHE
@@ -528,21 +827,46 @@ function openDetail(id) {
 
 function closeDetail() {
 
-    if ($("#modal"))
+    // Ferme la carte si elle est ouverte
+    closeMap();
+
+    // Ferme la fiche Pokémon
+    if ($("#modal")) {
         $("#modal").classList.add("hidden");
+    }
 
     render();
 }
 
-if ($("#close"))
-    $("#close").onclick = closeDetail;
+
+/* =========================
+   BOUTON X DE LA FICHE
+========================= */
+
+if ($("#close")) {
+
+    $("#close").onclick =
+        closeDetail;
+
+}
+
+
+/* =========================
+   FERMER EN CLIQUANT AUTOUR
+========================= */
 
 if ($("#modal")) {
+
     $("#modal").onclick = event => {
-        if (event.target.id === "modal") {
+
+        if (
+            event.target.id === "modal"
+        ) {
             closeDetail();
         }
+
     };
+
 }
 
 /* =========================
