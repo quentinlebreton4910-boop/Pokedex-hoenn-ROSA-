@@ -1262,3 +1262,169 @@ body.dark .actions button {
 
     z-index: 2;
    }
+
+
+/* =========================
+   POINTS SUR LA CARTE
+========================= */
+
+.mapImageWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.mapMarker {
+    position: absolute;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+.mapDot {
+    display: block;
+
+    width: 16px;
+    height: 16px;
+
+    border-radius: 50%;
+
+    background: #e3350d;
+
+    border: 3px solid white;
+
+    box-shadow:
+        0 2px 6px rgba(0,0,0,0.5);
+}
+
+.mapLabel {
+    position: absolute;
+
+    left: 50%;
+    top: 22px;
+
+    transform:
+        translateX(-50%);
+
+    white-space: nowrap;
+
+    padding: 4px 7px;
+
+    border-radius: 6px;
+
+    background: rgba(0,0,0,0.75);
+
+    color: white;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   LIEU INCONNU
+========================= */
+
+.mapUnknown {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    padding: 14px 24px;
+
+    border-radius: 12px;
+
+    background: rgba(0,0,0,0.75);
+
+    color: white;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    z-index: 5;
+}
+
+
+/* =========================
+   BARRE DE LA FICHE
+========================= */
+
+.detailTopBar {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================
+   CROIX FERMER
+========================= */
+
+.detailClose {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #e3350d;
+    color: white;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   FLÈCHES POKÉDEX
+========================= */
+
+.detailNav {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #e3350d;
+    color: white;
+
+    font-size: 36px;
+
+    line-height: 30px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.detailNav:hover,
+.detailClose:hover,
+.mapClose:hover,
+.mapButton:hover {
+    opacity: 0.85;
+}
+
+.detailNavPlaceholder {
+    width: 42px;
+    height: 42px;
+}
