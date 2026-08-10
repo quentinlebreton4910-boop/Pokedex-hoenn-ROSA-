@@ -1002,17 +1002,263 @@ body.dark .actions button {
     }
 }
 
+
+/* =========================================
+   LIENS D'ÉVOLUTION
+========================================= */
+
 .evolutionLink {
     border: none;
     background: none;
     padding: 0;
     margin: 0;
+
     color: #e3350d;
+
     font: inherit;
     font-weight: 700;
+
     cursor: pointer;
 }
 
 .evolutionLink:hover {
     text-decoration: underline;
 }
+
+
+/* =========================================
+   BOUTON MAP
+========================================= */
+
+.mapButton {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 12px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #e3350d;
+    color: white;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   FENÊTRE CARTE
+========================================= */
+
+.mapModal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px;
+}
+
+.mapModal.hidden {
+    display: none;
+}
+
+
+/* =========================================
+   BOÎTE DE LA CARTE
+========================================= */
+
+.mapBox {
+    position: relative;
+
+    width: min(900px, 100%);
+    max-height: 95vh;
+
+    overflow-y: auto;
+
+    background: white;
+    border-radius: 20px;
+
+    padding: 15px;
+}
+
+.dark .mapBox {
+    background: #1e1e1e;
+    color: white;
+}
+
+
+/* =========================================
+   EN-TÊTE DE LA CARTE
+========================================= */
+
+.mapHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+}
+
+.mapHeader h2 {
+    margin: 0;
+}
+
+
+/* =========================================
+   BOUTON FERMER LA CARTE
+========================================= */
+
+.mapClose {
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #e3350d;
+    color: white;
+
+    font-size: 30px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   IMAGE DE LA CARTE
+========================================= */
+
+.mapImageContainer {
+    width: 100%;
+    overflow: auto;
+
+    border-radius: 12px;
+}
+
+.hoennMap {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    image-rendering: pixelated;
+}
+
+
+/* =========================================
+   INFORMATIONS DES LIEUX
+========================================= */
+
+.mapLocations {
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    background: #f1f3f6;
+}
+
+.dark .mapLocations {
+    background: #292929;
+}
+
+
+/* =========================================
+   FENÊTRE CARTE — VERSION JAVASCRIPT
+========================================= */
+
+.mapWindow {
+    position: relative;
+
+    width: 100%;
+    max-width: 900px;
+    max-height: 95vh;
+
+    overflow: auto;
+
+    background: white;
+    border-radius: 20px;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+.dark .mapWindow {
+    background: #1e1e1e;
+    color: white;
+}
+
+
+/* =========================================
+   TITRE CARTE
+========================================= */
+
+.mapWindow h2 {
+    margin: 0 0 5px;
+}
+
+.mapPokemonName {
+    margin: 0 0 15px;
+
+    font-weight: bold;
+
+    color: #e3350d;
+}
+
+
+/* =========================================
+   IMAGE CARTE — VERSION JAVASCRIPT
+========================================= */
+
+.mapWindow .hoennMap {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: 12px;
+
+    image-rendering: pixelated;
+}
+
+
+/* =========================================
+   FERMETURE — VERSION JAVASCRIPT
+========================================= */
+
+.mapWindow .mapClose {
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #e3350d;
+    color: white;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    z-index: 2;
+   }
