@@ -3,29 +3,11 @@ let state = JSON.parse(localStorage.getItem("hoennState") || "{}");
 let filter = "all";
 let deferredInstallPrompt = null;
 
-
-/* =========================
-   SÉLECTEUR
-========================= */
-
 const $ = (selector) => document.querySelector(selector);
 
-
-/* =========================
-   SAUVEGARDE
-========================= */
-
 function save() {
-    localStorage.setItem(
-        "hoennState",
-        JSON.stringify(state)
-    );
+    localStorage.setItem("hoennState", JSON.stringify(state));
 }
-
-
-/* =========================
-   ÉTAT DES POKÉMON
-========================= */
 
 function getPokemonState(id) {
     return state[id] || {};
@@ -44,7 +26,6 @@ function favorite(id) {
 }
 
 function setState(id, patch) {
-
     state[id] = {
         ...getPokemonState(id),
         ...patch
@@ -53,14 +34,10 @@ function setState(id, patch) {
     save();
     render();
 
-    if (
-        $("#modal") &&
-        !$("#modal").classList.contains("hidden")
-    ) {
+    if ($("#modal") && !$("#modal").classList.contains("hidden")) {
         openDetail(id);
     }
 }
-
 
 /* =========================
    PROGRESSION
@@ -79,9 +56,7 @@ function progress() {
     ).length;
 
     const percentage = P.length
-        ? Math.round(
-            (obtained / P.length) * 100
-        )
+        ? Math.round((obtained / P.length) * 100)
         : 0;
 
     if ($("#progressText"))
@@ -110,13 +85,10 @@ function progress() {
         );
 
     if (subprogress) {
-
         subprogress.title =
-            `Complétion du Pokédex régional : ` +
-            `${requiredObtained}/208 requis`;
+            `Complétion du Pokédex régional : ${requiredObtained}/208 requis`;
     }
 }
-
 
 /* =========================
    RECHERCHE / FILTRES
@@ -126,17 +98,12 @@ function matches(pokemon) {
 
     const search =
         $("#search")
-            ? $("#search")
-                .value
-                .trim()
-                .toLowerCase()
+            ? $("#search").value.trim().toLowerCase()
             : "";
 
     if (
         search &&
-        !pokemon.name
-            .toLowerCase()
-            .includes(search) &&
+        !pokemon.name.toLowerCase().includes(search) &&
         !String(pokemon.id)
             .padStart(3, "0")
             .includes(search)
@@ -171,7 +138,6 @@ function matches(pokemon) {
     }
 }
 
-
 /* =========================
    CARTE POKÉMON
 ========================= */
@@ -188,12 +154,9 @@ function card(pokemon) {
             : pokemon.sprite;
 
     const date =
-        getPokemonState(
-            pokemon.id
-        ).obtainedDate;
+        getPokemonState(pokemon.id).obtainedDate;
 
     return `
-
         <article
             class="card ${s === "obtained" ? "done" : ""}"
             onclick="openDetail(${pokemon.id})"
@@ -203,13 +166,9 @@ function card(pokemon) {
                 class="fav"
                 onclick="
                     event.stopPropagation();
-                    setState(
-                        ${pokemon.id},
-                        {
-                            favorite:
-                                !favorite(${pokemon.id})
-                        }
-                    )
+                    setState(${pokemon.id},{
+                        favorite: !favorite(${pokemon.id})
+                    })
                 "
             >
                 ${isFavorite ? "⭐" : "☆"}
@@ -226,7 +185,6 @@ function card(pokemon) {
             >
 
             <div class="name">
-
                 ${pokemon.name}
 
                 ${
@@ -234,11 +192,9 @@ function card(pokemon) {
                         ? ""
                         : `<sup title="Non requis pour la complétion régionale">★</sup>`
                 }
-
             </div>
 
             <div class="types">
-
                 ${
                     (pokemon.types || [])
                         .map(
@@ -247,7 +203,6 @@ function card(pokemon) {
                         )
                         .join("")
                 }
-
             </div>
 
             <div class="state">
@@ -268,12 +223,9 @@ function card(pokemon) {
                     title="En cours"
                     onclick="
                         event.stopPropagation();
-                        setState(
-                            ${pokemon.id},
-                            {
-                                status:'progress'
-                            }
-                        )
+                        setState(${pokemon.id},{
+                            status:'progress'
+                        })
                     "
                 >
                     ↻
@@ -284,12 +236,9 @@ function card(pokemon) {
                     title="Impossible"
                     onclick="
                         event.stopPropagation();
-                        setState(
-                            ${pokemon.id},
-                            {
-                                status:'impossible'
-                            }
-                        )
+                        setState(${pokemon.id},{
+                            status:'impossible'
+                        })
                     "
                 >
                     ×
@@ -319,7 +268,6 @@ function card(pokemon) {
     `;
 }
 
-
 /* =========================
    OBTENTION
 ========================= */
@@ -327,17 +275,12 @@ function card(pokemon) {
 function markObtained(id) {
 
     setState(id, {
-
         status: "obtained",
-
         obtainedDate:
-            getPokemonState(id)
-                .obtainedDate ||
+            getPokemonState(id).obtainedDate ||
             new Date().toISOString()
-
     });
 }
-
 
 /* =========================
    AFFICHAGE
@@ -349,8 +292,7 @@ function render() {
 
     const grid = $("#grid");
 
-    if (!grid)
-        return;
+    if (!grid) return;
 
     const filtered =
         P.filter(matches);
@@ -367,635 +309,317 @@ function render() {
     }
 
     grid.innerHTML =
-        filtered
-            .map(card)
-            .join("");
+        filtered.map(card).join("");
 }
 
+/* =========================
+   ÉVOLUTIONS
+========================= */
 
-/* =========================================================
-   CARTE DE HOENN
-========================================================= */
+function evolutionLinks(pokemon) {
 
+    if (!pokemon.family) {
+        return pokemon.evolution ||
+            "Aucune information";
+    }
+
+    const family = P.filter(
+        p => p.family === pokemon.family
+    );
+
+    if (family.length <= 1) {
+        return pokemon.evolution ||
+            "Aucune évolution";
+    }
+
+    return family
+        .map(p => {
+
+            if (p.id === pokemon.id) {
+
+                return `
+                    <strong>
+                        ${p.name}
+                    </strong>
+                `;
+            }
+
+            return `
+                <button
+                    class="evolutionLink"
+                    onclick="
+                        event.stopPropagation();
+                        openDetail(${p.id})
+                    "
+                >
+                    ${p.name}
+                </button>
+            `;
+
+        })
+        .join(" → ");
+}
+
+/* =========================
+   LIEUX DE LA CARTE
+========================= */
 
 /*
-    Coordonnées basées sur une carte
-    de référence de 628 × 393 px.
+ * Coordonnées basées sur une carte
+ * de 640 × 420 pixels.
+ */
 
-    Routes / chenaux :
-    rectangles utilisés uniquement
-    pour calculer leur contour en pointillés.
+const mapLocations = {
 
-    Villes / lieux :
-    cercles avec centre + rayon.
-*/
+    "Route 101": { x: 108, y: 290 },
+    "Route 102": { x: 76, y: 268 },
+    "Route 103": { x: 140, y: 248 },
+    "Route 104": { x: 20, y: 240 },
 
+    "Bois Clémenti": { x: 13, y: 222 },
+    "Clémenti-Ville": { x: 41, y: 269 },
+    "Bourg-en-vol": { x: 108, y: 313 },
+    "Rosyères": { x: 108, y: 269 },
+    "Mérouville": { x: 19, y: 170 },
 
-const mapRoutes = {
+    "Route 105": { x: 20, y: 312 },
+    "Chenal 105": { x: 20, y: 312 },
 
-    "ROUTE 101":
-        [100, 284, 116, 296],
+    "Chenal 106": { x: 40, y: 356 },
+    "Chenal 107": { x: 106, y: 378 },
+    "Chenal 108": { x: 164, y: 380 },
+    "Chenal 109": { x: 194, y: 360 },
 
-    "ROUTE 102":
-        [59, 260, 94, 276],
+    "Route 110": { x: 196, y: 235 },
+    "Route 111": { x: 196, y: 105 },
+    "Route 112": { x: 164, y: 139 },
+    "Route 113": { x: 138, y: 49 },
+    "Route 114": { x: 54, y: 73 },
+    "Route 115": { x: 18, y: 115 },
+    "Route 116": { x: 64, y: 160 },
+    "Route 117": { x: 150, y: 179 },
+    "Route 118": { x: 252, y: 180 },
+    "Route 119": { x: 263, y: 105 },
+    "Route 120": { x: 305, y: 81 },
+    "Route 121": { x: 370, y: 115 },
 
-    "ROUTE 103":
-        [102, 241, 179, 255],
+    "Chenal 122": { x: 377, y: 148 },
+    "Route 123": { x: 340, y: 180 },
 
-    "ROUTE 104":
-        [29, 278, 11, 201],
+    "Chenal 124": { x: 503, y: 123 },
+    "Chenal 125": { x: 570, y: 123 },
+    "Chenal 126": { x: 502, y: 212 },
+    "Chenal 127": { x: 569, y: 212 },
+    "Chenal 128": { x: 569, y: 268 },
+    "Chenal 129": { x: 579, y: 289 },
+    "Chenal 130": { x: 524, y: 291 },
+    "Chenal 131": { x: 459, y: 291 },
+    "Chenal 132": { x: 368, y: 290 },
+    "Chenal 133": { x: 305, y: 290 },
+    "Chenal 134": { x: 240, y: 291 },
 
-    "CHENAL 105":
-        [11, 286, 28, 338],
+    "Route Victoire": { x: 614, y: 243 },
+    "Ligue Pokémon": { x: 613, y: 221 },
+    "Éternara": { x: 613, y: 268 },
 
-    "CHENAL 106":
-        [11, 349, 68, 363],
-
-    "CHENAL 107":
-        [81, 372, 131, 385],
-
-    "CHENAL 108":
-        [148, 371, 179, 388],
-
-    "CHENAL 109":
-        [186, 333, 203, 386],
-
-    "ROUTE 110":
-        [203, 270, 189, 201],
-
-    "ROUTE 111":
-        [202, 164, 191, 45],
-
-    "ROUTE 112":
-        [180, 149, 148, 129],
-
-    "ROUTE 113":
-        [174, 39, 101, 58],
-
-    "ROUTE 114":
-        [63, 46, 45, 99],
-
-    "ROUTE 115":
-        [27, 139, 8, 90],
-
-    "ROUTE 116":
-        [32, 154, 95, 166],
-
-    "ROUTE 117":
-        [124, 173, 175, 185],
-
-    "ROUTE 118":
-        [237, 172, 266, 189],
-
-    "ROUTE 119":
-        [270, 163, 256, 46],
-
-    "ROUTE 120":
-        [298, 41, 311, 122],
-
-    "ROUTE 121":
-        [323, 108, 418, 122],
-
-    "CHENAL 122":
-        [359, 132, 395, 164],
-
-    "ROUTE 123":
-        [280, 173, 400, 187],
-
-    "CHENAL 124":
-        [476, 86, 530, 160],
-
-    "CHENAL 125":
-        [541, 87, 598, 158],
-
-    "CHENAL 126":
-        [474, 173, 530, 252],
-
-    "CHENAL 127":
-        [540, 174, 598, 250],
-
-    "CHENAL 128":
-        [542, 261, 596, 275],
-
-    "CHENAL 129":
-        [560, 282, 598, 296],
-
-    "CHENAL 130":
-        [500, 282, 548, 301],
-
-    "CHENAL 131":
-        [434, 282, 484, 300],
-
-    "CHENAL 132":
-        [343, 281, 394, 299],
-
-    "CHENAL 133":
-        [276, 282, 334, 298],
-
-    "CHENAL 134":
-        [213, 283, 268, 300]
+    "Grotte Tréfonds": { x: 586, y: 120 },
+    "Algatia": { x: 558, y: 150 },
+    "Caverne Fondmer": { x: 553, y: 266 },
+    "Plage Secrète": { x: 592, y: 313 },
+    "Champ Fleuri Secret": { x: 503, y: 268 },
+    "Atalanopolis": { x: 494, y: 232 },
+    "Îlot Secret": { x: 460, y: 235 },
+    "Grotte Origine": { x: 460, y: 200 },
+    "Pacifiville": { x: 416, y: 290 },
+    "Île du Sud": { x: 298, y: 369 },
+    "Lavandia Sea": { x: 160, y: 354 },
+    "Myokara": { x: 63, y: 378 },
+    "Grotte Granite": { x: 41, y: 378 },
+    "Poivressel": { x: 195, y: 301 },
+    "Tunnel Mérazon": { x: 110, y: 158 },
+    "Vergazon": { x: 108, y: 180 },
+    "Vermilava": { x: 130, y: 136 },
+    "Sentier Sinuroc": { x: 142, y: 113 },
+    "Mont Chimnée": { x: 140, y: 91 },
+    "Chemin Ardent": { x: 162, y: 113 },
+    "Autéquia": { x: 85, y: 49 },
+    "Site Météore": { x: 31, y: 91 },
+    "Lavandia": { x: 209, y: 182 },
+    "New Lavandia": { x: 216, y: 204 },
+    "Cimetronelle": { x: 284, y: 48 },
+    "Parc Safari": { x: 361, y: 93 },
+    "Mont Mémoria": { x: 389, y: 152 },
+    "Nénucrique": { x: 450, y: 114 }
 };
-
-
-const mapPlaces = {
-
-    "ÉTERNARA":
-        [613, 268, 17],
-
-    "ROUTE VICTOIRE":
-        [614, 243, 14],
-
-    "LIGUE POKÉMON":
-        [613, 221, 14],
-
-    "GROTTE TRÉFONDS":
-        [586, 120, 14],
-
-    "ALGATIA":
-        [558, 150, 27],
-
-    "CAVERNE FONDMER":
-        [553, 266, 14],
-
-    "PLAGE SECRÈTE":
-        [592, 313, 14],
-
-    "CHAMP FLEURI SECRET":
-        [503, 268, 14],
-
-    "ATALANOPOLIS":
-        [494, 232, 17],
-
-    "ÎLOT SECRET":
-        [460, 235, 16],
-
-    "GROTTE ORIGINE":
-        [460, 200, 13],
-
-    "PACIFIVILLE":
-        [416, 290, 16],
-
-    "ÎLE DU SUD":
-        [298, 369, 14],
-
-    "LAVANDIA SEA":
-        [160, 354, 15],
-
-    "MYOKARA":
-        [63, 378, 16],
-
-    "GROTTE GRANITE":
-        [41, 378, 15],
-
-    "POIVRESSEL":
-        [195, 301, 26],
-
-    "BOURG-EN-VOL":
-        [108, 313, 16],
-
-    "ROSYÈRES":
-        [108, 269, 16],
-
-    "CLÉMENTI-VILLE":
-        [41, 269, 14],
-
-    "BOIS CLÉMENTI":
-        [13, 222, 16],
-
-    "MÉROUVILLE":
-        [19, 170, 26],
-
-    "TUNNEL MÉRAZON":
-        [110, 158, 13],
-
-    "VERGAZON":
-        [108, 180, 13],
-
-    "VERMILAVA":
-        [130, 136, 14],
-
-    "SENTIER SINUROC":
-        [142, 113, 15],
-
-    "MONT CHIMNÉE":
-        [140, 91, 14],
-
-    "CHEMIN ARDENT":
-        [162, 113, 14],
-
-    "AUTÉQUIA":
-        [85, 49, 16],
-
-    "SITE MÉTÉORE":
-        [31, 91, 14],
-
-    "LAVANDIA":
-        [209, 182, 25],
-
-    "NEW LAVANDIA":
-        [216, 204, 16],
-
-    "CIMETRONELLE":
-        [284, 48, 15],
-
-    "PARC SAFARI":
-        [361, 93, 14],
-
-    "MONT MÉMORIA":
-        [389, 152, 15],
-
-    "NÉNUCRIQUE":
-        [450, 114, 25]
-};
-
 
 /*
-    Normalise le nom d'un lieu
-    pour retrouver les coordonnées
-    même si la casse diffère.
-*/
+ * Zones des routes et chenaux.
+ * On utilise les coordonnées données
+ * pour dessiner des zones en pointillés.
+ */
+
+const mapAreas = {
+
+    "Route 101": [100, 284, 116, 296],
+    "Route 102": [59, 260, 94, 276],
+    "Route 103": [102, 241, 179, 255],
+    "Route 104": [11, 201, 29, 278],
+
+    "Chenal 105": [11, 286, 28, 338],
+    "Chenal 106": [11, 349, 68, 363],
+    "Chenal 107": [81, 372, 131, 385],
+    "Chenal 108": [148, 371, 179, 388],
+    "Chenal 109": [186, 333, 203, 386],
+
+    "Route 110": [189, 201, 203, 270],
+    "Route 111": [191, 45, 202, 164],
+    "Route 112": [148, 129, 180, 149],
+    "Route 113": [101, 39, 174, 58],
+    "Route 114": [45, 46, 63, 99],
+    "Route 115": [8, 90, 27, 139],
+    "Route 116": [32, 154, 95, 166],
+    "Route 117": [124, 173, 175, 185],
+    "Route 118": [237, 172, 266, 189],
+    "Route 119": [256, 46, 270, 163],
+    "Route 120": [298, 41, 311, 122],
+    "Route 121": [323, 108, 418, 122],
+
+    "Chenal 122": [359, 132, 395, 164],
+
+    "Route 123": [280, 173, 400, 187],
+
+    "Chenal 124": [476, 86, 530, 160],
+    "Chenal 125": [541, 87, 598, 158],
+    "Chenal 126": [474, 173, 530, 252],
+    "Chenal 127": [540, 174, 598, 250],
+    "Chenal 128": [542, 261, 596, 275],
+    "Chenal 129": [560, 282, 598, 296],
+    "Chenal 130": [500, 282, 548, 301],
+    "Chenal 131": [434, 282, 484, 300],
+    "Chenal 132": [343, 281, 394, 299],
+    "Chenal 133": [276, 282, 334, 298],
+    "Chenal 134": [213, 283, 268, 300]
+};
 
 function normalizeLocationName(name) {
 
-    return String(name || "")
+    return name
         .trim()
-        .toUpperCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "");
+        .replace(/\s+/g, " ")
+        .replace(/^Route Victoire$/i, "Route Victoire");
 }
 
+function findMapLocation(name) {
 
-/*
-    Recherche des coordonnées
-    en tenant compte des accents.
-*/
-
-function findMapRoute(name) {
-
-    const wanted =
+    const clean =
         normalizeLocationName(name);
 
-    for (const key in mapRoutes) {
-
-        if (
-            normalizeLocationName(key) ===
-            wanted
-        ) {
-            return mapRoutes[key];
-        }
+    if (mapLocations[clean]) {
+        return mapLocations[clean];
     }
 
     return null;
 }
 
+function isMapArea(name) {
 
-function findMapPlace(name) {
-
-    const wanted =
-        normalizeLocationName(name);
-
-    for (const key in mapPlaces) {
-
-        if (
-            normalizeLocationName(key) ===
-            wanted
-        ) {
-            return mapPlaces[key];
-        }
-    }
-
-    return null;
+    return !!mapAreas[
+        normalizeLocationName(name)
+    ];
 }
 
+function parseLocations(location) {
 
-/*
-    Découpe le champ location.
-
-    Exemple :
-    "Route 116, Grotte Granite, Route Victoire"
-*/
-
-function getPokemonLocations(pokemon) {
-
-    if (!pokemon.location)
-        return [];
-
-    const location =
-        String(pokemon.location)
-            .trim();
-
-    if (
-        !location ||
-        normalizeLocationName(location) ===
-            "INCONNUE"
-    ) {
-        return [];
-    }
+    if (!location) return [];
 
     return location
         .split(",")
-        .map(
-            place => place.trim()
-        )
+        .map(x => x.trim())
         .filter(Boolean);
 }
 
+function createMapMarkers(locations) {
 
-/*
-    Crée les éléments SVG de la carte.
+    return locations
+        .map(location => {
 
-    Routes / chenaux :
-    contour rectangulaire en pointillés.
+            const clean =
+                normalizeLocationName(location);
 
-    Villes / lieux :
-    cercle.
+            const point =
+                findMapLocation(clean);
 
-    selectedLocation :
-    si fourni, seul ce lieu est affiché.
-*/
+            if (!point) return "";
 
-function createMapMarkers(
-    locations,
-    selectedLocation = null
-) {
+            const area =
+                isMapArea(clean);
 
-    const width = 628;
-    const height = 393;
+            if (area) {
 
-    let svg = `
-        <svg
-            class="mapOverlay"
-            viewBox="0 0 ${width} ${height}"
-            preserveAspectRatio="none"
-        >
-    `;
+                const coords =
+                    mapAreas[clean];
 
-    let foundSomething = false;
+                const x1 = coords[0];
+                const y1 = coords[1];
+                const x2 = coords[2];
+                const y2 = coords[3];
 
-    locations.forEach(location => {
+                return `
+                    <div
+                        class="mapMarker"
+                        style="
+                            left:${((x1 + x2) / 2 / 640) * 100}%;
+                            top:${((y1 + y2) / 2 / 420) * 100}%;
+                        "
+                    >
+                        <span
+                            class="mapAreaOutline"
+                            style="
+                                width:${Math.abs(x2-x1) / 640 * 100}%;
+                                height:${Math.abs(y2-y1) / 420 * 100}%;
+                            "
+                        ></span>
+                    </div>
+                `;
+            }
 
-        if (
-            selectedLocation &&
-            normalizeLocationName(location) !==
-                normalizeLocationName(selectedLocation)
-        ) {
-            return;
-        }
-
-        const route =
-            findMapRoute(location);
-
-        const place =
-            findMapPlace(location);
-
-        /*
-            ROUTE / CHENAL
-        */
-
-        if (route) {
-
-            const x1 = Math.min(
-                route[0],
-                route[2]
-            );
-
-            const y1 = Math.min(
-                route[1],
-                route[3]
-            );
-
-            const width =
-                Math.abs(
-                    route[2] -
-                    route[0]
-                );
-
-            const height =
-                Math.abs(
-                    route[3] -
-                    route[1]
-                );
-
-            svg += `
-                <rect
-                    x="${x1}"
-                    y="${y1}"
-                    width="${width}"
-                    height="${height}"
-                    class="mapRouteMarker"
-                    rx="3"
+            return `
+                <div
+                    class="mapMarker"
+                    style="
+                        left:${point.x / 640 * 100}%;
+                        top:${point.y / 420 * 100}%;
+                    "
                 >
-                </rect>
+                    <span class="mapDot"></span>
+
+                    <span class="mapLabel">
+                        ${clean}
+                    </span>
+                </div>
             `;
 
-            foundSomething = true;
-
-            return;
-        }
-
-
-        /*
-            VILLE / LIEU
-        */
-
-        if (place) {
-
-            const x = place[0];
-            const y = place[1];
-            const r = place[2];
-
-            svg += `
-                <circle
-                    cx="${x}"
-                    cy="${y}"
-                    r="${r}"
-                    class="mapPlaceMarker"
-                >
-                </circle>
-            `;
-
-            foundSomething = true;
-        }
-
-    });
-
-    svg += `
-        </svg>
-    `;
-
-    return {
-        svg,
-        foundSomething
-    };
+        })
+        .join("");
 }
 
-
 /* =========================
-   OUVRIR LA CARTE
+   CARTE DE HOENN
 ========================= */
 
-function openMap(
-    id,
-    selectedLocation = null
-) {
+function openMap(id, selectedLocation = null) {
 
     const pokemon =
-        P.find(
-            p => p.id === id
-        );
+        P.find(p => p.id === id);
 
-    if (!pokemon)
-        return;
+    if (!pokemon) return;
 
     const locations =
-        getPokemonLocations(
-            pokemon
-        );
-
-    /*
-        Pokémon sans lieu connu
-    */
-
-    if (
-        !locations.length
-    ) {
-
-        $("#mapContent").innerHTML = `
-
-            <div class="mapHeader">
-
-                <h2>
-                    🗺️ Carte de Hoenn
-                </h2>
-
-                <button
-                    class="mapClose"
-                    onclick="closeMap()"
-                >
-                    ×
-                </button>
-
-            </div>
-
-            <p class="mapPokemonName">
-                ${pokemon.name}
-            </p>
-
-            <div
-                class="mapImageContainer"
-                style="
-                    position:relative;
-                "
-            >
-
-                <img
-                    class="hoennMap"
-                    src="hoenn-map.png"
-                    alt="Carte de Hoenn"
-                >
-
-                <div
-                    class="mapUnknown"
-                >
-                    Inconnue
-                </div>
-
-            </div>
-
-        `;
-
-        $("#mapModal")
-            .classList
-            .remove("hidden");
-
-        return;
-    }
-
-
-    /*
-        Création des marqueurs
-    */
-
-    const markerData =
-        createMapMarkers(
-            locations,
-            selectedLocation
-        );
-
-
-    /*
-        Si le lieu demandé n'a
-        pas de coordonnées.
-    */
-
-    if (
-        selectedLocation &&
-        !markerData.foundSomething
-    ) {
-
-        $("#mapContent").innerHTML = `
-
-            <div class="mapHeader">
-
-                <h2>
-                    🗺️ Carte de Hoenn
-                </h2>
-
-                <button
-                    class="mapClose"
-                    onclick="closeMap()"
-                >
-                    ×
-                </button>
-
-            </div>
-
-            <p class="mapPokemonName">
-                ${pokemon.name}
-            </p>
-
-            <div
-                class="mapImageContainer"
-                style="
-                    position:relative;
-                "
-            >
-
-                <img
-                    class="hoennMap"
-                    src="hoenn-map.png"
-                    alt="Carte de Hoenn"
-                >
-
-                <div
-                    class="mapUnknown"
-                >
-                    ${selectedLocation}
-                </div>
-
-            </div>
-
-        `;
-
-        $("#mapModal")
-            .classList
-            .remove("hidden");
-
-        return;
-    }
-
-
-    /*
-        Carte normale
-    */
+        parseLocations(pokemon.location);
 
     $("#mapContent").innerHTML = `
 
         <div class="mapHeader">
-
-            <h2>
-                🗺️ Carte de Hoenn
-            </h2>
 
             <button
                 class="mapClose"
@@ -1004,26 +628,44 @@ function openMap(
                 ×
             </button>
 
+            <h2>
+                🗺️ Carte de Hoenn
+            </h2>
+
         </div>
 
         <p class="mapPokemonName">
             ${pokemon.name}
         </p>
 
-        <div
-            class="mapImageContainer"
-            style="
-                position:relative;
-            "
-        >
+        <div class="mapImageContainer">
 
-            <img
-                class="hoennMap"
-                src="hoenn-map.png"
-                alt="Carte de Hoenn"
+            <div
+                class="mapImageWrapper"
+                style="
+                    aspect-ratio: 640 / 420;
+                "
             >
 
-            ${markerData.svg}
+                <img
+                    class="hoennMap"
+                    src="hoenn-map.png"
+                    alt="Carte de Hoenn"
+                >
+
+                ${
+                    locations.length
+                        ? createMapMarkers(locations)
+                        : `
+                            <div
+                                class="mapUnknown"
+                            >
+                                Inconnue
+                            </div>
+                        `
+                }
+
+            </div>
 
         </div>
 
@@ -1037,31 +679,30 @@ function openMap(
             <br><br>
 
             ${
-                locations
-                    .map(location => `
+                locations.length
+                    ? locations
+                        .map(location => {
 
-                        <button
-                            class="mapLocationButton"
-                            onclick="
-                                openMap(
-                                    ${pokemon.id},
-                                    '${location
-                                        .replace(
-                                            /'/g,
-                                            "\\'"
-                                        )}'
-                                )
-                            "
-                        >
-                            ${location}
-                        </button>
+                            return `
+                                <button
+                                    class="mapLocationLink"
+                                    onclick="
+                                        openMap(
+                                            ${id},
+                                            '${location.replace(/'/g, "\\'")}'
+                                        )
+                                    "
+                                >
+                                    ${location}
+                                </button>
+                            `;
 
-                    `)
-                    .join(" · ")
+                        })
+                        .join(" • ")
+                    : "Inconnue"
             }
 
         </div>
-
     `;
 
     $("#mapModal")
@@ -1069,100 +710,25 @@ function openMap(
         .remove("hidden");
 }
 
-
-/* =========================
-   FERMER LA CARTE
-========================= */
-
 function closeMap() {
 
     if ($("#mapModal")) {
-
         $("#mapModal")
             .classList
             .add("hidden");
     }
 }
 
-
 /* =========================
-   ÉVOLUTIONS
-========================= */
-
-function evolutionLinks(
-    pokemon
-) {
-
-    if (!pokemon.family) {
-
-        return (
-            pokemon.evolution ||
-            "Aucune information"
-        );
-    }
-
-    const family =
-        P.filter(
-            p =>
-                p.family ===
-                pokemon.family
-        );
-
-    if (family.length <= 1) {
-
-        return (
-            pokemon.evolution ||
-            "Aucune évolution"
-        );
-    }
-
-    return family
-        .map(p => {
-
-            if (
-                p.id ===
-                pokemon.id
-            ) {
-
-                return `
-                    <strong>
-                        ${p.name}
-                    </strong>
-                `;
-            }
-
-            return `
-
-                <button
-                    class="evolutionLink"
-                    onclick="
-                        event.stopPropagation();
-                        openDetail(${p.id})
-                    "
-                >
-                    ${p.name}
-                </button>
-
-            `;
-
-        })
-        .join(" → ");
-}
-
-
-/* =========================================================
    FICHE DÉTAILLÉE
-========================================================= */
+========================= */
 
 function openDetail(id) {
 
     const pokemon =
-        P.find(
-            p => p.id === id
-        );
+        P.find(p => p.id === id);
 
-    if (!pokemon)
-        return;
+    if (!pokemon) return;
 
     const currentState =
         getPokemonState(id);
@@ -1176,9 +742,7 @@ function openDetail(id) {
             : pokemon.sprite;
 
     const evolution =
-        evolutionLinks(
-            pokemon
-        );
+        evolutionLinks(pokemon);
 
     const location =
         pokemon.location ||
@@ -1192,115 +756,69 @@ function openDetail(id) {
         pokemon.egg ||
         "Information indisponible";
 
-
-    /*
-        Localisation cliquable
-    */
-
-    let locationHTML;
-
-    if (
-        pokemon.location &&
-        normalizeLocationName(
-            pokemon.location
-        ) !== "INCONNUE"
-    ) {
-
-        const locations =
-            getPokemonLocations(
-                pokemon
-            );
-
-        locationHTML =
-            locations
-                .map(location => `
-
-                    <button
-                        class="mapLocationButton"
-                        onclick="
-                            event.stopPropagation();
-                            openMap(
-                                ${pokemon.id},
-                                '${location
-                                    .replace(
-                                        /'/g,
-                                        "\\'"
-                                    )}'
-                            )
-                        "
-                    >
-                        ${location}
-                    </button>
-
-                `)
-                .join(" · ");
-
-    } else {
-
-        locationHTML =
-            "Inconnue";
-    }
-
-
-    /*
-        Pokémon précédent / suivant
-    */
-
-    const currentIndex =
-        P.findIndex(
-            p => p.id === id
-        );
+    const index =
+        P.findIndex(p => p.id === id);
 
     const previous =
-        currentIndex > 0
-            ? P[currentIndex - 1]
+        index > 0
+            ? P[index - 1]
             : null;
 
     const next =
-        currentIndex <
-            P.length - 1
-            ? P[currentIndex + 1]
+        index < P.length - 1
+            ? P[index + 1]
             : null;
-
 
     $("#detail").innerHTML = `
 
         <div class="detailNavigation">
 
             <button
-                class="detailNavButton"
-                ${
-                    previous
-                        ? `onclick="openDetail(${previous.id})"`
-                        : "disabled"
-                }
-                title="Pokémon précédent"
+                class="detailArrow"
+                onclick="
+                    event.stopPropagation();
+                    ${
+                        previous
+                            ? `openDetail(${previous.id})`
+                            : ""
+                    }
+                "
+                ${previous ? "" : "disabled"}
             >
                 ◀
             </button>
 
-            <div class="detailNumber">
-                #${String(
-                    pokemon.id
-                ).padStart(3, "0")}
-            </div>
+            <button
+                class="detailClose"
+                onclick="
+                    closeDetail()
+                "
+            >
+                ×
+            </button>
 
             <button
-                class="detailNavButton"
-                ${
-                    next
-                        ? `onclick="openDetail(${next.id})"`
-                        : "disabled"
-                }
-                title="Pokémon suivant"
+                class="detailArrow"
+                onclick="
+                    event.stopPropagation();
+                    ${
+                        next
+                            ? `openDetail(${next.id})`
+                            : ""
+                    }
+                "
+                ${next ? "" : "disabled"}
             >
                 ▶
             </button>
 
         </div>
 
-
         <div class="detailHero">
+
+            <div class="detailNumber">
+                #${String(pokemon.id).padStart(3, "0")}
+            </div>
 
             <img
                 src="${image}"
@@ -1312,7 +830,6 @@ function openDetail(id) {
             </h2>
 
             <div class="types">
-
                 ${
                     (pokemon.types || [])
                         .map(
@@ -1321,105 +838,38 @@ function openDetail(id) {
                         )
                         .join("")
                 }
-
             </div>
 
         </div>
 
-
         <div class="detail">
 
             <p>
-
-                <b>
-                    🌳 Évolution :
-                </b>
-
-                <br>
-
+                <b>🌳 Évolution :</b><br>
                 ${evolution}
-
             </p>
 
-
             <p>
-
-                <b>
-                    📍 Où l'obtenir :
-                </b>
-
-                <br>
-
-                ${locationHTML}
-
-            </p>
-
-
-            <p>
-
-                <b>
-                    🎣 Méthode :
-                </b>
-
-                <br>
-
-                ${method}
-
-            </p>
-
-
-            <p>
-
-                <b>
-                    🥚 Œuf :
-                </b>
-
-                <br>
-
-                ${egg}
-
-            </p>
-
-
-            <p>
-
-                <b>
-                    📖 Complétion :
-                </b>
-
-                <br>
+                <b>📍 Où l'obtenir :</b><br>
 
                 ${
-                    pokemon.requiredForCompletion
-                        ? "Compte parmi les 208 Pokémon requis."
-                        : "Non requis pour compléter le Pokédex régional."
+                    parseLocations(location)
+                        .map(loc => `
+                            <button
+                                class="locationLink"
+                                onclick="
+                                    openMap(
+                                        ${id},
+                                        '${loc.replace(/'/g, "\\'")}'
+                                    )
+                                "
+                            >
+                                ${loc}
+                            </button>
+                        `)
+                        .join(", ")
                 }
-
             </p>
-
-
-            ${
-                currentState.obtainedDate
-                    ? `
-
-                        <p>
-
-                            <b>
-                                📅 Obtenu le :
-                            </b>
-
-                            <br>
-
-                            ${formatDate(
-                                currentState.obtainedDate
-                            )}
-
-                        </p>
-
-                    `
-                    : ""
-            }
-
 
             <button
                 class="mapButton"
@@ -1427,9 +877,41 @@ function openDetail(id) {
                     openMap(${id})
                 "
             >
-                🗺️ Voir sur la carte
+                🗺️ MAP
             </button>
 
+            <p>
+                <b>🎣 Méthode :</b><br>
+                ${method}
+            </p>
+
+            <p>
+                <b>🥚 Œuf :</b><br>
+                ${egg}
+            </p>
+
+            <p>
+                <b>📖 Complétion :</b><br>
+
+                ${
+                    pokemon.requiredForCompletion
+                        ? "Compte parmi les 208 Pokémon requis."
+                        : "Non requis pour compléter le Pokédex régional."
+                }
+            </p>
+
+            ${
+                currentState.obtainedDate
+                    ? `
+                        <p>
+                            <b>📅 Obtenu le :</b><br>
+                            ${formatDate(
+                                currentState.obtainedDate
+                            )}
+                        </p>
+                    `
+                    : ""
+            }
 
             <div class="actions">
 
@@ -1442,46 +924,34 @@ function openDetail(id) {
                     ✅ Obtenu
                 </button>
 
-
                 <button
                     onclick="
-                        setState(
-                            ${id},
-                            {
-                                status:'progress'
-                            }
-                        );
+                        setState(${id},{
+                            status:'progress'
+                        });
                         closeDetail()
                     "
                 >
                     🔄 En cours
                 </button>
 
-
                 <button
                     onclick="
-                        setState(
-                            ${id},
-                            {
-                                status:'impossible'
-                            }
-                        );
+                        setState(${id},{
+                            status:'impossible'
+                        });
                         closeDetail()
                     "
                 >
                     🚫 Impossible
                 </button>
 
-
                 <button
                     onclick="
-                        setState(
-                            ${id},
-                            {
-                                favorite:
-                                    !favorite(${id})
-                            }
-                        )
+                        setState(${id},{
+                            favorite:
+                                !favorite(${id})
+                        })
                     "
                 >
                     ⭐ ${
@@ -1491,16 +961,12 @@ function openDetail(id) {
                     }
                 </button>
 
-
                 <button
                     onclick="
-                        setState(
-                            ${id},
-                            {
-                                shiny:
-                                    !shiny(${id})
-                            }
-                        )
+                        setState(${id},{
+                            shiny:
+                                !shiny(${id})
+                        })
                     "
                 >
                     ✨ Shiny :
@@ -1511,16 +977,12 @@ function openDetail(id) {
                     }
                 </button>
 
-
                 <button
                     onclick="
-                        setState(
-                            ${id},
-                            {
-                                status:'missing',
-                                obtainedDate:null
-                            }
-                        );
+                        setState(${id},{
+                            status:'missing',
+                            obtainedDate:null
+                        });
                         closeDetail()
                     "
                 >
@@ -1530,7 +992,6 @@ function openDetail(id) {
             </div>
 
         </div>
-
     `;
 
     $("#modal")
@@ -1538,26 +999,25 @@ function openDetail(id) {
         .remove("hidden");
 }
 
-
 /* =========================
    FERMETURE FICHE
 ========================= */
 
 function closeDetail() {
 
-    if ($("#modal"))
+    if ($("#modal")) {
         $("#modal")
             .classList
             .add("hidden");
+    }
 
     render();
 }
 
-
-if ($("#close"))
+if ($("#close")) {
     $("#close").onclick =
         closeDetail;
-
+}
 
 if ($("#modal")) {
 
@@ -1568,12 +1028,11 @@ if ($("#modal")) {
                 event.target.id ===
                 "modal"
             ) {
-
                 closeDetail();
             }
+
         };
 }
-
 
 if ($("#mapModal")) {
 
@@ -1584,12 +1043,11 @@ if ($("#mapModal")) {
                 event.target.id ===
                 "mapModal"
             ) {
-
                 closeMap();
             }
+
         };
 }
-
 
 /* =========================
    RECHERCHE
@@ -1597,12 +1055,12 @@ if ($("#mapModal")) {
 
 if ($("#search")) {
 
-    $("#search").addEventListener(
-        "input",
-        render
-    );
+    $("#search")
+        .addEventListener(
+            "input",
+            render
+        );
 }
-
 
 /* =========================
    FILTRES
@@ -1610,41 +1068,43 @@ if ($("#search")) {
 
 if ($("#filters")) {
 
-    $("#filters").addEventListener(
-        "click",
-        event => {
+    $("#filters")
+        .addEventListener(
+            "click",
+            event => {
 
-            if (
-                event.target.tagName !==
-                "BUTTON"
-            )
-                return;
+                if (
+                    event.target.tagName !==
+                    "BUTTON"
+                ) {
+                    return;
+                }
 
-            document
-                .querySelectorAll(
-                    ".filters button"
-                )
-                .forEach(
-                    button =>
-                        button.classList
-                            .remove(
-                                "active"
-                            )
-                );
+                document
+                    .querySelectorAll(
+                        ".filters button"
+                    )
+                    .forEach(
+                        button =>
+                            button.classList
+                                .remove(
+                                    "active"
+                                )
+                    );
 
-            event.target.classList
-                .add("active");
+                event.target.classList
+                    .add("active");
 
-            filter =
-                event.target.dataset
-                    .filter ||
-                "all";
+                filter =
+                    event.target
+                        .dataset
+                        .filter ||
+                    "all";
 
-            render();
-        }
-    );
+                render();
+            }
+        );
 }
-
 
 /* =========================
    THÈME
@@ -1663,7 +1123,6 @@ function setTheme(theme) {
     );
 }
 
-
 if ($("#themeBtn")) {
 
     $("#themeBtn").onclick = () => {
@@ -1681,16 +1140,12 @@ if ($("#themeBtn")) {
     };
 }
 
-
 if (
-    localStorage.getItem(
-        "theme"
-    ) === "dark"
+    localStorage.getItem("theme") ===
+    "dark"
 ) {
-
     setTheme("dark");
 }
-
 
 /* =========================
    EXPORT
@@ -1698,59 +1153,46 @@ if (
 
 if ($("#exportBtn")) {
 
-    $("#exportBtn").onclick =
-        () => {
+    $("#exportBtn").onclick = () => {
 
-            const data = {
-
-                version: 4,
-
-                exportedAt:
-                    new Date()
-                        .toISOString(),
-
-                progression:
-                    state
-            };
-
-            const blob =
-                new Blob(
-                    [
-                        JSON.stringify(
-                            data,
-                            null,
-                            2
-                        )
-                    ],
-                    {
-                        type:
-                            "application/json"
-                    }
-                );
-
-            const url =
-                URL.createObjectURL(
-                    blob
-                );
-
-            const link =
-                document.createElement(
-                    "a"
-                );
-
-            link.href = url;
-
-            link.download =
-                "pokedex-hoenn-progression.json";
-
-            link.click();
-
-            URL.revokeObjectURL(
-                url
-            );
+        const data = {
+            version: 4,
+            exportedAt:
+                new Date().toISOString(),
+            progression: state
         };
-}
 
+        const blob =
+            new Blob(
+                [
+                    JSON.stringify(
+                        data,
+                        null,
+                        2
+                    )
+                ],
+                {
+                    type:
+                        "application/json"
+                }
+            );
+
+        const url =
+            URL.createObjectURL(blob);
+
+        const link =
+            document.createElement("a");
+
+        link.href = url;
+
+        link.download =
+            "pokedex-hoenn-progression.json";
+
+        link.click();
+
+        URL.revokeObjectURL(url);
+    };
+}
 
 /* =========================
    IMPORT
@@ -1764,57 +1206,48 @@ if ($("#importFile")) {
             const file =
                 event.target.files[0];
 
-            if (!file)
-                return;
+            if (!file) return;
 
             const reader =
                 new FileReader();
 
-            reader.onload =
-                () => {
+            reader.onload = () => {
 
-                    try {
+                try {
 
-                        const imported =
-                            JSON.parse(
-                                reader.result
-                            );
-
-                        if (
-                            imported &&
-                            imported.progression
-                        ) {
-
-                            state =
-                                imported.progression;
-
-                        } else {
-
-                            state =
-                                imported;
-                        }
-
-                        save();
-                        render();
-
-                        alert(
-                            "Progression importée avec succès !"
+                    const imported =
+                        JSON.parse(
+                            reader.result
                         );
 
-                    } catch {
-
-                        alert(
-                            "Le fichier sélectionné est invalide."
-                        );
+                    if (
+                        imported &&
+                        imported.progression
+                    ) {
+                        state =
+                            imported.progression;
+                    } else {
+                        state = imported;
                     }
-                };
 
-            reader.readAsText(
-                file
-            );
+                    save();
+                    render();
+
+                    alert(
+                        "Progression importée avec succès !"
+                    );
+
+                } catch {
+
+                    alert(
+                        "Le fichier sélectionné est invalide."
+                    );
+                }
+            };
+
+            reader.readAsText(file);
         };
 }
-
 
 /* =========================
    RESET
@@ -1822,25 +1255,23 @@ if ($("#importFile")) {
 
 if ($("#resetBtn")) {
 
-    $("#resetBtn").onclick =
-        () => {
+    $("#resetBtn").onclick = () => {
 
-            if (
-                !confirm(
-                    "⚠️ Effacer toute la progression ?"
-                )
-            ) {
-                return;
-            }
+        if (
+            !confirm(
+                "⚠️ Effacer toute la progression ?"
+            )
+        ) {
+            return;
+        }
 
-            state = {};
+        state = {};
 
-            save();
+        save();
 
-            render();
-        };
+        render();
+    };
 }
-
 
 /* =========================
    INSTALLATION PWA
@@ -1859,7 +1290,6 @@ window.addEventListener(
     }
 );
 
-
 function showInstallButton() {
 
     const button =
@@ -1874,7 +1304,6 @@ function showInstallButton() {
     if (hint)
         hint.hidden = false;
 }
-
 
 if ($("#installBtn")) {
 
@@ -1901,7 +1330,6 @@ if ($("#installBtn")) {
         };
 }
 
-
 window.addEventListener(
     "appinstalled",
     () => {
@@ -1919,14 +1347,11 @@ window.addEventListener(
     }
 );
 
-
 /* =========================
    SERVICE WORKER
 ========================= */
 
-if (
-    "serviceWorker" in navigator
-) {
+if ("serviceWorker" in navigator) {
 
     window.addEventListener(
         "load",
@@ -1946,7 +1371,6 @@ if (
         }
     );
 }
-
 
 /* =========================
    DATE
@@ -1975,7 +1399,6 @@ function formatDate(date) {
     }
 }
 
-
 /* =========================
    CHARGEMENT DES DONNÉES
 ========================= */
@@ -1992,14 +1415,12 @@ fetch("pokemon.json")
 
         return response.json();
     })
-
     .then(data => {
 
         P = data;
 
         render();
     })
-
     .catch(error => {
 
         console.error(error);
@@ -2007,14 +1428,10 @@ fetch("pokemon.json")
         if ($("#grid")) {
 
             $("#grid").innerHTML = `
-
                 <div class="empty">
-
                     ❌ Impossible de charger
                     les données du Pokédex.
-
                 </div>
-
             `;
         }
     });
