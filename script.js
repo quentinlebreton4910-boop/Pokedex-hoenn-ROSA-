@@ -399,20 +399,6 @@ function render() {
    CARTE DE HOENN
 ========================================================= */
 
-
-/*
-    Coordonnées de référence :
-    628 × 393 px.
-
-    L'image réelle peut être affichée
-    en 640 × 420 px.
-
-    Le SVG est étiré exactement
-    avec l'image afin que les coordonnées
-    restent au bon endroit.
-*/
-
-
 const mapRoutes = {
 
     "ROUTE 101":
@@ -747,16 +733,6 @@ function createMapMarkers(
     const width = 628;
     const height = 393;
 
-    /*
-        IMPORTANT :
-
-        Le SVG est maintenant en position
-        ABSOLUE au-dessus de l'image.
-
-        Il ne peut donc plus créer une
-        deuxième carte en dessous.
-    */
-
     let svg = `
 
         <svg
@@ -781,11 +757,6 @@ function createMapMarkers(
 
 
     locations.forEach(location => {
-
-        /*
-            Si on a demandé une route précise,
-            on n'affiche QUE celle-ci.
-        */
 
         if (
             selectedLocation &&
@@ -833,13 +804,6 @@ function createMapMarkers(
                     route[1]
                 );
 
-
-            /*
-                Pointillés directement
-                dans le SVG.
-
-                Pas besoin de CSS.
-            */
 
             svg += `
 
@@ -948,10 +912,6 @@ function openMap(
         );
 
 
-    /* =========================
-       AUCUNE LOCALISATION
-    ========================= */
-
     if (!locations.length) {
 
         $("#mapContent").innerHTML = `
@@ -1020,20 +980,12 @@ function openMap(
     }
 
 
-    /* =========================
-       CRÉATION MARQUEURS
-    ========================= */
-
     const markerData =
         createMapMarkers(
             locations,
             selectedLocation
         );
 
-
-    /* =========================
-       LIEU DEMANDÉ INCONNU
-    ========================= */
 
     if (
         selectedLocation &&
@@ -1105,10 +1057,6 @@ function openMap(
 
     }
 
-
-    /* =========================
-       CARTE
-    ========================= */
 
     $("#mapContent").innerHTML = `
 
@@ -1416,52 +1364,51 @@ function openDetail(id) {
 
         <div class="detailNavigation">
 
-    <button
-        class="detailNav"
-        ${
-            previous
-                ? `onclick="openDetail(${previous.id})"`
-                : "disabled"
-        }
-        title="Pokémon précédent"
-    >
-        ◀
-    </button>
+            <button
+                class="detailNav"
+                ${
+                    previous
+                        ? `onclick="openDetail(${previous.id})"`
+                        : "disabled"
+                }
+                title="Pokémon précédent"
+            >
+                ◀
+            </button>
 
-    <button
-        class="detailClose"
-        onclick="closeDetail()"
-        title="Fermer"
-    >
-        ×
-    </button>
+            <button
+                class="detailClose"
+                onclick="closeDetail()"
+                title="Fermer"
+            >
+                ×
+            </button>
 
-    <button
-        class="detailNav"
-        ${
-            next
-                ? `onclick="openDetail(${next.id})"`
-                : "disabled"
-        }
-        title="Pokémon suivant"
-    >
-        ▶
-    </button>
+            <button
+                class="detailNav"
+                ${
+                    next
+                        ? `onclick="openDetail(${next.id})"`
+                        : "disabled"
+                }
+                title="Pokémon suivant"
+            >
+                ▶
+            </button>
 
-</div>
+        </div>
 
-<div class="detailNumber">
-    #${String(
-        pokemon.id
-    ).padStart(3, "0")}
-</div>
 
-<div class="detailNumber">
-    #${String(
-        pokemon.id
-    ).padStart(3, "0")}
-</div>
+        <!-- UN SEUL NUMÉRO, CENTRÉ SOUS LA CROIX -->
 
+        <div class="detailNumber">
+            #${String(
+                pokemon.id
+            ).padStart(3, "0")}
+        </div>
+
+
+        <div class="detailHero">
 
             <img
                 src="${image}"
@@ -1584,8 +1531,6 @@ function openDetail(id) {
                     : ""
             }
 
-
-            <!-- BOUTON MAP -->
 
             <button
                 class="mapButton"
