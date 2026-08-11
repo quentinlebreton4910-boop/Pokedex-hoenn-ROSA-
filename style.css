@@ -1284,26 +1284,6 @@ body.dark .actions button {
     pointer-events: none;
 }
 
-.mapDot {
-    display: block;
-
-    width: 16px;
-    height: 16px;
-
-    border-radius: 50%;
-
-    background: white;
-
-    border: 3px solid white;
-
-    box-shadow:
-        0 2px 6px
-        rgba(0,0,0,0.5);
-
-    transform:
-        translateY(-2px);
-}
-
 .mapLabel {
     position: absolute;
 
@@ -1396,12 +1376,34 @@ body.dark .actions button {
 
 
 /* =========================
-   FLÈCHES POKÉDEX
+NAVIGATION FICHE POKÉMON
 ========================= */
 
-.detailNav {
+.detailNavigation {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    margin: 0 0 8px;
+
+    position: relative;
+}
+
+/* =========================
+BOUTONS ← × →
+========================= */
+
+.detailNav,
+.detailClose {
     width: 42px;
     height: 42px;
+
+    flex: 0 0 42px;
 
     border: none;
     border-radius: 12px;
@@ -1409,28 +1411,67 @@ body.dark .actions button {
     background: #e3350d;
     color: white;
 
-    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    line-height: 30px;
+    font-size: 24px;
+    font-weight: 900;
+
+    line-height: 1;
 
     cursor: pointer;
 
-    display: flex;
+    box-shadow:
+        0 3px 8px rgba(0,0,0,.18);
 
-    align-items: center;
-    justify-content: center;
+    transition:
+        transform .12s,
+        opacity .12s;
 }
 
 .detailNav:hover,
-.detailClose:hover,
-.mapClose:hover,
-.mapButton:hover {
-    opacity: 0.85;
+.detailClose:hover {
+    opacity: .9;
 }
 
-.detailNavPlaceholder {
-    width: 42px;
-    height: 42px;
+.detailNav:active,
+.detailClose:active {
+    transform: scale(.92);
+}
+
+/* Flèches */
+
+.detailNav {
+    font-size: 25px;
+}
+
+/* Croix */
+
+.detailClose {
+    font-size: 27px;
+}
+
+/* =========================
+NUMÉRO POKÉMON
+========================= */
+
+.detailNumber {
+    color: var(--muted);
+
+    background: transparent;
+
+    border: none;
+
+    padding: 0;
+
+    margin: 0 0 8px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    font-weight: 800;
 }
 
 
@@ -1652,4 +1693,43 @@ body.dark .actions button {
     stroke-width: 3px;
 
     transform: translateY(-7px);
+}
+
+
+/* =========================================
+MARQUEURS RÉELS SUR LA CARTE
+========================================= */
+
+/* Routes et chenaux */
+
+.mapRouteMarker {
+    fill: none;
+
+    stroke: white;
+
+    stroke-width: 3;
+
+    stroke-dasharray: 7 5;
+
+    vector-effect: non-scaling-stroke;
+
+    opacity: 1;
+
+    transform: translateY(-4px);
+}
+
+/* Villes et lieux */
+
+.mapPlaceMarker {
+    fill: white;
+
+    stroke: white;
+
+    stroke-width: 3;
+
+    vector-effect: non-scaling-stroke;
+
+    opacity: 1;
+
+    transform: translateY(-4px);
 }
