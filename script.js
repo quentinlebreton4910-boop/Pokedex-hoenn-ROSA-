@@ -1462,12 +1462,8 @@ function openDetail(id) {
         <div class="detailHero">
 
             <div class="detailNumber">
-
-                #${String(
-                    pokemon.id
-                ).padStart(3, "0")}
-
-            </div>
+    ×
+</div>
 
 
             <img
