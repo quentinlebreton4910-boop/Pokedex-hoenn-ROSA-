@@ -3,7 +3,6 @@ let state = JSON.parse(localStorage.getItem("hoennState") || "{}");
 let filter = "all";
 let deferredInstallPrompt = null;
 
-
 /* =========================
    SÉLECTEUR
 ========================= */
@@ -16,10 +15,12 @@ const $ = (selector) => document.querySelector(selector);
 ========================= */
 
 function save() {
+
     localStorage.setItem(
         "hoennState",
         JSON.stringify(state)
     );
+
 }
 
 
@@ -28,20 +29,32 @@ function save() {
 ========================= */
 
 function getPokemonState(id) {
+
     return state[id] || {};
+
 }
+
 
 function status(id) {
+
     return getPokemonState(id).status || "missing";
+
 }
+
 
 function shiny(id) {
+
     return !!getPokemonState(id).shiny;
+
 }
 
+
 function favorite(id) {
+
     return !!getPokemonState(id).favorite;
+
 }
+
 
 function setState(id, patch) {
 
@@ -59,6 +72,7 @@ function setState(id, patch) {
     ) {
         openDetail(id);
     }
+
 }
 
 
@@ -114,7 +128,9 @@ function progress() {
         subprogress.title =
             `Complétion du Pokédex régional : ` +
             `${requiredObtained}/208 requis`;
+
     }
+
 }
 
 
@@ -168,7 +184,9 @@ function matches(pokemon) {
 
         default:
             return true;
+
     }
+
 }
 
 
@@ -316,7 +334,9 @@ function card(pokemon) {
             }
 
         </article>
+
     `;
+
 }
 
 
@@ -336,6 +356,7 @@ function markObtained(id) {
             new Date().toISOString()
 
     });
+
 }
 
 
@@ -370,6 +391,7 @@ function render() {
         filtered
             .map(card)
             .join("");
+
 }
 
 
@@ -379,15 +401,15 @@ function render() {
 
 
 /*
-    Coordonnées basées sur une carte
-    de référence de 628 × 393 px.
+    Coordonnées de référence :
+    628 × 393 px.
 
-    Routes / chenaux :
-    rectangles utilisés uniquement
-    pour calculer leur contour en pointillés.
+    L'image réelle peut être affichée
+    en 640 × 420 px.
 
-    Villes / lieux :
-    cercles avec centre + rayon.
+    Le SVG est étiré exactement
+    avec l'image afin que les coordonnées
+    restent au bon endroit.
 */
 
 
@@ -494,6 +516,7 @@ const mapRoutes = {
 
     "CHENAL 134":
         [213, 283, 268, 300]
+
 };
 
 
@@ -606,14 +629,13 @@ const mapPlaces = {
 
     "NÉNUCRIQUE":
         [450, 114, 25]
+
 };
 
 
-/*
-    Normalise le nom d'un lieu
-    pour retrouver les coordonnées
-    même si la casse diffère.
-*/
+/* =========================
+   NORMALISATION
+========================= */
 
 function normalizeLocationName(name) {
 
@@ -622,13 +644,13 @@ function normalizeLocationName(name) {
         .toUpperCase()
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "");
+
 }
 
 
-/*
-    Recherche des coordonnées
-    en tenant compte des accents.
-*/
+/* =========================
+   RECHERCHE ROUTE
+========================= */
 
 function findMapRoute(name) {
 
@@ -641,13 +663,21 @@ function findMapRoute(name) {
             normalizeLocationName(key) ===
             wanted
         ) {
+
             return mapRoutes[key];
+
         }
+
     }
 
     return null;
+
 }
 
+
+/* =========================
+   RECHERCHE LIEU
+========================= */
 
 function findMapPlace(name) {
 
@@ -660,20 +690,21 @@ function findMapPlace(name) {
             normalizeLocationName(key) ===
             wanted
         ) {
+
             return mapPlaces[key];
+
         }
+
     }
 
     return null;
+
 }
 
 
-/*
-    Découpe le champ location.
-
-    Exemple :
-    "Route 116, Grotte Granite, Route Victoire"
-*/
+/* =========================
+   LIEUX DU POKÉMON
+========================= */
 
 function getPokemonLocations(pokemon) {
 
@@ -687,9 +718,11 @@ function getPokemonLocations(pokemon) {
     if (
         !location ||
         normalizeLocationName(location) ===
-            "INCONNUE"
+        "INCONNUE"
     ) {
+
         return [];
+
     }
 
     return location
@@ -698,21 +731,13 @@ function getPokemonLocations(pokemon) {
             place => place.trim()
         )
         .filter(Boolean);
+
 }
 
 
-/*
-    Crée les éléments SVG de la carte.
-
-    Routes / chenaux :
-    contour rectangulaire en pointillés.
-
-    Villes / lieux :
-    cercle.
-
-    selectedLocation :
-    si fourni, seul ce lieu est affiché.
-*/
+/* =========================================================
+   CRÉATION DES MARQUEURS
+========================================================= */
 
 function createMapMarkers(
     locations,
@@ -722,25 +747,56 @@ function createMapMarkers(
     const width = 628;
     const height = 393;
 
+    /*
+        IMPORTANT :
+
+        Le SVG est maintenant en position
+        ABSOLUE au-dessus de l'image.
+
+        Il ne peut donc plus créer une
+        deuxième carte en dessous.
+    */
+
     let svg = `
+
         <svg
             class="mapOverlay"
             viewBox="0 0 ${width} ${height}"
             preserveAspectRatio="none"
+            style="
+                position:absolute;
+                left:0;
+                top:0;
+                width:100%;
+                height:100%;
+                z-index:5;
+                pointer-events:none;
+                overflow:visible;
+            "
         >
+
     `;
 
     let foundSomething = false;
 
+
     locations.forEach(location => {
+
+        /*
+            Si on a demandé une route précise,
+            on n'affiche QUE celle-ci.
+        */
 
         if (
             selectedLocation &&
             normalizeLocationName(location) !==
-                normalizeLocationName(selectedLocation)
+            normalizeLocationName(selectedLocation)
         ) {
+
             return;
+
         }
+
 
         const route =
             findMapRoute(location);
@@ -748,9 +804,10 @@ function createMapMarkers(
         const place =
             findMapPlace(location);
 
-        /*
-            ROUTE / CHENAL
-        */
+
+        /* =========================
+           ROUTE / CHENAL
+        ========================= */
 
         if (route) {
 
@@ -764,39 +821,60 @@ function createMapMarkers(
                 route[3]
             );
 
-            const width =
+            const routeWidth =
                 Math.abs(
                     route[2] -
                     route[0]
                 );
 
-            const height =
+            const routeHeight =
                 Math.abs(
                     route[3] -
                     route[1]
                 );
 
+
+            /*
+                Pointillés directement
+                dans le SVG.
+
+                Pas besoin de CSS.
+            */
+
             svg += `
+
                 <rect
                     x="${x1}"
                     y="${y1}"
-                    width="${width}"
-                    height="${height}"
-                    class="mapRouteMarker"
+                    width="${routeWidth}"
+                    height="${routeHeight}"
                     rx="3"
-                >
-                </rect>
+                    ry="3"
+
+                    fill="none"
+
+                    stroke="#e3350d"
+                    stroke-width="2.5"
+
+                    stroke-dasharray="6 4"
+
+                    vector-effect="non-scaling-stroke"
+
+                    opacity="1"
+                />
+
             `;
 
             foundSomething = true;
 
             return;
+
         }
 
 
-        /*
-            VILLE / LIEU
-        */
+        /* =========================
+           VILLE / LIEU
+        ========================= */
 
         if (place) {
 
@@ -804,29 +882,45 @@ function createMapMarkers(
             const y = place[1];
             const r = place[2];
 
+
             svg += `
+
                 <circle
                     cx="${x}"
                     cy="${y}"
                     r="${r}"
-                    class="mapPlaceMarker"
-                >
-                </circle>
+
+                    fill="rgba(227,53,13,0.12)"
+
+                    stroke="#e3350d"
+                    stroke-width="2.5"
+
+                    vector-effect="non-scaling-stroke"
+
+                    opacity="1"
+                />
+
             `;
 
             foundSomething = true;
+
         }
 
     });
 
+
     svg += `
+
         </svg>
+
     `;
+
 
     return {
         svg,
         foundSomething
     };
+
 }
 
 
@@ -847,18 +941,18 @@ function openMap(
     if (!pokemon)
         return;
 
+
     const locations =
         getPokemonLocations(
             pokemon
         );
 
-    /*
-        Pokémon sans lieu connu
-    */
 
-    if (
-        !locations.length
-    ) {
+    /* =========================
+       AUCUNE LOCALISATION
+    ========================= */
+
+    if (!locations.length) {
 
         $("#mapContent").innerHTML = `
 
@@ -896,6 +990,19 @@ function openMap(
 
                 <div
                     class="mapUnknown"
+                    style="
+                        position:absolute;
+                        left:50%;
+                        top:50%;
+                        transform:translate(-50%,-50%);
+                        z-index:10;
+                        padding:12px 20px;
+                        border-radius:12px;
+                        background:rgba(0,0,0,0.75);
+                        color:white;
+                        font-size:20px;
+                        font-weight:700;
+                    "
                 >
                     Inconnue
                 </div>
@@ -909,12 +1016,13 @@ function openMap(
             .remove("hidden");
 
         return;
+
     }
 
 
-    /*
-        Création des marqueurs
-    */
+    /* =========================
+       CRÉATION MARQUEURS
+    ========================= */
 
     const markerData =
         createMapMarkers(
@@ -923,10 +1031,9 @@ function openMap(
         );
 
 
-    /*
-        Si le lieu demandé n'a
-        pas de coordonnées.
-    */
+    /* =========================
+       LIEU DEMANDÉ INCONNU
+    ========================= */
 
     if (
         selectedLocation &&
@@ -969,6 +1076,19 @@ function openMap(
 
                 <div
                     class="mapUnknown"
+                    style="
+                        position:absolute;
+                        left:50%;
+                        top:50%;
+                        transform:translate(-50%,-50%);
+                        z-index:10;
+                        padding:12px 20px;
+                        border-radius:12px;
+                        background:rgba(0,0,0,0.75);
+                        color:white;
+                        font-size:18px;
+                        font-weight:700;
+                    "
                 >
                     ${selectedLocation}
                 </div>
@@ -982,12 +1102,13 @@ function openMap(
             .remove("hidden");
 
         return;
+
     }
 
 
-    /*
-        Carte normale
-    */
+    /* =========================
+       CARTE
+    ========================= */
 
     $("#mapContent").innerHTML = `
 
@@ -1014,6 +1135,7 @@ function openMap(
             class="mapImageContainer"
             style="
                 position:relative;
+                width:100%;
             "
         >
 
@@ -1064,9 +1186,11 @@ function openMap(
 
     `;
 
+
     $("#mapModal")
         .classList
         .remove("hidden");
+
 }
 
 
@@ -1081,7 +1205,9 @@ function closeMap() {
         $("#mapModal")
             .classList
             .add("hidden");
+
     }
+
 }
 
 
@@ -1099,7 +1225,9 @@ function evolutionLinks(
             pokemon.evolution ||
             "Aucune information"
         );
+
     }
+
 
     const family =
         P.filter(
@@ -1108,13 +1236,16 @@ function evolutionLinks(
                 pokemon.family
         );
 
+
     if (family.length <= 1) {
 
         return (
             pokemon.evolution ||
             "Aucune évolution"
         );
+
     }
+
 
     return family
         .map(p => {
@@ -1129,7 +1260,9 @@ function evolutionLinks(
                         ${p.name}
                     </strong>
                 `;
+
             }
+
 
             return `
 
@@ -1147,6 +1280,7 @@ function evolutionLinks(
 
         })
         .join(" → ");
+
 }
 
 
@@ -1164,6 +1298,7 @@ function openDetail(id) {
     if (!pokemon)
         return;
 
+
     const currentState =
         getPokemonState(id);
 
@@ -1175,29 +1310,34 @@ function openDetail(id) {
             ? pokemon.shiny
             : pokemon.sprite;
 
+
     const evolution =
         evolutionLinks(
             pokemon
         );
 
+
     const location =
         pokemon.location ||
         "Information indisponible";
 
+
     const method =
         pokemon.method ||
         "Information indisponible";
+
 
     const egg =
         pokemon.egg ||
         "Information indisponible";
 
 
-    /*
-        Localisation cliquable
-    */
+    /* =========================
+       LOCALISATIONS CLIQUABLES
+    ========================= */
 
     let locationHTML;
+
 
     if (
         pokemon.location &&
@@ -1210,6 +1350,7 @@ function openDetail(id) {
             getPokemonLocations(
                 pokemon
             );
+
 
         locationHTML =
             locations
@@ -1235,26 +1376,30 @@ function openDetail(id) {
                 `)
                 .join(" · ");
 
+
     } else {
 
         locationHTML =
             "Inconnue";
+
     }
 
 
-    /*
-        Pokémon précédent / suivant
-    */
+    /* =========================
+       POKÉMON PRÉCÉDENT / SUIVANT
+    ========================= */
 
     const currentIndex =
         P.findIndex(
             p => p.id === id
         );
 
+
     const previous =
         currentIndex > 0
             ? P[currentIndex - 1]
             : null;
+
 
     const next =
         currentIndex <
@@ -1263,9 +1408,15 @@ function openDetail(id) {
             : null;
 
 
+    /* =========================
+       FICHE
+    ========================= */
+
     $("#detail").innerHTML = `
 
         <div class="detailNavigation">
+
+            <!-- POKÉMON PRÉCÉDENT -->
 
             <button
                 class="detailNavButton"
@@ -1279,11 +1430,19 @@ function openDetail(id) {
                 ◀
             </button>
 
-            <div class="detailNumber">
-                #${String(
-                    pokemon.id
-                ).padStart(3, "0")}
-            </div>
+
+            <!-- CROIX -->
+
+            <button
+                class="detailCloseButton"
+                onclick="closeDetail()"
+                title="Fermer"
+            >
+                ×
+            </button>
+
+
+            <!-- POKÉMON SUIVANT -->
 
             <button
                 class="detailNavButton"
@@ -1302,14 +1461,25 @@ function openDetail(id) {
 
         <div class="detailHero">
 
+            <div class="detailNumber">
+
+                #${String(
+                    pokemon.id
+                ).padStart(3, "0")}
+
+            </div>
+
+
             <img
                 src="${image}"
                 alt="${pokemon.name}"
             >
 
+
             <h2>
                 ${pokemon.name}
             </h2>
+
 
             <div class="types">
 
@@ -1328,6 +1498,7 @@ function openDetail(id) {
 
 
         <div class="detail">
+
 
             <p>
 
@@ -1421,6 +1592,8 @@ function openDetail(id) {
             }
 
 
+            <!-- BOUTON MAP -->
+
             <button
                 class="mapButton"
                 onclick="
@@ -1432,6 +1605,7 @@ function openDetail(id) {
 
 
             <div class="actions">
+
 
                 <button
                     onclick="
@@ -1527,15 +1701,19 @@ function openDetail(id) {
                     ↩️ Réinitialiser
                 </button>
 
+
             </div>
+
 
         </div>
 
     `;
 
+
     $("#modal")
         .classList
         .remove("hidden");
+
 }
 
 
@@ -1551,13 +1729,22 @@ function closeDetail() {
             .add("hidden");
 
     render();
+
 }
 
+
+/* =========================
+   BOUTON FERMER
+========================= */
 
 if ($("#close"))
     $("#close").onclick =
         closeDetail;
 
+
+/* =========================
+   CLIC EXTÉRIEUR FICHE
+========================= */
 
 if ($("#modal")) {
 
@@ -1570,10 +1757,17 @@ if ($("#modal")) {
             ) {
 
                 closeDetail();
+
             }
+
         };
+
 }
 
+
+/* =========================
+   CLIC EXTÉRIEUR CARTE
+========================= */
 
 if ($("#mapModal")) {
 
@@ -1586,8 +1780,11 @@ if ($("#mapModal")) {
             ) {
 
                 closeMap();
+
             }
+
         };
+
 }
 
 
@@ -1601,6 +1798,7 @@ if ($("#search")) {
         "input",
         render
     );
+
 }
 
 
@@ -1620,6 +1818,7 @@ if ($("#filters")) {
             )
                 return;
 
+
             document
                 .querySelectorAll(
                     ".filters button"
@@ -1632,17 +1831,22 @@ if ($("#filters")) {
                             )
                 );
 
+
             event.target.classList
                 .add("active");
+
 
             filter =
                 event.target.dataset
                     .filter ||
                 "all";
 
+
             render();
+
         }
     );
+
 }
 
 
@@ -1661,6 +1865,7 @@ function setTheme(theme) {
         "theme",
         theme
     );
+
 }
 
 
@@ -1673,12 +1878,15 @@ if ($("#themeBtn")) {
                 "dark"
             );
 
+
         setTheme(
             dark
                 ? "light"
                 : "dark"
         );
+
     };
+
 }
 
 
@@ -1689,6 +1897,7 @@ if (
 ) {
 
     setTheme("dark");
+
 }
 
 
@@ -1711,7 +1920,9 @@ if ($("#exportBtn")) {
 
                 progression:
                     state
+
             };
+
 
             const blob =
                 new Blob(
@@ -1728,27 +1939,35 @@ if ($("#exportBtn")) {
                     }
                 );
 
+
             const url =
                 URL.createObjectURL(
                     blob
                 );
+
 
             const link =
                 document.createElement(
                     "a"
                 );
 
+
             link.href = url;
+
 
             link.download =
                 "pokedex-hoenn-progression.json";
 
+
             link.click();
+
 
             URL.revokeObjectURL(
                 url
             );
+
         };
+
 }
 
 
@@ -1767,8 +1986,10 @@ if ($("#importFile")) {
             if (!file)
                 return;
 
+
             const reader =
                 new FileReader();
+
 
             reader.onload =
                 () => {
@@ -1779,6 +2000,7 @@ if ($("#importFile")) {
                             JSON.parse(
                                 reader.result
                             );
+
 
                         if (
                             imported &&
@@ -1792,27 +2014,36 @@ if ($("#importFile")) {
 
                             state =
                                 imported;
+
                         }
+
 
                         save();
                         render();
 
+
                         alert(
                             "Progression importée avec succès !"
                         );
+
 
                     } catch {
 
                         alert(
                             "Le fichier sélectionné est invalide."
                         );
+
                     }
+
                 };
+
 
             reader.readAsText(
                 file
             );
+
         };
+
 }
 
 
@@ -1830,15 +2061,22 @@ if ($("#resetBtn")) {
                     "⚠️ Effacer toute la progression ?"
                 )
             ) {
+
                 return;
+
             }
+
 
             state = {};
 
+
             save();
 
+
             render();
+
         };
+
 }
 
 
@@ -1856,6 +2094,7 @@ window.addEventListener(
             event;
 
         showInstallButton();
+
     }
 );
 
@@ -1868,11 +2107,14 @@ function showInstallButton() {
     const hint =
         $("#installHint");
 
+
     if (button)
         button.hidden = false;
 
+
     if (hint)
         hint.hidden = false;
+
 }
 
 
@@ -1884,21 +2126,29 @@ if ($("#installBtn")) {
             if (
                 !deferredInstallPrompt
             ) {
+
                 return;
+
             }
+
 
             deferredInstallPrompt
                 .prompt();
 
+
             await deferredInstallPrompt
                 .userChoice;
+
 
             deferredInstallPrompt =
                 null;
 
+
             $("#installBtn").hidden =
                 true;
+
         };
+
 }
 
 
@@ -1909,13 +2159,16 @@ window.addEventListener(
         deferredInstallPrompt =
             null;
 
+
         if ($("#installBtn"))
             $("#installBtn").hidden =
                 true;
 
+
         if ($("#installHint"))
             $("#installHint").hidden =
                 true;
+
     }
 );
 
@@ -1943,8 +2196,10 @@ if (
                             error
                         )
                 );
+
         }
     );
+
 }
 
 
@@ -1956,6 +2211,7 @@ function formatDate(date) {
 
     if (!date)
         return "";
+
 
     try {
 
@@ -1972,7 +2228,9 @@ function formatDate(date) {
     } catch {
 
         return "";
+
     }
+
 }
 
 
@@ -1988,9 +2246,11 @@ fetch("pokemon.json")
             throw new Error(
                 "pokemon.json introuvable"
             );
+
         }
 
         return response.json();
+
     })
 
     .then(data => {
@@ -1998,6 +2258,7 @@ fetch("pokemon.json")
         P = data;
 
         render();
+
     })
 
     .catch(error => {
@@ -2016,5 +2277,7 @@ fetch("pokemon.json")
                 </div>
 
             `;
+
         }
+
     });
