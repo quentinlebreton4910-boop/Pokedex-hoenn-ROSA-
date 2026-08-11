@@ -1541,3 +1541,115 @@ body.dark .actions button {
 
     transform: none;
 }
+
+
+/* =========================================
+   NAVIGATION FICHE POKÉMON
+========================================= */
+
+.detailNavigation {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    width: 100%;
+
+    margin:
+        0
+        0
+        4px;
+}
+
+.detailNavButton {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #e3350d;
+    color: white;
+
+    font-size: 25px;
+    font-weight: 900;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        transform .12s,
+        opacity .15s;
+}
+
+.detailNavButton:hover {
+    opacity: .88;
+}
+
+.detailNavButton:active {
+    transform: scale(.92);
+}
+
+.detailNavButton:disabled {
+    opacity: .35;
+    cursor: default;
+}
+
+.detailCloseCenter {
+    font-size: 28px;
+}
+
+/* Numéro du Pokémon */
+.detailNavigation + .detailNumber {
+    text-align: center;
+
+    margin:
+        0
+        0
+        8px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+/* =========================================
+   MARQUEURS CARTE HOENN
+========================================= */
+
+/* Routes et chenaux : pointillés blancs */
+.mapRouteMarker {
+    fill: none !important;
+
+    stroke: white !important;
+
+    stroke-width: 3px;
+
+    stroke-dasharray: 6 5;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+    transform: translateY(-7px);
+}
+
+/* Villes et lieux : ronds blancs */
+.mapPlaceMarker {
+    fill: none !important;
+
+    stroke: white !important;
+
+    stroke-width: 3px;
+
+    transform: translateY(-7px);
+}
