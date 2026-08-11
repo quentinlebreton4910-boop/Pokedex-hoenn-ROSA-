@@ -1292,12 +1292,16 @@ body.dark .actions button {
 
     border-radius: 50%;
 
-    background: #e3350d;
+    background: white;
 
     border: 3px solid white;
 
     box-shadow:
-        0 2px 6px rgba(0,0,0,0.5);
+        0 2px 6px
+        rgba(0,0,0,0.5);
+
+    transform:
+        translateY(-2px);
 }
 
 .mapLabel {
@@ -1427,4 +1431,113 @@ body.dark .actions button {
 .detailNavPlaceholder {
     width: 42px;
     height: 42px;
+}
+
+
+/* =========================================
+   NAVIGATION FICHE POKÉMON — CENTRÉE
+========================================= */
+
+.detailNavigation {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    margin:
+        0
+        0
+        10px;
+
+    padding:
+        0;
+}
+
+/* Boutons ← et → */
+
+.detailNavButton {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #e3350d;
+    color: white;
+
+    font-size: 24px;
+    font-weight: 900;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 8px
+        rgba(0,0,0,.18);
+
+    transition:
+        transform .12s,
+        opacity .15s;
+}
+
+/* Croix centrale */
+
+.detailNumber {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border-radius: 12px;
+
+    background: #e3350d;
+    color: white;
+
+    font-size: 24px;
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+/* Effet au survol */
+
+.detailNavButton:hover {
+    opacity: .88;
+
+    transform:
+        translateY(-1px);
+}
+
+/* Effet au clic */
+
+.detailNavButton:active {
+    transform:
+        scale(.92);
+}
+
+/* Bouton désactivé */
+
+.detailNavButton:disabled {
+    opacity: .45;
+
+    cursor: default;
+
+    transform: none;
 }
