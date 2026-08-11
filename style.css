@@ -1,8 +1,9 @@
 /* =========================================
-   POKÉDEX HOENN ROSA — V4
+POKÉDEX HOENN ROSA — V4
 ========================================= */
 
 :root {
+
     --red: #e3350d;
     --red-dark: #b51f0a;
     --blue: #35aeea;
@@ -19,15 +20,19 @@
         0 5px 18px rgba(0,0,0,.10);
 }
 
+
 * {
     box-sizing: border-box;
 }
+
 
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
+
     margin: 0;
     min-height: 100vh;
 
@@ -53,11 +58,13 @@ body {
         color .25s;
 }
 
+
 /* =========================================
-   MODE SOMBRE
+MODE SOMBRE
 ========================================= */
 
 body.dark {
+
     --bg: #101216;
     --card: #1b1f26;
     --text: #f2f4f7;
@@ -72,11 +79,13 @@ body.dark {
         );
 }
 
+
 /* =========================================
-   HEADER
+HEADER
 ========================================= */
 
 .top {
+
     position: sticky;
     top: 0;
     z-index: 20;
@@ -101,27 +110,36 @@ body.dark {
         0 4px 14px rgba(0,0,0,.22);
 }
 
+
 .top h1 {
+
     margin: 0;
+
     font-size: 21px;
     font-weight: 900;
 }
+
 
 .top small {
     opacity: .85;
 }
 
+
 .top > div {
+
     display: flex;
     align-items: center;
+
     gap: 7px;
 }
 
+
 /* =========================================
-   BOUTONS HEADER
+BOUTONS HEADER
 ========================================= */
 
 .iconBtn {
+
     width: 42px;
     height: 42px;
 
@@ -140,21 +158,36 @@ body.dark {
         background .15s;
 }
 
+
 .iconBtn:hover {
-    background: rgba(255,255,255,.28);
-    transform: scale(1.05);
+
+    background:
+        rgba(255,255,255,.28);
+
+    transform:
+        scale(1.05);
 }
+
 
 .iconBtn:active {
-    transform: scale(.94);
+
+    transform:
+        scale(.94);
 }
 
+
 /* =========================================
-   CONTENEUR PRINCIPAL
+CONTENEUR PRINCIPAL
 ========================================= */
 
 main {
-    width: min(1100px, 100%);
+
+    width:
+        min(
+            1100px,
+            100%
+        );
+
     margin: auto;
 
     padding:
@@ -163,14 +196,18 @@ main {
         50px;
 }
 
+
 /* =========================================
-   MESSAGE INSTALLATION
+MESSAGE INSTALLATION
 ========================================= */
 
 .installHint {
+
     margin-bottom: 14px;
 
-    padding: 12px 14px;
+    padding:
+        12px
+        14px;
 
     border-radius: 14px;
 
@@ -181,19 +218,24 @@ main {
     font-weight: 700;
 
     box-shadow:
-        0 3px 10px rgba(0,0,0,.05);
+        0 3px 10px
+        rgba(0,0,0,.05);
 }
 
+
 body.dark .installHint {
+
     background: #172b38;
     color: #bfeaff;
 }
 
+
 /* =========================================
-   PROGRESSION
+PROGRESSION
 ========================================= */
 
 .progressCard {
+
     position: relative;
 
     padding: 18px;
@@ -212,12 +254,15 @@ body.dark .installHint {
 
     border-radius: 20px;
 
-    box-shadow: var(--shadow);
+    box-shadow:
+        var(--shadow);
 
     overflow: hidden;
 }
 
+
 body.dark .progressCard {
+
     background:
         linear-gradient(
             145deg,
@@ -226,9 +271,9 @@ body.dark .progressCard {
         );
 }
 
-/* petit élément Pokédex */
 
 .progressCard::before {
+
     content: "";
 
     display: block;
@@ -247,26 +292,36 @@ body.dark .progressCard {
 
     box-shadow:
         inset 0 0 0 2px #1683a7,
-        0 3px 7px rgba(0,0,0,.15);
+        0 3px 7px
+        rgba(0,0,0,.15);
 }
 
+
 .progressCard h2 {
-    margin: 0 0 5px;
+
+    margin:
+        0
+        0
+        5px;
 
     font-size: 20px;
 }
 
+
 .progressCard .subprogress {
+
     color: var(--muted);
 
     font-size: 13px;
 }
 
+
 /* =========================================
-   BARRE DE PROGRESSION
+BARRE DE PROGRESSION
 ========================================= */
 
 .bar {
+
     width: 100%;
     height: 15px;
 
@@ -282,7 +337,9 @@ body.dark .progressCard {
     background: #eef0f3;
 }
 
+
 .bar i {
+
     display: block;
 
     width: 0%;
@@ -301,17 +358,21 @@ body.dark .progressCard {
         width .35s ease;
 }
 
+
 /* =========================================
-   RECHERCHE
+RECHERCHE
 ========================================= */
 
 .searchBox {
+
     position: relative;
 
     margin-bottom: 13px;
 }
 
+
 #search {
+
     width: 100%;
 
     padding:
@@ -331,14 +392,17 @@ body.dark .progressCard {
     font-size: 15px;
 
     box-shadow:
-        0 3px 10px rgba(0,0,0,.05);
+        0 3px 10px
+        rgba(0,0,0,.05);
 
     transition:
         border .2s,
         box-shadow .2s;
 }
 
+
 #search:focus {
+
     border-color: var(--red);
 
     box-shadow:
@@ -346,15 +410,18 @@ body.dark .progressCard {
         rgba(227,53,13,.12);
 }
 
+
 #search::placeholder {
     color: var(--muted);
 }
 
+
 /* =========================================
-   FILTRES
+FILTRES
 ========================================= */
 
 .filters {
+
     display: flex;
 
     gap: 7px;
@@ -368,11 +435,14 @@ body.dark .progressCard {
     scrollbar-width: none;
 }
 
+
 .filters::-webkit-scrollbar {
     display: none;
 }
 
+
 .filters button {
+
     flex:
         0 0 auto;
 
@@ -393,31 +463,37 @@ body.dark .progressCard {
 
     cursor: pointer;
 
-    transition:
-        .15s;
+    transition: .15s;
 }
+
 
 .filters button:hover {
     transform: translateY(-1px);
 }
 
+
 .filters button.active {
+
     color: white;
 
-    border-color: var(--red);
+    border-color:
+        var(--red);
 
-    background: var(--red);
+    background:
+        var(--red);
 
     box-shadow:
         0 3px 8px
         rgba(227,53,13,.25);
 }
 
+
 /* =========================================
-   GRILLE
+GRILLE
 ========================================= */
 
 #grid {
+
     display: grid;
 
     grid-template-columns:
@@ -429,11 +505,13 @@ body.dark .progressCard {
     gap: 12px;
 }
 
+
 /* =========================================
-   CARTE POKÉMON
+CARTE POKÉMON
 ========================================= */
 
 .card {
+
     position: relative;
 
     min-width: 0;
@@ -448,7 +526,8 @@ body.dark .progressCard {
     background: var(--card);
 
     box-shadow:
-        0 3px 12px rgba(0,0,0,.07);
+        0 3px 12px
+        rgba(0,0,0,.07);
 
     cursor: pointer;
 
@@ -459,7 +538,9 @@ body.dark .progressCard {
         box-shadow .15s;
 }
 
+
 .card:hover {
+
     transform:
         translateY(-3px);
 
@@ -468,7 +549,9 @@ body.dark .progressCard {
         rgba(0,0,0,.13);
 }
 
+
 .card::before {
+
     content: "";
 
     position: absolute;
@@ -479,18 +562,23 @@ body.dark .progressCard {
 
     height: 4px;
 
-    background: var(--red);
+    background:
+        var(--red);
 }
+
 
 .card.done::before {
-    background: var(--green);
+    background:
+        var(--green);
 }
 
+
 /* =========================================
-   FAVORI
+FAVORI
 ========================================= */
 
 .card .fav {
+
     position: absolute;
 
     top: 9px;
@@ -513,17 +601,22 @@ body.dark .progressCard {
     z-index: 2;
 }
 
+
 body.dark .card .fav {
+
     background:
         rgba(0,0,0,.35);
 }
 
+
 /* =========================================
-   NUMÉRO
+NUMÉRO
 ========================================= */
 
 .num {
-    color: var(--muted);
+
+    color:
+        var(--muted);
 
     font-size: 12px;
 
@@ -532,11 +625,13 @@ body.dark .card .fav {
     margin-bottom: 4px;
 }
 
+
 /* =========================================
-   SPRITE
+SPRITE
 ========================================= */
 
 .card > img {
+
     display: block;
 
     width: 105px;
@@ -560,11 +655,13 @@ body.dark .card .fav {
         );
 }
 
+
 /* =========================================
-   NOM
+NOM
 ========================================= */
 
 .name {
+
     text-align: center;
 
     font-size: 16px;
@@ -578,17 +675,22 @@ body.dark .card .fav {
     text-overflow: ellipsis;
 }
 
+
 .name sup {
-    color: var(--yellow);
+
+    color:
+        var(--yellow);
 
     font-size: 10px;
 }
 
+
 /* =========================================
-   TYPES
+TYPES
 ========================================= */
 
 .types {
+
     display: flex;
 
     justify-content: center;
@@ -602,7 +704,9 @@ body.dark .card .fav {
         0;
 }
 
+
 .type {
+
     display: inline-block;
 
     padding:
@@ -620,16 +724,21 @@ body.dark .card .fav {
     font-weight: 800;
 }
 
+
 body.dark .type {
+
     background: #2a3039;
+
     color: #d9dee5;
 }
 
+
 /* =========================================
-   BOUTONS DE STATUT
+BOUTONS DE STATUT
 ========================================= */
 
 .state {
+
     display: flex;
 
     justify-content: center;
@@ -639,7 +748,9 @@ body.dark .type {
     margin-top: 8px;
 }
 
+
 .state button {
+
     width: 34px;
     height: 32px;
 
@@ -657,32 +768,45 @@ body.dark .type {
         transform .12s;
 }
 
+
 .state button:active {
-    transform: scale(.9);
+    transform:
+        scale(.9);
 }
 
+
 .got {
+
     background: #d8f3e7;
+
     color: #14734b;
 }
 
+
 .doing {
+
     background: #fff0c2;
+
     color: #856600;
 }
 
+
 .nope {
+
     background: #ffd9d9;
+
     color: #a61b1b;
 }
 
+
 /* =========================================
-   BADGES
+BADGES
 ========================================= */
 
 .completedBadge,
 .shinyBadge,
 .dateBadge {
+
     text-align: center;
 
     margin-top: 6px;
@@ -692,23 +816,28 @@ body.dark .type {
     font-weight: 800;
 }
 
+
 .completedBadge {
     color: var(--green);
 }
+
 
 .shinyBadge {
     color: #a87800;
 }
 
+
 .dateBadge {
     color: var(--muted);
 }
 
+
 /* =========================================
-   MODALE
+MODALE
 ========================================= */
 
 #modal {
+
     position: fixed;
 
     inset: 0;
@@ -729,11 +858,14 @@ body.dark .type {
         blur(5px);
 }
 
+
 #modal.hidden {
     display: none;
 }
 
+
 #detail {
+
     position: relative;
 
     width:
@@ -760,11 +892,13 @@ body.dark .type {
         rgba(0,0,0,.35);
 }
 
+
 /* =========================================
-   HERO DÉTAIL
+HERO DÉTAIL
 ========================================= */
 
 .detailHero {
+
     padding: 16px;
 
     text-align: center;
@@ -779,7 +913,9 @@ body.dark .type {
         );
 }
 
+
 body.dark .detailHero {
+
     background:
         linear-gradient(
             145deg,
@@ -788,7 +924,9 @@ body.dark .detailHero {
         );
 }
 
+
 .detailHero img {
+
     width: 180px;
     height: 180px;
 
@@ -799,7 +937,9 @@ body.dark .detailHero {
     margin: auto;
 }
 
+
 .detailHero h2 {
+
     margin:
         5px
         0
@@ -808,23 +948,56 @@ body.dark .detailHero {
     font-size: 25px;
 }
 
-.detailNumber {
-    color: var(--muted);
-
-    font-weight: 800;
-}
 
 /* =========================================
-   DÉTAILS
+NUMÉRO SOUS LA NAVIGATION
+========================================= */
+
+.detailNumber {
+
+    display: block;
+
+    width: 100%;
+
+    margin:
+        2px
+        0
+        10px;
+
+    padding: 0;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 0;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================
+DÉTAILS
 ========================================= */
 
 .detail {
+
     padding:
         10px
         3px;
 }
 
+
 .detail p {
+
     line-height: 1.55;
 
     padding-bottom: 8px;
@@ -833,15 +1006,18 @@ body.dark .detailHero {
         1px solid var(--border);
 }
 
+
 .detail b {
     font-weight: 850;
 }
 
+
 /* =========================================
-   ACTIONS
+ACTIONS
 ========================================= */
 
 .actions {
+
     display: grid;
 
     grid-template-columns:
@@ -855,7 +1031,9 @@ body.dark .detailHero {
     margin-top: 15px;
 }
 
+
 .actions button {
+
     min-height: 45px;
 
     border: 0;
@@ -874,20 +1052,25 @@ body.dark .detailHero {
         transform .12s;
 }
 
+
 body.dark .actions button {
     background: #2a3039;
 }
 
+
 .actions button:hover {
+
     transform:
         translateY(-1px);
 }
 
+
 /* =========================================
-   BOUTON FERMER
+BOUTON FERMER
 ========================================= */
 
 #close {
+
     position: absolute;
 
     top: 10px;
@@ -904,7 +1087,8 @@ body.dark .actions button {
 
     color: white;
 
-    background: var(--red);
+    background:
+        var(--red);
 
     font-size: 18px;
 
@@ -913,14 +1097,19 @@ body.dark .actions button {
     cursor: pointer;
 }
 
+
 /* =========================================
-   AUCUN RÉSULTAT
+AUCUN RÉSULTAT
 ========================================= */
 
 .empty {
-    grid-column: 1 / -1;
 
-    padding: 40px 20px;
+    grid-column:
+        1 / -1;
+
+    padding:
+        40px
+        20px;
 
     text-align: center;
 
@@ -929,20 +1118,24 @@ body.dark .actions button {
     font-weight: 700;
 }
 
+
 /* =========================================
-   RESPONSIVE TÉLÉPHONE
+RESPONSIVE TÉLÉPHONE
 ========================================= */
 
 @media (max-width: 600px) {
 
     main {
+
         padding:
             12px
             10px
             35px;
     }
 
+
     #grid {
+
         grid-template-columns:
             repeat(
                 2,
@@ -952,43 +1145,56 @@ body.dark .actions button {
         gap: 9px;
     }
 
+
     .card {
         padding: 9px;
     }
 
+
     .card > img {
+
         width: 88px;
         height: 88px;
     }
+
 
     .name {
         font-size: 14px;
     }
 
+
     .actions {
+
         grid-template-columns:
             1fr;
     }
 
+
     #detail {
+
         max-height: 94vh;
 
         border-radius: 19px;
     }
 
+
     .detailHero img {
+
         width: 150px;
         height: 150px;
     }
+
 }
 
+
 /* =========================================
-   TRÈS PETITS ÉCRANS
+TRÈS PETITS ÉCRANS
 ========================================= */
 
 @media (max-width: 360px) {
 
     #grid {
+
         grid-template-columns:
             repeat(
                 2,
@@ -996,30 +1202,39 @@ body.dark .actions button {
             );
     }
 
+
     .card > img {
+
         width: 76px;
         height: 76px;
     }
+
 }
 
 
 /* =========================================
-   LIENS D'ÉVOLUTION
+LIENS D'ÉVOLUTION
 ========================================= */
 
 .evolutionLink {
+
     border: none;
+
     background: none;
+
     padding: 0;
+
     margin: 0;
 
     color: #e3350d;
 
     font: inherit;
+
     font-weight: 700;
 
     cursor: pointer;
 }
+
 
 .evolutionLink:hover {
     text-decoration: underline;
@@ -1027,21 +1242,27 @@ body.dark .actions button {
 
 
 /* =========================================
-   BOUTON MAP
+BOUTON MAP
 ========================================= */
 
 .mapButton {
+
     width: 100%;
+
     padding: 14px;
+
     margin-bottom: 12px;
 
     border: none;
+
     border-radius: 12px;
 
     background: #e3350d;
+
     color: white;
 
     font-size: 16px;
+
     font-weight: 700;
 
     cursor: pointer;
@@ -1049,23 +1270,28 @@ body.dark .actions button {
 
 
 /* =========================================
-   FENÊTRE CARTE
+FENÊTRE CARTE
 ========================================= */
 
 .mapModal {
+
     position: fixed;
+
     inset: 0;
 
     z-index: 9999;
 
-    background: rgba(0, 0, 0, 0.75);
+    background:
+        rgba(0, 0, 0, 0.75);
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     padding: 15px;
 }
+
 
 .mapModal.hidden {
     display: none;
@@ -1073,40 +1299,54 @@ body.dark .actions button {
 
 
 /* =========================================
-   BOÎTE DE LA CARTE
+BOÎTE DE LA CARTE
 ========================================= */
 
 .mapBox {
+
     position: relative;
 
-    width: min(900px, 100%);
+    width:
+        min(
+            900px,
+            100%
+        );
+
     max-height: 95vh;
 
     overflow-y: auto;
 
     background: white;
+
     border-radius: 20px;
 
     padding: 15px;
 }
 
+
 .dark .mapBox {
+
     background: #1e1e1e;
+
     color: white;
 }
 
 
 /* =========================================
-   EN-TÊTE DE LA CARTE
+EN-TÊTE DE LA CARTE
 ========================================= */
 
 .mapHeader {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     margin-bottom: 12px;
 }
+
 
 .mapHeader h2 {
     margin: 0;
@@ -1114,20 +1354,24 @@ body.dark .actions button {
 
 
 /* =========================================
-   BOUTON FERMER LA CARTE
+BOUTON FERMER LA CARTE
 ========================================= */
 
 .mapClose {
+
     width: 45px;
     height: 45px;
 
     border: none;
+
     border-radius: 12px;
 
     background: #e3350d;
+
     color: white;
 
     font-size: 30px;
+
     line-height: 1;
 
     cursor: pointer;
@@ -1135,20 +1379,25 @@ body.dark .actions button {
 
 
 /* =========================================
-   IMAGE DE LA CARTE
+IMAGE DE LA CARTE
 ========================================= */
 
 .mapImageContainer {
+
     width: 100%;
+
     overflow: auto;
 
     border-radius: 12px;
 }
 
+
 .hoennMap {
+
     display: block;
 
     width: 100%;
+
     height: auto;
 
     image-rendering: pixelated;
@@ -1156,10 +1405,11 @@ body.dark .actions button {
 
 
 /* =========================================
-   INFORMATIONS DES LIEUX
+INFORMATIONS DES LIEUX
 ========================================= */
 
 .mapLocations {
+
     margin-top: 15px;
 
     padding: 12px;
@@ -1169,25 +1419,30 @@ body.dark .actions button {
     background: #f1f3f6;
 }
 
+
 .dark .mapLocations {
     background: #292929;
 }
 
 
 /* =========================================
-   FENÊTRE CARTE — VERSION JAVASCRIPT
+FENÊTRE CARTE — VERSION JAVASCRIPT
 ========================================= */
 
 .mapWindow {
+
     position: relative;
 
     width: 100%;
+
     max-width: 900px;
+
     max-height: 95vh;
 
     overflow: auto;
 
     background: white;
+
     border-radius: 20px;
 
     padding: 20px;
@@ -1197,22 +1452,34 @@ body.dark .actions button {
     text-align: center;
 }
 
+
 .dark .mapWindow {
+
     background: #1e1e1e;
+
     color: white;
 }
 
 
 /* =========================================
-   TITRE CARTE
+TITRE CARTE
 ========================================= */
 
 .mapWindow h2 {
-    margin: 0 0 5px;
+
+    margin:
+        0
+        0
+        5px;
 }
 
+
 .mapPokemonName {
-    margin: 0 0 15px;
+
+    margin:
+        0
+        0
+        15px;
 
     font-weight: bold;
 
@@ -1221,13 +1488,15 @@ body.dark .actions button {
 
 
 /* =========================================
-   IMAGE CARTE — VERSION JAVASCRIPT
+IMAGE CARTE — VERSION JAVASCRIPT
 ========================================= */
 
 .mapWindow .hoennMap {
+
     display: block;
 
     width: 100%;
+
     height: auto;
 
     border-radius: 12px;
@@ -1237,10 +1506,11 @@ body.dark .actions button {
 
 
 /* =========================================
-   FERMETURE — VERSION JAVASCRIPT
+FERMETURE — VERSION JAVASCRIPT
 ========================================= */
 
 .mapWindow .mapClose {
+
     position: absolute;
 
     top: 10px;
@@ -1250,30 +1520,37 @@ body.dark .actions button {
     height: 45px;
 
     border: none;
+
     border-radius: 12px;
 
     background: #e3350d;
+
     color: white;
 
     font-size: 24px;
+
     font-weight: bold;
 
     cursor: pointer;
 
     z-index: 2;
-   }
+}
 
 
-/* =========================
-   POINTS SUR LA CARTE
-========================= */
+/* =========================================
+POINTS SUR LA CARTE
+========================================= */
 
 .mapImageWrapper {
+
     position: relative;
+
     width: 100%;
 }
 
+
 .mapMarker {
+
     position: absolute;
 
     transform:
@@ -1284,7 +1561,9 @@ body.dark .actions button {
     pointer-events: none;
 }
 
+
 .mapLabel {
+
     position: absolute;
 
     left: 50%;
@@ -1295,24 +1574,29 @@ body.dark .actions button {
 
     white-space: nowrap;
 
-    padding: 4px 7px;
+    padding:
+        4px
+        7px;
 
     border-radius: 6px;
 
-    background: rgba(0,0,0,0.75);
+    background:
+        rgba(0,0,0,0.75);
 
     color: white;
 
     font-size: 11px;
+
     font-weight: 700;
 }
 
 
-/* =========================
-   LIEU INCONNU
-========================= */
+/* =========================================
+LIEU INCONNU
+========================================= */
 
 .mapUnknown {
+
     position: absolute;
 
     left: 50%;
@@ -1321,29 +1605,35 @@ body.dark .actions button {
     transform:
         translate(-50%, -50%);
 
-    padding: 14px 24px;
+    padding:
+        14px
+        24px;
 
     border-radius: 12px;
 
-    background: rgba(0,0,0,0.75);
+    background:
+        rgba(0,0,0,0.75);
 
     color: white;
 
     font-size: 20px;
+
     font-weight: 700;
 
     z-index: 5;
 }
 
 
-/* =========================
-   BARRE DE LA FICHE
-========================= */
+/* =========================================
+BARRE DE LA FICHE
+========================================= */
 
 .detailTopBar {
+
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     width: 100%;
@@ -1352,21 +1642,25 @@ body.dark .actions button {
 }
 
 
-/* =========================
-   CROIX FERMER
-========================= */
+/* =========================================
+CROIX FERMER
+========================================= */
 
 .detailClose {
+
     width: 42px;
     height: 42px;
 
     border: none;
+
     border-radius: 12px;
 
     background: #e3350d;
+
     color: white;
 
     font-size: 28px;
+
     font-weight: 700;
 
     line-height: 1;
@@ -1375,114 +1669,16 @@ body.dark .actions button {
 }
 
 
-/* =========================
-NAVIGATION FICHE POKÉMON
-========================= */
-
-.detailNavigation {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 10px;
-
-    width: 100%;
-
-    margin: 0 0 8px;
-
-    position: relative;
-}
-
-/* =========================
-BOUTONS ← × →
-========================= */
-
-.detailNav,
-.detailClose {
-    width: 42px;
-    height: 42px;
-
-    flex: 0 0 42px;
-
-    border: none;
-    border-radius: 12px;
-
-    background: #e3350d;
-    color: white;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 24px;
-    font-weight: 900;
-
-    line-height: 1;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 3px 8px rgba(0,0,0,.18);
-
-    transition:
-        transform .12s,
-        opacity .12s;
-}
-
-.detailNav:hover,
-.detailClose:hover {
-    opacity: .9;
-}
-
-.detailNav:active,
-.detailClose:active {
-    transform: scale(.92);
-}
-
-/* Flèches */
-
-.detailNav {
-    font-size: 25px;
-}
-
-/* Croix */
-
-.detailClose {
-    font-size: 27px;
-}
-
-/* =========================
-NUMÉRO POKÉMON
-========================= */
-
-.detailNumber {
-    color: var(--muted);
-
-    background: transparent;
-
-    border: none;
-
-    padding: 0;
-
-    margin: 0 0 8px;
-
-    text-align: center;
-
-    font-size: 14px;
-
-    font-weight: 800;
-}
-
-
 /* =========================================
-   NAVIGATION FICHE POKÉMON — CENTRÉE
+NAVIGATION FICHE POKÉMON
 ========================================= */
 
 .detailNavigation {
+
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 10px;
@@ -1492,32 +1688,41 @@ NUMÉRO POKÉMON
     margin:
         0
         0
-        10px;
+        8px;
 
-    padding:
-        0;
+    position: relative;
 }
 
-/* Boutons ← et → */
 
-.detailNavButton {
-    display: flex;
+/* =========================================
+BOUTONS ← × →
+========================================= */
 
-    align-items: center;
-    justify-content: center;
+.detailNav,
+.detailClose {
 
     width: 42px;
     height: 42px;
 
-    padding: 0;
+    flex:
+        0 0 42px;
 
     border: none;
+
     border-radius: 12px;
 
     background: #e3350d;
+
     color: white;
 
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
     font-size: 24px;
+
     font-weight: 900;
 
     line-height: 1;
@@ -1530,169 +1735,75 @@ NUMÉRO POKÉMON
 
     transition:
         transform .12s,
-        opacity .15s;
+        opacity .12s;
 }
 
-/* Croix centrale */
 
-.detailNumber {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 42px;
-    height: 42px;
-
-    padding: 0;
-
-    border-radius: 12px;
-
-    background: #e3350d;
-    color: white;
-
-    font-size: 24px;
-    font-weight: 900;
-
-    line-height: 1;
+.detailNav:hover,
+.detailClose:hover {
+    opacity: .9;
 }
 
-/* Effet au survol */
 
-.detailNavButton:hover {
-    opacity: .88;
-
-    transform:
-        translateY(-1px);
-}
-
-/* Effet au clic */
-
-.detailNavButton:active {
+.detailNav:active,
+.detailClose:active {
     transform:
         scale(.92);
 }
 
-/* Bouton désactivé */
-
-.detailNavButton:disabled {
-    opacity: .45;
-
-    cursor: default;
-
-    transform: none;
-}
-
 
 /* =========================================
-   NAVIGATION FICHE POKÉMON
+FLÈCHES
 ========================================= */
 
-.detailNavigation {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 8px;
-
-    width: 100%;
-
-    margin:
-        0
-        0
-        4px;
-}
-
-.detailNavButton {
-    width: 42px;
-    height: 42px;
-
-    border: none;
-    border-radius: 12px;
-
-    background: #e3350d;
-    color: white;
-
+.detailNav {
     font-size: 25px;
-    font-weight: 900;
-
-    line-height: 1;
-
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transition:
-        transform .12s,
-        opacity .15s;
-}
-
-.detailNavButton:hover {
-    opacity: .88;
-}
-
-.detailNavButton:active {
-    transform: scale(.92);
-}
-
-.detailNavButton:disabled {
-    opacity: .35;
-    cursor: default;
-}
-
-.detailCloseCenter {
-    font-size: 28px;
-}
-
-/* Numéro du Pokémon */
-.detailNavigation + .detailNumber {
-    text-align: center;
-
-    margin:
-        0
-        0
-        8px;
-
-    color: var(--muted);
-
-    font-size: 14px;
-    font-weight: 800;
 }
 
 
 /* =========================================
-   MARQUEURS CARTE HOENN
+CROIX
 ========================================= */
 
-/* Routes et chenaux : pointillés blancs */
+.detailClose {
+    font-size: 27px;
+}
+
+
+/* =========================================
+MARQUEURS CARTE HOENN
+========================================= */
+
 .mapRouteMarker {
+
     fill: none !important;
 
     stroke: white !important;
 
     stroke-width: 3px;
 
-    stroke-dasharray: 6 5;
+    stroke-dasharray:
+        6 5;
 
     stroke-linecap: round;
 
     stroke-linejoin: round;
 
-    transform: translateY(-7px);
+    transform:
+        translateY(-7px);
 }
 
-/* Villes et lieux : ronds blancs */
+
 .mapPlaceMarker {
+
     fill: none !important;
 
     stroke: white !important;
 
     stroke-width: 3px;
 
-    transform: translateY(-7px);
+    transform:
+        translateY(-7px);
 }
 
 
@@ -1700,36 +1811,40 @@ NUMÉRO POKÉMON
 MARQUEURS RÉELS SUR LA CARTE
 ========================================= */
 
-/* Routes et chenaux */
-
 .mapRouteMarker {
+
     fill: none;
 
     stroke: white;
 
     stroke-width: 3;
 
-    stroke-dasharray: 7 5;
+    stroke-dasharray:
+        7 5;
 
-    vector-effect: non-scaling-stroke;
+    vector-effect:
+        non-scaling-stroke;
 
     opacity: 1;
 
-    transform: translateY(-4px);
+    transform:
+        translateY(-4px);
 }
 
-/* Villes et lieux */
 
 .mapPlaceMarker {
+
     fill: white;
 
     stroke: white;
 
     stroke-width: 3;
 
-    vector-effect: non-scaling-stroke;
+    vector-effect:
+        non-scaling-stroke;
 
     opacity: 1;
 
-    transform: translateY(-4px);
-}
+    transform:
+        translateY(-4px);
+   }
