@@ -817,7 +817,7 @@ function createMapMarkers(
 
                     fill="none"
 
-                    stroke="#e3350d"
+                    stroke="white"
                     stroke-width="2.5"
 
                     stroke-dasharray="6 4"
@@ -854,9 +854,8 @@ function createMapMarkers(
                     cy="${y}"
                     r="${r}"
 
-                    fill="rgba(227,53,13,0.12)"
-
-                    stroke="#e3350d"
+                    fill="none"
+stroke="white"
                     stroke-width="2.5"
 
                     vector-effect="non-scaling-stroke"
