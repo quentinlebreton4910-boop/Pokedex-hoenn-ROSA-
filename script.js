@@ -1415,54 +1415,46 @@ function openDetail(id) {
     $("#detail").innerHTML = `
 
         <div class="detailNavigation">
+<div class="detailNavigation">
 
-            <!-- POKÉMON PRÉCÉDENT -->
+    <button
+        class="detailNavButton"
+        ${
+            previous
+                ? `onclick="openDetail(${previous.id})"`
+                : "disabled"
+        }
+        title="Pokémon précédent"
+    >
+        ◀
+    </button>
 
-            <button
-                class="detailNavButton"
-                ${
-                    previous
-                        ? `onclick="openDetail(${previous.id})"`
-                        : "disabled"
-                }
-                title="Pokémon précédent"
-            >
-                ◀
-            </button>
+    <button
+        class="detailNavButton detailCloseCenter"
+        onclick="closeDetail()"
+        title="Fermer"
+    >
+        ×
+    </button>
 
+    <button
+        class="detailNavButton"
+        ${
+            next
+                ? `onclick="openDetail(${next.id})"`
+                : "disabled"
+        }
+        title="Pokémon suivant"
+    >
+        ▶
+    </button>
 
-            <!-- CROIX -->
+</div>
 
-            <button
-                class="detailCloseButton"
-                onclick="closeDetail()"
-                title="Fermer"
-            >
-                ×
-            </button>
-
-
-            <!-- POKÉMON SUIVANT -->
-
-            <button
-                class="detailNavButton"
-                ${
-                    next
-                        ? `onclick="openDetail(${next.id})"`
-                        : "disabled"
-                }
-                title="Pokémon suivant"
-            >
-                ▶
-            </button>
-
-        </div>
-
-
-        <div class="detailHero">
-
-            <div class="detailNumber">
-    ×
+<div class="detailNumber">
+    #${String(
+        pokemon.id
+    ).padStart(3, "0")}
 </div>
 
 
