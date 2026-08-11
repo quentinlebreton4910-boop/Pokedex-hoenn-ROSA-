@@ -1415,10 +1415,9 @@ function openDetail(id) {
     $("#detail").innerHTML = `
 
         <div class="detailNavigation">
-<div class="detailNavigation">
 
     <button
-        class="detailNavButton"
+        class="detailNav"
         ${
             previous
                 ? `onclick="openDetail(${previous.id})"`
@@ -1430,7 +1429,7 @@ function openDetail(id) {
     </button>
 
     <button
-        class="detailNavButton detailCloseCenter"
+        class="detailClose"
         onclick="closeDetail()"
         title="Fermer"
     >
@@ -1438,7 +1437,7 @@ function openDetail(id) {
     </button>
 
     <button
-        class="detailNavButton"
+        class="detailNav"
         ${
             next
                 ? `onclick="openDetail(${next.id})"`
@@ -1449,6 +1448,12 @@ function openDetail(id) {
         ▶
     </button>
 
+</div>
+
+<div class="detailNumber">
+    #${String(
+        pokemon.id
+    ).padStart(3, "0")}
 </div>
 
 <div class="detailNumber">
