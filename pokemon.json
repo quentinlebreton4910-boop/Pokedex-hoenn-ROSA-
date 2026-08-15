@@ -3144,7 +3144,7 @@
     "location": "Chenal 107, Chenal 124, Chenal 126, Chenal 128, Chenal 129, Chenal 130",
     "method": "Capture sauvage",
     "egg": "Oui",
-    "family": 0,
+    "family": 70,
     "requiredForCompletion": true,
     "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
   },
@@ -3161,7 +3161,7 @@
     "location": "Chenal 107, Chenal 124, Chenal 126, Chenal 128, Chenal 129, Chenal 130",
     "method": "Capture sauvage, évolution de Chinchou au niveau 27",
     "egg": "Oui",
-    "family": 0,
+    "family": 70,
     "requiredForCompletion": true,
     "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
   },
