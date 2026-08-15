@@ -1848,3 +1848,46 @@ MARQUEURS RÉELS SUR LA CARTE
     transform:
         translateY(-4px);
    }
+
+
+/* =========================================
+   BADGE VERSION RO / SA
+========================================= */
+
+.versionBadge {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 2px auto 8px;
+
+    min-width: 42px;
+    height: 26px;
+
+    padding: 0 10px;
+
+    border-radius: 999px;
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    line-height: 1;
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,.15);
+}
+
+/* Rubis Oméga */
+
+.versionRO {
+    background: #e3350d;
+}
+
+/* Saphir Alpha */
+
+.versionSA {
+    background: #35aeea;
+}
