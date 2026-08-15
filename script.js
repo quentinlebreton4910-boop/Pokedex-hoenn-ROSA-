@@ -182,11 +182,11 @@ function matches(pokemon) {
     case "shiny":
         return shiny(pokemon.id);
 
-    case "ro":
-        return pokemon.version === "RO";
+    case "Rubis Oméga":
+        return pokemon.version === "Rubis Oméga";
 
-    case "sa":
-        return pokemon.version === "SA";
+    case "Saphir Alpha":
+        return pokemon.version === "Saphir Alpha";
 
     default:
         return true;
