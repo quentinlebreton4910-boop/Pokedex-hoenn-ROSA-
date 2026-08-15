@@ -1289,7 +1289,7 @@ function openDetail(id) {
 
 let versionBadge = "";
 
-if (pokemon.version === "RO") {
+if (pokemon.version === "Rubis Oméga") {
     versionBadge = `
         <div class="versionBadge versionRO">
             RO
@@ -1297,7 +1297,7 @@ if (pokemon.version === "RO") {
     `;
 }
 
-if (pokemon.version === "SA") {
+if (pokemon.version === "Saphir Alpha") {
     versionBadge = `
         <div class="versionBadge versionSA">
             SA
