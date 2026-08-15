@@ -1891,3 +1891,17 @@ MARQUEURS RÉELS SUR LA CARTE
 .versionSA {
     background: #35aeea;
 }
+
+.versionFilter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.versionFilter img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
