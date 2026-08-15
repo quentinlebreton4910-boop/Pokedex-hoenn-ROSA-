@@ -326,6 +326,7 @@
     "egg": "Oui",
     "family": 7,
     "requiredForCompletion": true,
+    "version": "Saphir Alpha",
     "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
   },
   {
@@ -343,6 +344,7 @@
     "egg": "Oui",
     "family": 7,
     "requiredForCompletion": true,
+    "version": "Saphir Alpha",
     "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
   },
   {
@@ -359,6 +361,7 @@
     "egg": "Oui",
     "family": 8,
     "requiredForCompletion": true,
+    "version": "Rubis Oméga",
     "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
   },
   {
@@ -376,6 +379,7 @@
     "egg": "Oui",
     "family": 8,
     "requiredForCompletion": true,
+    "version": "Rubis Oméga",
     "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
   },
   {
@@ -393,6 +397,7 @@
     "egg": "Oui",
     "family": 8,
     "requiredForCompletion": true,
+    "version": "Rubis Oméga",
     "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
   },
   {
