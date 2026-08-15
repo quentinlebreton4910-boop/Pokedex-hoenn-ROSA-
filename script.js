@@ -1438,8 +1438,10 @@ if (pokemon.version === "SA") {
 
 
             <h2>
-                ${pokemon.name}
-            </h2>
+    ${pokemon.name}
+</h2>
+
+${versionBadge}
 
 
             <div class="types">
