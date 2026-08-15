@@ -1278,6 +1278,28 @@ function openDetail(id) {
         pokemon.egg ||
         "Information indisponible";
 
+   /* =========================
+   VERSION RO / SA
+========================= */
+
+let versionBadge = "";
+
+if (pokemon.version === "RO") {
+    versionBadge = `
+        <div class="versionBadge versionRO">
+            RO
+        </div>
+    `;
+}
+
+if (pokemon.version === "SA") {
+    versionBadge = `
+        <div class="versionBadge versionSA">
+            SA
+        </div>
+    `;
+}
+
 
     /* =========================
        LOCALISATIONS CLIQUABLES
