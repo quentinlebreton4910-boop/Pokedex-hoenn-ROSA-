@@ -164,27 +164,32 @@ function matches(pokemon) {
 
     switch (filter) {
 
-        case "obtained":
-            return s === "obtained";
+    case "obtained":
+        return s === "obtained";
 
-        case "progress":
-            return s === "progress";
+    case "progress":
+        return s === "progress";
 
-        case "missing":
-            return s === "missing";
+    case "missing":
+        return s === "missing";
 
-        case "impossible":
-            return s === "impossible";
+    case "impossible":
+        return s === "impossible";
 
-        case "favorite":
-            return favorite(pokemon.id);
+    case "favorite":
+        return favorite(pokemon.id);
 
-        case "shiny":
-            return shiny(pokemon.id);
+    case "shiny":
+        return shiny(pokemon.id);
 
-        default:
-            return true;
+    case "ro":
+        return pokemon.version === "RO";
 
+    case "sa":
+        return pokemon.version === "SA";
+
+    default:
+        return true;
     }
 
 }
