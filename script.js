@@ -1292,7 +1292,7 @@ let versionBadge = "";
 if (pokemon.version === "Rubis Oméga") {
     versionBadge = `
         <div class="versionBadge versionRO">
-            RO
+            Rubis Oméga
         </div>
     `;
 }
@@ -1300,7 +1300,7 @@ if (pokemon.version === "Rubis Oméga") {
 if (pokemon.version === "Saphir Alpha") {
     versionBadge = `
         <div class="versionBadge versionSA">
-            SA
+            Saphir Alpha
         </div>
     `;
 }
