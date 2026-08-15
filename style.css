@@ -1905,3 +1905,9 @@ MARQUEURS RÉELS SUR LA CARTE
     object-fit: contain;
     image-rendering: pixelated;
 }
+
+.versionFilter img[src*="gemme-rouge"] {
+    width: 42px;
+    height: 42px;
+}
+
