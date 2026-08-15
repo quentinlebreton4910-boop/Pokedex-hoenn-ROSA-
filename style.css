@@ -1900,8 +1900,8 @@ MARQUEURS RÉELS SUR LA CARTE
 }
 
 .versionFilter img {
-    width: 28px;
-    height: 28px;
+    width: 35px;
+    height: 35px;
     object-fit: contain;
     image-rendering: pixelated;
 }
