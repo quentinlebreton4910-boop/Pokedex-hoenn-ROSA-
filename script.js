@@ -182,11 +182,11 @@ function matches(pokemon) {
     case "shiny":
         return shiny(pokemon.id);
 
-    case "Rubis Oméga":
-        return pokemon.version === "Rubis Oméga";
+    case "ro":
+    return pokemon.version === "Rubis Oméga";
 
-    case "Saphir Alpha":
-        return pokemon.version === "Saphir Alpha";
+case "sa":
+    return pokemon.version === "Saphir Alpha";
 
     default:
         return true;
@@ -1291,7 +1291,7 @@ let versionBadge = "";
 
 if (pokemon.version === "Rubis Oméga") {
     versionBadge = `
-        <div class="versionBadge versionRubis Oméga">
+        <div class="versionBadge versionRO">
             Rubis Oméga
         </div>
     `;
@@ -1299,7 +1299,7 @@ if (pokemon.version === "Rubis Oméga") {
 
 if (pokemon.version === "Saphir Alpha") {
     versionBadge = `
-        <div class="versionBadge versionSaphir Alpha">
+        <div class="versionBadge versionSA">
             Saphir Alpha
         </div>
     `;
