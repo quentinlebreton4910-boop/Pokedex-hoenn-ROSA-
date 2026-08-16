@@ -2088,13 +2088,23 @@ BOUTONS DE VERSION
     transform: none !important;
 }
 
+
+/* Taille des gemmes dans les boutons de version */
 .versionFilter img {
-    width: 18px !important;
-    height: 18px !important;
-    max-width: 18px !important;
-    max-height: 18px !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
+    width: 28px !important;
+    height: 28px !important;
+    max-width: 28px !important;
+    max-height: 28px !important;
     object-fit: contain !important;
     image-rendering: pixelated;
+}
+
+/* Ajustement visuel de la gemme rouge */
+.versionFilter img[src*="gemme-rouge"] {
+    transform: scale(1.20);
+}
+
+/* Gemme bleue = référence */
+.versionFilter img[src*="gemme-bleue"] {
+    transform: scale(1);
 }
