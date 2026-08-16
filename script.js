@@ -621,6 +621,131 @@ const mapPlaces = {
     "NÉNUCRIQUE":
         [439, 107, 27]
 
+    "Pilier Céleste":
+        [439, 107, 27]
+
+    "Atoll de Combat":
+        [439, 107, 27]
+
+    "Forêt Mirage 1":
+        [439, 107, 27]
+
+    "Forêt Mirage 2":
+        [439, 107, 27]
+
+    "Forêt Mirage 3":
+        [439, 107, 27]
+
+    "Forêt Mirage 4":
+        [439, 107, 27]
+
+    "Forêt Mirage 5":
+        [439, 107, 27]
+
+    "Forêt Mirage 6":
+        [439, 107, 27]
+
+    "Forêt Mirage 7":
+        [439, 107, 27]
+
+    "Forêt Mirage 8":
+        [439, 107, 27]
+
+    "Grotte Mirage 1":
+        [439, 107, 27]
+
+    "Grotte Mirage 2":
+        [439, 107, 27]
+
+    "Grotte Mirage 3":
+        [439, 107, 27]
+
+    "Grotte Mirage 4":
+        [439, 107, 27]
+
+    "Grotte Mirage 5":
+        [439, 107, 27]
+
+    "Grotte Mirage 6":
+        [439, 107, 27]
+
+    "Grotte Mirage 7":
+        [439, 107, 27]
+
+    "Grotte Mirage 8":
+        [439, 107, 27]
+
+    "Île Mirage 1":
+        [439, 107, 27]
+
+    "Île Mirage 2":
+        [439, 107, 27]
+
+    "Île Mirage 3":
+        [439, 107, 27]
+
+    "Île Mirage 4":
+        [439, 107, 27]
+
+    "Île Mirage 5":
+        [439, 107, 27]
+
+    "Île Mirage 6":
+        [439, 107, 27]
+
+    "Île Mirage 7":
+        [439, 107, 27]
+
+    "Île Mirage 8":
+        [439, 107, 27]
+
+    "Mont Mirage 1":
+        [439, 107, 27]
+
+    "Mont Mirage 2":
+        [439, 107, 27]
+
+    "Mont Mirage 3":
+        [439, 107, 27]
+
+    "Mont Mirage 4":
+        [439, 107, 27]
+
+    "Mont Mirage 5":
+        [439, 107, 27]
+
+    "Mont Mirage 6":
+        [439, 107, 27]
+
+    "Mont Mirage 7":
+        [439, 107, 27]
+
+    "Mont Mirage 8":
+        [439, 107, 27]
+
+    "Île de l’Arc":
+        [439, 107, 27]
+
+    "Forêt Impénétrable":
+        [439, 107, 27]
+
+    "Plaine sans Nom":
+        [439, 107, 27]
+
+    "Grotte Oubliée":
+        [439, 107, 27]
+
+    "Grotte Évanescente":
+        [439, 107, 27]
+
+    "Gouffre Informe":
+        [439, 107, 27]
+
+    "Gros Nuages Noirs":
+        [439, 107, 27]
+
+    "Faille Dimensionnelle":
+        [439, 107, 27]
 };
 
 
