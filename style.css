@@ -2099,12 +2099,12 @@ BOUTONS DE VERSION
 
 /* Gemme rouge */
 .versionFilter img[src*="gemme-rouge"] {
-    width: 28px !important;
-    height: 28px !important;
+    width: 40px !important;
+    height: 40px !important;
 }
 
 /* Gemme bleue */
 .versionFilter img[src*="gemme-bleue"] {
-    width: 27px !important;
-    height: 27px !important;
+    width: 35px !important;
+    height: 35px !important;
 }
