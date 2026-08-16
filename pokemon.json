@@ -3373,6 +3373,7 @@
     "evolution": "Pas d'évolution directe",
     "location": "Route 120",
     "method": "Tombeau Antique — interaction",
+"methodUrl": "LIEN_VERS_L_EXPLICATION"
     "egg": "Non",
     "family": 0,
     "requiredForCompletion": true,
