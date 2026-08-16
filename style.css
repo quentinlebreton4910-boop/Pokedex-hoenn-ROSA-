@@ -1899,15 +1899,13 @@ MARQUEURS RÉELS SUR LA CARTE
     gap: 7px;
 }
 
-.versionFilter img {
+..versionButton img {
     width: 35px;
     height: 35px;
     object-fit: contain;
     image-rendering: pixelated;
 }
 
-.versionFilter img[src*="gemme-rouge"] {
-    width: 45px;
-    height: 45px;
+.versionButton img[src*="rubis"] {
+    transform: scale(1.20);
 }
-
