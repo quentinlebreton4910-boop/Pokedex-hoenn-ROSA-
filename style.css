@@ -2109,11 +2109,35 @@ BOUTONS DE VERSION
     height: 35px !important;
 }
 
+.versionFilter {
+    height: 50px !important;
+    min-height: 50px !important;
+    padding: 0 12px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+}
+
 .versionFilter img {
-    width: 100px !important;
-    height: 100px !important;
-    max-width: none !important;
-    max-height: none !important;
+    width: 40px !important;
+    height: 40px !important;
+    max-width: 40px !important;
+    max-height: 40px !important;
     min-width: 0 !important;
     min-height: 0 !important;
+    object-fit: contain !important;
+    transform: none !important;
+}
+
+/* Rouge */
+.versionFilter img[src*="gemme-rouge"] {
+    width: 45px !important;
+    height: 45px !important;
+}
+
+/* Bleue */
+.versionFilter img[src*="gemme-bleue"] {
+    width: 40px !important;
+    height: 40px !important;
 }
