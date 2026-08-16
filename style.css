@@ -2027,3 +2027,51 @@ BOUTONS DE VERSION
 
     transform: scale(1.20);
 }
+
+
+/* =========================================
+   PETITS BOUTONS DES FILTRES
+   ========================================= */
+
+#filters {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+    overflow-x: auto !important;
+    width: 100% !important;
+    padding: 2px 0 6px !important;
+}
+
+#filters button {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+
+    width: auto !important;
+    min-width: auto !important;
+    max-width: max-content !important;
+
+    height: 34px !important;
+
+    margin: 0 !important;
+    padding: 0 11px !important;
+
+    border-radius: 999px !important;
+    border: 1px solid var(--border) !important;
+
+    font-size: 12px !important;
+    line-height: 1 !important;
+    font-weight: 700 !important;
+
+    white-space: nowrap !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    box-sizing: border-box !important;
+}
+
+#filters button.active {
+    background: var(--red) !important;
+    color: white !important;
+    border-color: var(--red) !important;
+}
