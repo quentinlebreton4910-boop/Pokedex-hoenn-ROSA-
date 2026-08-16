@@ -2014,8 +2014,8 @@ BOUTONS DE VERSION
 
 .versionButton img {
 
-    width: 35px;
-    height: 35px;
+    width: 28px;
+    height: 28px;
 
     object-fit: contain;
 
@@ -2025,7 +2025,7 @@ BOUTONS DE VERSION
 
 .versionButton img[src*="rubis"] {
 
-    transform: scale(1.20);
+    transform: scale(1.15);
 }
 
 
