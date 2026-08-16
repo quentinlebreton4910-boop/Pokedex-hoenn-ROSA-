@@ -2098,8 +2098,8 @@ BOUTONS DE VERSION
 }
 
 .versionFilter {
-    height: 50px !important;
-    min-height: 50px !important;
+    height: 34px !important;
+    min-height: 34px !important;
     padding: 0 12px !important;
     display: inline-flex !important;
     align-items: center !important;
@@ -2108,10 +2108,10 @@ BOUTONS DE VERSION
 }
 
 .versionFilter img {
-    width: 40px !important;
-    height: 40px !important;
-    max-width: 40px !important;
-    max-height: 40px !important;
+    width: 24px !important;
+    height: 24px !important;
+    max-width: 24px !important;
+    max-height: 24px !important;
     min-width: 0 !important;
     min-height: 0 !important;
     object-fit: contain !important;
@@ -2120,12 +2120,12 @@ BOUTONS DE VERSION
 
 /* Rouge */
 .versionFilter img[src*="gemme-rouge"] {
-    width: 45px !important;
-    height: 45px !important;
+    width: 29px !important;
+    height: 29px !important;
 }
 
 /* Bleue */
 .versionFilter img[src*="gemme-bleue"] {
-    width: 40px !important;
-    height: 40px !important;
+    width: 24px !important;
+    height: 24px !important;
 }
