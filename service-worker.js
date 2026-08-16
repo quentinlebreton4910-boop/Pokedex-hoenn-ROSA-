@@ -1,4 +1,4 @@
-const CACHE_NAME = "pokedex-hoenn-v69";
+const CACHE_NAME = "pokedex-hoenn-v70";
 
 const FILES_TO_CACHE = [
     "./",
