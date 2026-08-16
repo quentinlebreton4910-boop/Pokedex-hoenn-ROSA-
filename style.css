@@ -2013,19 +2013,21 @@ BOUTONS DE VERSION
 
 
 .versionButton img {
-
-    width: 28px;
-    height: 28px;
-
+    width: 32px;
+    height: 32px;
     object-fit: contain;
-
     image-rendering: pixelated;
+    transform: scale(1);
 }
 
+/* Gemme Rouge */
+.versionButton img[src*="rouge"] {
+    transform: scale(0.78);
+}
 
-.versionButton img[src*="rubis"] {
-
-    transform: scale(1.15);
+/* Gemme Bleue */
+.versionButton img[src*="bleue"] {
+    transform: scale(0.78);
 }
 
 
