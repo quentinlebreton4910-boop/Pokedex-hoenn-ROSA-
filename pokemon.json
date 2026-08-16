@@ -3343,7 +3343,7 @@
     "method": "Ruines Désert — interaction",
     "methodUrl": "https://www.pokebip.com/page/jeux-video/pokemon-rubis-omega-saphir-alpha/legendaires#regis",
     "egg": "Non",
-    "family": 0,
+    "family": 71,
     "requiredForCompletion": true,
     "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
   },
@@ -3360,7 +3360,7 @@
     "method": "Grotte Island Cave — interaction",
     "methodUrl": "https://www.pokebip.com/page/jeux-video/pokemon-rubis-omega-saphir-alpha/legendaires#regis",
     "egg": "Non",
-    "family": 0,
+    "family": 71,
     "requiredForCompletion": true,
     "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
   },
@@ -3377,7 +3377,7 @@
     "method": "Tombeau Antique — interaction",
     "methodUrl": "https://www.pokebip.com/page/jeux-video/pokemon-rubis-omega-saphir-alpha/legendaires#regis",
     "egg": "Non",
-    "family": 0,
+    "family": 71,
     "requiredForCompletion": true,
     "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
   },
@@ -3394,7 +3394,7 @@
     "location": "Île du Sud",
     "method": "Île du Sud — cadeau dans Saphir Alpha",
     "egg": "Non",
-    "family": 0,
+    "family": 72,
     "requiredForCompletion": true,
     "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
   },
@@ -3411,7 +3411,7 @@
     "location": "Île du Sud",
     "method": "Île du Sud — cadeau dans Rubis Oméga",
     "egg": "Non",
-    "family": 0,
+    "family": 72,
     "requiredForCompletion": true,
     "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
   },
@@ -3427,7 +3427,7 @@
     "location": "Grotte Origine",
     "method": "Grotte Origine — interaction dans Saphir Alpha",
     "egg": "Non",
-    "family": 0,
+    "family": 73,
     "requiredForCompletion": true,
     "version": "Saphir Alpha",
     "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
@@ -3444,7 +3444,7 @@
     "location": "Grotte Origine",
     "method": "Grotte Origine — interaction dans Rubis Oméga",
     "egg": "Non",
-    "family": 0,
+    "family": 73,
     "requiredForCompletion": true,
     "version": "Rubis Oméga",
     "source": "Serebii Hoenn Pokédex / Pokémon Database (références dans README)"
