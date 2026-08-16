@@ -3366,14 +3366,14 @@
     "id": 204,
     "name": "Registeel",
     "types": [
-      "Steel"
+    "Steel"
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/379.png",
     "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/379.png",
     "evolution": "Pas d'évolution directe",
     "location": "Route 120",
     "method": "Tombeau Antique — interaction",
-    "methodUrl": "https://www.pokebip.com/page/jeux-video/pokemon-rubis-omega-saphir-alpha/legendaires#regis"
+    "methodUrl": "https://www.pokebip.com/page/jeux-video/pokemon-rubis-omega-saphir-alpha/legendaires#regis",
     "egg": "Non",
     "family": 0,
     "requiredForCompletion": true,
