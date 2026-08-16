@@ -2097,18 +2097,6 @@ BOUTONS DE VERSION
     transform: none !important;
 }
 
-/* Gemme rouge */
-.versionFilter img[src*="gemme-rouge"] {
-    width: 40px !important;
-    height: 40px !important;
-}
-
-/* Gemme bleue */
-.versionFilter img[src*="gemme-bleue"] {
-    width: 35px !important;
-    height: 35px !important;
-}
-
 .versionFilter {
     height: 50px !important;
     min-height: 50px !important;
