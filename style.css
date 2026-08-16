@@ -2076,3 +2076,24 @@ BOUTONS DE VERSION
     color: white !important;
     border-color: var(--red) !important;
 }
+
+.versionButton img {
+    width: 18px !important;
+    height: 18px !important;
+    max-width: 18px !important;
+    max-height: 18px !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    object-fit: contain !important;
+    transform: none !important;
+}
+
+.versionButton img[src*="rubis"],
+.versionButton img[src*="saphir"] {
+    width: 18px !important;
+    height: 18px !important;
+    max-width: 18px !important;
+    max-height: 18px !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+}
