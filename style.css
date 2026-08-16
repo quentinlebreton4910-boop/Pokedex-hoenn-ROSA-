@@ -439,29 +439,33 @@ FILTRES
 
 .filters button {
 
-    flex:
-        0 0 auto;
+    flex: 0 0 auto;
 
-    padding:
-        9px
-        13px;
+    width: auto;
+    min-width: 0;
+    height: 36px;
 
-    border:
-        1px solid var(--border);
+    padding: 7px 12px;
 
+    border: 1px solid var(--border);
     border-radius: 999px;
 
     color: var(--text);
-
     background: var(--card);
 
+    font-size: 13px;
     font-weight: 700;
+    line-height: 1;
+
+    white-space: nowrap;
 
     cursor: pointer;
 
-    transition: .15s;
+    transition:
+        transform .15s,
+        background .15s,
+        color .15s;
 }
-
 
 .filters button:hover {
     transform: translateY(-1px);
