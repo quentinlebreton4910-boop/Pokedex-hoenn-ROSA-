@@ -341,9 +341,8 @@ function card(pokemon) {
         </article>
 
     `;
-
 }
-
+                                
 
 /* =========================
    OBTENTION
@@ -1275,9 +1274,20 @@ function openDetail(id) {
 
 
     const method =
-        pokemon.method ||
-        "Information indisponible";
+    pokemon.method ||
+    "Information indisponible";
 
+const methodHTML =
+    pokemon.methodUrl
+        ? `<a
+            href="${pokemon.methodUrl}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="methodLink"
+          >
+            ${method} ↗
+          </a>`
+        : method;
 
     const egg =
         pokemon.egg ||
