@@ -2098,8 +2098,8 @@ BOUTONS DE VERSION
 }
 
 .versionFilter {
-    height: 34px !important;
-    min-height: 34px !important;
+    height: 50px !important;
+    min-height: 50px !important;
     padding: 0 12px !important;
     display: inline-flex !important;
     align-items: center !important;
