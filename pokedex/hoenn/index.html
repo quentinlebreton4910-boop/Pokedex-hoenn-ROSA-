@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Pokédex Hoenn</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      font-family: Arial, sans-serif;
+
+      background:
+        linear-gradient(
+          135deg,
+          #061a4a,
+          #0879c9,
+          #063c8f,
+          #00a8d8
+        );
+
+      background-size: 400% 400%;
+
+      animation: bg 12s ease infinite;
+
+      color: white;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 50px 20px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+
+      text-shadow:
+        0 0 15px rgba(255,255,255,.8);
+    }
+
+    p {
+      opacity: .8;
+      margin-bottom: 35px;
+    }
+
+    .choices {
+      width: 100%;
+      max-width: 500px;
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 15px;
+    }
+
+    button {
+      border: 1px solid rgba(255,255,255,.4);
+
+      border-radius: 18px;
+
+      padding: 22px;
+
+      background: rgba(255,255,255,.12);
+
+      backdrop-filter: blur(10px);
+
+      color: white;
+
+      font-size: 22px;
+      font-weight: bold;
+
+      cursor: pointer;
+
+      transition: .2s;
+    }
+
+    button:hover {
+      background: rgba(255,255,255,.22);
+      transform: translateY(-3px);
+    }
+
+    button:active {
+      transform: scale(.98);
+    }
+
+    @keyframes bg {
+
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>Hoenn</h1>
+
+  <p>Choisis ton Pokédex</p>
+
+  <div class="choices">
+
+    <!-- À relier à ton Pokédex régional actuel -->
+
+    <button
+      onclick="window.location.href='regional/'"
+    >
+      Pokédex régional
+    </button>
+
+    <button
+      onclick="window.location.href='megadex/'"
+    >
+      Mégadex
+    </button>
+
+    <button
+      onclick="window.location.href='national/'"
+    >
+      Pokédex national
+    </button>
+
+  </div>
+
+</body>
+</html>
