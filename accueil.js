@@ -124,7 +124,7 @@ function createPokemonBackground(region = "all") {
    */
 
   const count = Math.min(
-    window.innerWidth < 600 ? 35 : 50,
+    window.innerWidth < 600 ? 18 : 30,
     shuffled.length
   );
 
