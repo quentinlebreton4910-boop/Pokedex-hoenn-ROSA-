@@ -1,0 +1,258 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #061a4a,
+      #0879c9,
+      #063c8f,
+      #00a8d8,
+      #061a4a
+    );
+
+  background-size: 400% 400%;
+  animation: holographicWave 12s ease infinite;
+
+  position: relative;
+}
+
+/* Effet holographique */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      120deg,
+      rgba(255,255,255,0.05) 0px,
+      rgba(255,255,255,0.05) 2px,
+      transparent 2px,
+      transparent 35px
+    );
+
+  transform: rotate(8deg);
+  animation: scanMove 8s linear infinite;
+}
+
+/* Pokémon en arrière-plan */
+
+.background-pokemon {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bg-pokemon {
+  position: absolute;
+
+  width: 80px;
+  height: 80px;
+
+  object-fit: contain;
+
+  opacity: 0.22;
+
+  filter:
+    drop-shadow(0 0 8px rgba(255,255,255,0.5));
+
+  animation:
+    pokemonFloat var(--duration) ease-in-out infinite alternate;
+
+  animation-delay: var(--delay);
+}
+
+/* Contenu */
+
+.home {
+  position: relative;
+  z-index: 5;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 60px 20px;
+}
+
+h1 {
+  margin: 0;
+
+  color: white;
+
+  font-size: clamp(42px, 10vw, 80px);
+  font-weight: 900;
+  letter-spacing: 8px;
+
+  text-align: center;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.8),
+    0 0 25px rgba(0,180,255,0.9);
+}
+
+.subtitle {
+  margin: 10px 0 40px;
+
+  color: rgba(255,255,255,0.9);
+
+  font-size: 18px;
+}
+
+/* Liste des régions */
+
+.region-list {
+  width: 100%;
+  max-width: 600px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Bouton région */
+
+.region-card {
+  width: 100%;
+
+  padding: 25px 30px;
+
+  border: 1px solid rgba(255,255,255,0.45);
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.12);
+
+  backdrop-filter: blur(10px);
+
+  color: white;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  box-shadow:
+    0 8px 30px rgba(0,0,0,0.25),
+    inset 0 0 20px rgba(255,255,255,0.05);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.region-card:hover {
+  transform: translateY(-4px) scale(1.01);
+
+  background: rgba(255,255,255,0.2);
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,0.3),
+    0 0 25px rgba(0,190,255,0.35);
+}
+
+.region-card:active {
+  transform: scale(0.98);
+}
+
+.region-card span {
+  display: block;
+
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.region-card small {
+  display: block;
+
+  margin-top: 6px;
+
+  color: rgba(255,255,255,0.75);
+
+  font-size: 14px;
+}
+
+/* Animations */
+
+@keyframes holographicWave {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes scanMove {
+  from {
+    transform: translate(-5%, -5%) rotate(8deg);
+  }
+
+  to {
+    transform: translate(5%, 5%) rotate(8deg);
+  }
+}
+
+@keyframes pokemonFloat {
+  from {
+    transform:
+      translateY(0)
+      rotate(-4deg);
+  }
+
+  to {
+    transform:
+      translateY(-25px)
+      rotate(4deg);
+  }
+}
+
+/* Téléphone */
+
+@media (max-width: 600px) {
+
+  .home {
+    padding: 45px 15px;
+  }
+
+  h1 {
+    letter-spacing: 5px;
+  }
+
+  .region-card {
+    padding: 20px;
+  }
+
+  .region-card span {
+    font-size: 24px;
+  }
+
+  .bg-pokemon {
+    width: 65px;
+    height: 65px;
+  }
+}
