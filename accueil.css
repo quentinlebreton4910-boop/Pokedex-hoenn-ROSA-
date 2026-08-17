@@ -62,6 +62,7 @@ body::before {
 }
 
 .bg-pokemon {
+.bg-pokemon {
   position: absolute;
 
   width: 80px;
@@ -74,10 +75,21 @@ body::before {
   filter:
     drop-shadow(0 0 8px rgba(255,255,255,0.5));
 
+  /*
+   * Les Pokémon restent dans leur zone.
+   * L'animation ne les fait plus suffisamment
+   * descendre pour toucher les autres.
+   */
   animation:
     pokemonFloat var(--duration) ease-in-out infinite alternate;
 
   animation-delay: var(--delay);
+
+  /*
+   * Évite que les images dépassent de leur zone.
+   */
+  max-width: 80px;
+  max-height: 80px;
 }
 
 /* Contenu */
