@@ -62,22 +62,22 @@ body::before {
 }
 
 .bg-pokemon {
-  position: absolute;
+position: absolute;
 
-  width: 80px;
-  height: 80px;
+width: 80px;
+height: 80px;
 
-  object-fit: contain;
+object-fit: contain;
 
-  opacity: 0.22;
+opacity: 0.22;
 
-  filter:
-    drop-shadow(0 0 8px rgba(255,255,255,0.5));
+filter:
+drop-shadow(0 0 8px rgba(255,255,255,0.5));
 
-  animation:
-    pokemonFloat var(--duration) ease-in-out infinite alternate;
+animation:
+pokemonFloat var(--duration) ease-in-out infinite alternate;
 
-  animation-delay: var(--delay);
+animation-delay: var(--delay);
 }
 
 /* Contenu */
