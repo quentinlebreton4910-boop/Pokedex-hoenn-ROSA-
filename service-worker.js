@@ -6,6 +6,8 @@ const FILES_TO_CACHE = [
     "./style.css",
     "./script.js",
     "./pokemon.json",
+    "./accueil.js",
+    "./accueil.css",
     "./manifest.json"
 ];
 
