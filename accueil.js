@@ -31,24 +31,25 @@ const regions = {
  * Le sprite Méga sera recherché séparément.
  */
 const megaHoenn = [
-  254, // Jungko
-  257, // Braségali
-  260, // Laggron
-  282, // Gardevoir
-  302, // Ténéfix
-  303, // Mysdibule
-  306, // Galeking
-  308, // Charmina
-  310, // Élecsprint
-  319, // Sharpedo
-  323, // Camérupt
-  334, // Altaria
-  359, // Absol
-  362, // Oniglali
-  373, // Drattak
-  376, // Métalosse
-  380, // Latias
-  381  // Latios
+  254, // Méga-Jungko
+  257, // Méga-Braségali
+  260, // Méga-Laggron
+  282, // Méga-Gardevoir
+  302, // Méga-Ténéfix
+  303, // Méga-Mysdibule
+  306, // Méga-Galeking
+  308, // Méga-Charmina
+  310, // Méga-Élecsprint
+  319, // Méga-Sharpedo
+  323, // Méga-Camérupt
+  334, // Méga-Altaria
+  354, // Méga-Ténéfix
+  359, // Méga-Absol
+  362, // Méga-Oniglali
+  373, // Méga-Drattak
+  376, // Méga-Métalosse
+  380, // Méga-Latias
+  381  // Méga-Latios
 ];
 
 
@@ -418,6 +419,165 @@ document.querySelectorAll(".region-card").forEach(button => {
 
       window.location.href =
         "pokedex/hoenn/";
+
+    }
+
+  });
+
+});
+
+
+/* =========================================================
+   SONS DES BOUTONS
+   ========================================================= */
+
+let audioContext = null;
+
+function getAudioContext() {
+  if (!audioContext) {
+    audioContext = new (
+      window.AudioContext ||
+      window.webkitAudioContext
+    )();
+  }
+
+  return audioContext;
+}
+
+
+/* Petit son de clic */
+
+function playClickSound() {
+
+  const ctx = getAudioContext();
+
+  if (ctx.state === "suspended") {
+    ctx.resume();
+  }
+
+  const oscillator = ctx.createOscillator();
+  const gain = ctx.createGain();
+
+  oscillator.type = "sine";
+
+  oscillator.frequency.setValueAtTime(
+    520,
+    ctx.currentTime
+  );
+
+  oscillator.frequency.exponentialRampToValueAtTime(
+    760,
+    ctx.currentTime + 0.08
+  );
+
+  gain.gain.setValueAtTime(
+    0.0001,
+    ctx.currentTime
+  );
+
+  gain.gain.exponentialRampToValueAtTime(
+    0.12,
+    ctx.currentTime + 0.01
+  );
+
+  gain.gain.exponentialRampToValueAtTime(
+    0.0001,
+    ctx.currentTime + 0.10
+  );
+
+  oscillator.connect(gain);
+  gain.connect(ctx.destination);
+
+  oscillator.start();
+
+  oscillator.stop(
+    ctx.currentTime + 0.11
+  );
+}
+
+
+/* Son légèrement plus long pour changer de page */
+
+function playTransitionSound() {
+
+  const ctx = getAudioContext();
+
+  if (ctx.state === "suspended") {
+    ctx.resume();
+  }
+
+  const oscillator = ctx.createOscillator();
+  const gain = ctx.createGain();
+
+  oscillator.type = "sine";
+
+  oscillator.frequency.setValueAtTime(
+    300,
+    ctx.currentTime
+  );
+
+  oscillator.frequency.exponentialRampToValueAtTime(
+    900,
+    ctx.currentTime + 0.22
+  );
+
+  gain.gain.setValueAtTime(
+    0.0001,
+    ctx.currentTime
+  );
+
+  gain.gain.exponentialRampToValueAtTime(
+    0.15,
+    ctx.currentTime + 0.03
+  );
+
+  gain.gain.exponentialRampToValueAtTime(
+    0.0001,
+    ctx.currentTime + 0.25
+  );
+
+  oscillator.connect(gain);
+  gain.connect(ctx.destination);
+
+  oscillator.start();
+
+  oscillator.stop(
+    ctx.currentTime + 0.26
+  );
+}
+
+
+/* Tous les boutons */
+
+document.querySelectorAll("button").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    playClickSound();
+
+  });
+
+});
+
+
+/* Bouton Hoenn */
+
+document.querySelectorAll(".region-card").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const region = button.dataset.region;
+
+    if (region === "hoenn") {
+
+      playTransitionSound();
+
+      setTimeout(() => {
+
+        window.location.href =
+          "pokedex/hoenn/";
+
+      }, 180);
 
     }
 
