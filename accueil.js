@@ -121,172 +121,104 @@ function shuffle(array) {
 
 function createPokemonBackground(region = "all") {
 
-  if (!pokemonBackground) return;
+  const container = document.getElementById("pokemonBackground");
 
-  pokemonBackground.innerHTML = "";
+  if (!container) return;
 
-  /*
-   * Pour l'accueil :
-   * on prend beaucoup plus d'espèces disponibles.
-   *
-   * Pour Hoenn :
-   * on utilise uniquement les Pokémon Hoenn + Méga Hoenn.
-   */
+  container.innerHTML = "";
 
-  let pool = [];
+  let pool;
 
   if (region === "hoenn") {
 
-    pool = [
-      ...regions.hoenn.map(id => ({
-        id,
-        mega: false
-      })),
-
-      /* MÉGA-ÉVOLUTIONS DE HOENN */
-
-      { id: 254, mega: true }, // Méga-Jungko
-      { id: 257, mega: true }, // Méga-Braségali
-      { id: 260, mega: true }, // Méga-Laggron
-
-      { id: 282, mega: true }, // Méga-Gardevoir
-      { id: 284, mega: true }, // Méga-Armald? non
-      { id: 306, mega: true }, // Méga-Galeking
-      { id: 308, mega: true }, // Méga-Charmina
-      { id: 310, mega: true }, // Méga-Élecsprint
-      { id: 319, mega: true }, // Méga-Sharpedo
-      { id: 323, mega: true }, // Méga-Camérupt
-      { id: 334, mega: true }, // Méga-Altaria
-      { id: 362, mega: true }, // Méga-Oniglali
-      { id: 373, mega: true }, // Méga-Drattak
-      { id: 376, mega: true }, // Méga-Métalosse
-      { id: 380, mega: true }, // Méga-Latias
-      { id: 381, mega: true }  // Méga-Latios
-    ];
+    pool = Array.from(
+      { length: 135 },
+      (_, i) => i + 252
+    );
 
   } else {
 
     /*
-     * ACCUEIL :
-     * beaucoup plus d'espèces disponibles.
+     * Beaucoup plus d'espèces disponibles
+     * pour l'accueil.
      *
-     * 1 → 1025 couvre les Pokémon connus
-     * disponibles dans les sprites PokeAPI.
+     * 1 à 1025 = Pokémon disponibles
+     * dans PokeAPI.
      */
 
     pool = Array.from(
       { length: 1025 },
-      (_, i) => ({
-        id: i + 1,
-        mega: false
-      })
+      (_, i) => i + 1
     );
   }
 
 
   /*
-   * Mélange complet
+   * Mélange
    */
 
-  pool = shuffle(pool);
+  pool.sort(() => Math.random() - 0.5);
 
 
   /*
-   * Nombre de Pokémon affichés
+   * Nombre de Pokémon
    */
 
-  const count =
+  const amount =
     window.innerWidth <= 600
-      ? 42
-      : 75;
+      ? 35
+      : 65;
 
 
   /*
-   * Pas de doublon
+   * On garde les premiers Pokémon
+   * après mélange.
    */
 
-  const selected = [];
-
-  const used = new Set();
-
-  for (const pokemon of pool) {
-
-    const key =
-      pokemon.mega
-        ? `mega-${pokemon.id}`
-        : `normal-${pokemon.id}`;
-
-    if (used.has(key)) continue;
-
-    used.add(key);
-
-    selected.push(pokemon);
-
-    if (selected.length >= count) break;
-  }
+  const selected =
+    pool.slice(0, amount);
 
 
   /*
-   * Placement sans chevauchement
+   * Positions déjà utilisées
    */
 
-  const placed = [];
-
-  const screenWidth = window.innerWidth;
-  const screenHeight = window.innerHeight;
-
-  const minGap =
-    screenWidth <= 600
-      ? 18
-      : 14;
+  const positions = [];
 
 
-  selected.forEach((pokemon, index) => {
+  selected.forEach(id => {
 
     let x;
     let y;
-    let size;
 
     let valid = false;
 
-    let attempts = 0;
+    let tries = 0;
 
 
-    while (!valid && attempts < 500) {
+    /*
+     * On cherche une position
+     * qui ne touche pas les autres.
+     */
 
-      /*
-       * Taille aléatoire
-       */
-
-      size =
-        screenWidth <= 600
-          ? 38 + Math.random() * 28
-          : 45 + Math.random() * 35;
-
-
-      /*
-       * Position
-       */
+    while (!valid && tries < 300) {
 
       x =
-        size / 2 +
-        Math.random() *
-        (screenWidth - size);
+        5 +
+        Math.random() * 90;
 
       y =
-        size / 2 +
-        Math.random() *
-        (screenHeight - size);
+        5 +
+        Math.random() * 90;
 
 
-      /*
-       * Vérification des distances
-       */
+      valid = positions.every(pos => {
 
-      valid = placed.every(existing => {
+        const dx =
+          pos.x - x;
 
-        const dx = existing.x - x;
-        const dy = existing.y - y;
+        const dy =
+          pos.y - y;
 
         const distance =
           Math.sqrt(
@@ -294,32 +226,22 @@ function createPokemonBackground(region = "all") {
             dy * dy
           );
 
-        const requiredDistance =
-          (existing.size + size) / 2 +
-          minGap;
+        return distance > 10;
 
-        return distance >= requiredDistance;
       });
 
 
-      attempts++;
+      tries++;
+
     }
 
-
-    /*
-     * Si aucun emplacement parfait n'est trouvé,
-     * on ne crée PAS le Pokémon.
-     *
-     * Ça évite les chevauchements.
-     */
 
     if (!valid) return;
 
 
-    placed.push({
+    positions.push({
       x,
-      y,
-      size
+      y
     });
 
 
@@ -332,47 +254,21 @@ function createPokemonBackground(region = "all") {
 
 
     /*
-     * SHINY
-     *
-     * Environ 12 % de chance
+     * Chance de shiny
      */
 
     const shiny =
       Math.random() < 0.12;
 
 
-    let src;
+    img.src = shiny
 
+      ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${id}.png`
 
-    if (pokemon.mega) {
+      : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
 
-      /*
-       * Sprite Méga ROSA
-       */
-
-      src =
-        shiny
-          ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vi/omega-ruby-alpha-sapphire/shiny/${pokemon.id}-mega.png`
-          : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vi/omega-ruby-alpha-sapphire/${pokemon.id}-mega.png`;
-
-    } else {
-
-      /*
-       * Sprite normal / shiny
-       */
-
-      src =
-        shiny
-          ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokemon.id}.png`
-          : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
-    }
-
-
-    img.src = src;
 
     img.draggable = false;
-
-    img.alt = "";
 
 
     /*
@@ -380,15 +276,19 @@ function createPokemonBackground(region = "all") {
      */
 
     img.style.left =
-      `${x}px`;
+      `${x}%`;
 
     img.style.top =
-      `${y}px`;
+      `${y}%`;
 
 
     /*
      * Taille
      */
+
+    const size =
+      45 +
+      Math.random() * 35;
 
     img.style.width =
       `${size}px`;
@@ -398,61 +298,12 @@ function createPokemonBackground(region = "all") {
 
 
     /*
-     * Animation différente
-     * pour chaque Pokémon
+     * Animation
      */
 
     img.style.setProperty(
       "--duration",
-      `${7 + Math.random() * 8}s`
-    );
-
-    img.style.setProperty(
-      "--delay",
-      `${Math.random() * -12}s`
-    );
-
-
-    /*
-     * Légère rotation aléatoire
-     */
-
-    img.style.setProperty(
-      "--rotation",
-      `${-8 + Math.random() * 16}deg`
-    );
-
-
-    pokemonBackground.appendChild(img);
-
-  });
-
-}
-
-    placed.push({
-      x,
-      y,
-      size
-    });
-
-    const img = document.createElement("img");
-
-    img.className = "bg-pokemon";
-
-    img.src =
-      `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
-
-    img.draggable = false;
-
-    img.style.left = `${x}%`;
-    img.style.top = `${y}%`;
-
-    img.style.width = `${size}px`;
-    img.style.height = `${size}px`;
-
-    img.style.setProperty(
-      "--duration",
-      `${7 + Math.random() * 9}s`
+      `${7 + Math.random() * 7}s`
     );
 
     img.style.setProperty(
@@ -460,14 +311,12 @@ function createPokemonBackground(region = "all") {
       `${Math.random() * -10}s`
     );
 
-    // Chaque Pokémon a une animation légèrement différente
-    img.style.animationDelay =
-      `${Math.random() * -10}s`;
 
-    pokemonBackground.appendChild(img);
+    container.appendChild(img);
+
   });
-}
 
+}
 
 /*
  * Page d'accueil :
