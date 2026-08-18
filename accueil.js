@@ -114,52 +114,88 @@ function createPokemonBackground(region = "all") {
 
   pokemonBackground.innerHTML = "";
 
-  const available = regions[region] || regions.all;
-  const shuffled = shuffle(available);
+  let available = regions[region] || regions.all;
 
-  const count = window.innerWidth < 600 ? 40 : 70;
-  const selected = shuffled.slice(0, count);
+  // Mélange aléatoire
+  available = shuffle(available);
+
+  // Beaucoup plus de Pokémon
+  const count = window.innerWidth < 600 ? 55 : 90;
+
+  const selected = available.slice(0, count);
 
   const placed = [];
-  const minDistance = window.innerWidth < 600 ? 12 : 9;
+
+  // Distance minimale entre les Pokémon
+  const minDistance = window.innerWidth < 600 ? 11 : 8;
 
   selected.forEach(id => {
 
-    let x, y, ok = false;
-    let tries = 0;
+    let x;
+    let y;
+    let size;
+    let valid = false;
+    let attempts = 0;
 
-    while (!ok && tries < 200) {
+    while (!valid && attempts < 300) {
 
-      x = 3 + Math.random() * 94;
-      y = 3 + Math.random() * 94;
+      x = 4 + Math.random() * 92;
+      y = 4 + Math.random() * 92;
 
-      ok = placed.every(p => {
+      // Tailles variées
+      const sizes = [42, 48, 54, 60, 68, 76];
+      size = sizes[Math.floor(Math.random() * sizes.length)];
+
+      valid = placed.every(p => {
+
         const dx = p.x - x;
         const dy = p.y - y;
-        return Math.sqrt(dx*dx + dy*dy) > minDistance;
+
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        return distance > minDistance;
       });
 
-      tries++;
+      attempts++;
     }
 
-    placed.push({x,y});
+    placed.push({
+      x,
+      y,
+      size
+    });
 
     const img = document.createElement("img");
 
     img.className = "bg-pokemon";
-    img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+
+    img.src =
+      `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+
     img.draggable = false;
 
     img.style.left = `${x}%`;
     img.style.top = `${y}%`;
 
-    img.style.setProperty("--duration", `${6 + Math.random()*8}s`);
-    img.style.setProperty("--delay", `${Math.random()*-10}s`);
+    img.style.width = `${size}px`;
+    img.style.height = `${size}px`;
+
+    img.style.setProperty(
+      "--duration",
+      `${7 + Math.random() * 9}s`
+    );
+
+    img.style.setProperty(
+      "--delay",
+      `${Math.random() * -10}s`
+    );
+
+    // Chaque Pokémon a une animation légèrement différente
+    img.style.animationDelay =
+      `${Math.random() * -10}s`;
 
     pokemonBackground.appendChild(img);
-
   });
-
 }
 
 
