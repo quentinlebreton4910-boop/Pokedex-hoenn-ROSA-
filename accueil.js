@@ -131,12 +131,71 @@ function createPokemonBackground(region = "all") {
 
   if (region === "hoenn") {
 
-    pool = Array.from(
-      { length: 135 },
-      (_, i) => i + 252
-    );
+  /*
+   * Pokémon de Hoenn
+   */
+  pool = Array.from(
+    { length: 135 },
+    (_, i) => ({
+      id: i + 252,
+      mega: false
+    })
+  );
 
-  } else {
+
+  /*
+   * Méga-Évolutions de Pokémon de Hoenn
+   */
+  const megaHoenn = [
+
+    254, // Méga-Jungko
+    257, // Méga-Braségali
+    260, // Méga-Laggron
+
+    282, // Méga-Gardevoir
+
+    302, // Méga-Ténéfix
+    303, // Méga-Galeking
+    306, // Méga-Galeking
+    308, // Méga-Charmina
+    310, // Méga-Élecsprint
+
+    319, // Méga-Sharpedo
+    323, // Méga-Camérupt
+
+    334, // Méga-Altaria
+    359, // Méga-Absol
+    362, // Méga-Oniglali
+
+    373, // Méga-Drattak
+    376, // Méga-Métalosse
+
+    380, // Méga-Latias
+    381  // Méga-Latios
+
+  ];
+
+
+  megaHoenn.forEach(id => {
+
+    pool.push({
+      id: id,
+      mega: true
+    });
+
+  });
+
+} else {
+
+  pool = Array.from(
+    { length: 1025 },
+    (_, i) => ({
+      id: i + 1,
+      mega: false
+    })
+  );
+
+} else {
 
     /*
      * Beaucoup plus d'espèces disponibles
@@ -258,14 +317,34 @@ function createPokemonBackground(region = "all") {
      */
 
     const shiny =
-      Math.random() < 0.12;
+  Math.random() < 0.12;
 
 
-    img.src = shiny
+if (pokemon.mega) {
 
-      ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${id}.png`
+  /*
+   * Sprite Méga
+   */
 
-      : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+  img.src = shiny
+
+    ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/${pokemon.id}-mega.png`
+
+    : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}-mega.png`;
+
+} else {
+
+  /*
+   * Sprite normal
+   */
+
+  img.src = shiny
+
+    ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokemon.id}.png`
+
+    : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
+
+}
 
 
     img.draggable = false;
