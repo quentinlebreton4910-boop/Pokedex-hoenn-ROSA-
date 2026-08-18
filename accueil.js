@@ -115,53 +115,51 @@ function createPokemonBackground(region = "all") {
   pokemonBackground.innerHTML = "";
 
   const available = regions[region] || regions.all;
-
   const shuffled = shuffle(available);
 
-  /*
-   * Nombre de Pokémon affichés.
-   * On ne prend jamais deux fois le même ID.
-   */
-
-  const count = Math.min(
-    window.innerWidth < 600 ? 28 : 40,
-    shuffled.length
-  );
-
+  const count = window.innerWidth < 600 ? 40 : 70;
   const selected = shuffled.slice(0, count);
 
-  selected.forEach((id, index) => {
+  const placed = [];
+  const minDistance = window.innerWidth < 600 ? 12 : 9;
+
+  selected.forEach(id => {
+
+    let x, y, ok = false;
+    let tries = 0;
+
+    while (!ok && tries < 200) {
+
+      x = 3 + Math.random() * 94;
+      y = 3 + Math.random() * 94;
+
+      ok = placed.every(p => {
+        const dx = p.x - x;
+        const dy = p.y - y;
+        return Math.sqrt(dx*dx + dy*dy) > minDistance;
+      });
+
+      tries++;
+    }
+
+    placed.push({x,y});
 
     const img = document.createElement("img");
 
     img.className = "bg-pokemon";
-
-    img.src =
-      `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
-
-    img.alt = "";
-
+    img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
     img.draggable = false;
 
-    img.style.left =
-      `${Math.random() * 95}%`;
+    img.style.left = `${x}%`;
+    img.style.top = `${y}%`;
 
-    img.style.top =
-      `${Math.random() * 95}%`;
-
-    img.style.setProperty(
-      "--duration",
-      `${5 + Math.random() * 7}s`
-    );
-
-    img.style.setProperty(
-      "--delay",
-      `${Math.random() * -8}s`
-    );
+    img.style.setProperty("--duration", `${6 + Math.random()*8}s`);
+    img.style.setProperty("--delay", `${Math.random()*-10}s`);
 
     pokemonBackground.appendChild(img);
 
   });
+
 }
 
 
