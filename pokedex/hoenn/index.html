@@ -2,42 +2,409 @@
 <html lang="fr">
 
 <head>
-
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="theme-color"
-    content="#0879c9"
-  >
+  <meta name="theme-color" content="#0879c9">
 
   <title>Pokédex Hoenn</title>
 
-  <!-- EXACTEMENT LE MÊME CSS QUE L'ACCUEIL -->
-  <link
-    rel="stylesheet"
-    href="../../accueil.css"
-  >
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      font-family: Arial, sans-serif;
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #061a4a,
+          #0879c9,
+          #063c8f,
+          #00a8d8,
+          #061a4a
+        );
+
+      background-size: 400% 400%;
+      animation: holographicWave 12s ease infinite;
+
+      position: relative;
+    }
+
+    /* =====================================================
+       EFFET HOLOGRAPHIQUE
+       ===================================================== */
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -50%;
+
+      pointer-events: none;
+      z-index: 0;
+
+      background:
+        repeating-linear-gradient(
+          120deg,
+          rgba(255,255,255,0.045) 0px,
+          rgba(255,255,255,0.045) 2px,
+          transparent 2px,
+          transparent 35px
+        );
+
+      transform: rotate(8deg);
+      animation: scanMove 8s linear infinite;
+    }
+
+    /* =====================================================
+       FOND POKÉMON
+       ===================================================== */
+
+    #pokemonBackground {
+      position: fixed;
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      overflow: hidden;
+      pointer-events: none;
+
+      z-index: 1;
+    }
+
+    .bg-pokemon {
+      position: absolute;
+
+      transform: translate(-50%, -50%);
+
+      object-fit: contain;
+
+      opacity: 0.25;
+
+      pointer-events: none;
+      user-select: none;
+
+      filter:
+        drop-shadow(
+          0 0 8px
+          rgba(255,255,255,0.35)
+        );
+
+      animation:
+        pokemonFloat
+        var(--duration)
+        ease-in-out
+        var(--delay)
+        infinite;
+    }
+
+    /* =====================================================
+       CONTENU
+       ===================================================== */
+
+    .page-content {
+      position: relative;
+
+      z-index: 10;
+
+      min-height: 100vh;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 40px 20px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+
+      font-size: clamp(40px, 9vw, 64px);
+
+      letter-spacing: 5px;
+
+      text-align: center;
+
+      text-shadow:
+        0 0 10px rgba(255,255,255,0.8),
+        0 0 25px rgba(0,180,255,0.9);
+    }
+
+    .subtitle {
+      margin: 0 0 35px;
+
+      color: rgba(255,255,255,0.85);
+
+      font-size: 18px;
+    }
+
+    /* =====================================================
+       BOUTON RETOUR
+       ===================================================== */
+
+    .back-button {
+      position: fixed;
+
+      top: 18px;
+      left: 18px;
+
+      z-index: 50;
+
+      padding: 10px 16px;
+
+      border-radius: 12px;
+
+      border: 1px solid rgba(255,255,255,0.22);
+
+      background: rgba(255,255,255,0.025);
+
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+
+      color: white;
+
+      font-size: 15px;
+      font-weight: bold;
+
+      cursor: pointer;
+
+      transition: 0.2s;
+    }
+
+    .back-button:hover {
+      background: rgba(255,255,255,0.07);
+      transform: translateY(-2px);
+    }
+
+    .back-button:active {
+      transform: scale(0.96);
+    }
+
+    /* =====================================================
+       CHOIX DU POKÉDEX
+       ===================================================== */
+
+    .choices {
+      width: 100%;
+      max-width: 500px;
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 15px;
+    }
+
+    .choice-button {
+      width: 100%;
+
+      padding: 22px;
+
+      border-radius: 18px;
+
+      border: 1px solid rgba(255,255,255,0.18);
+
+      background: rgba(255,255,255,0.018);
+
+      backdrop-filter: blur(1px);
+      -webkit-backdrop-filter: blur(1px);
+
+      color: white;
+
+      font-size: 21px;
+      font-weight: bold;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 5px 22px rgba(0,0,0,0.06);
+
+      transition:
+        background 0.2s,
+        transform 0.2s;
+    }
+
+    .choice-button:hover {
+      background: rgba(255,255,255,0.05);
+
+      transform: translateY(-2px);
+    }
+
+    .choice-button:active {
+      transform: scale(0.98);
+    }
+
+    /* =====================================================
+       CONTRÔLE DU VOLUME
+       ===================================================== */
+
+    .volume-control {
+      position: fixed;
+
+      right: 18px;
+      bottom: 18px;
+
+      z-index: 50;
+
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 8px 12px;
+
+      border-radius: 14px;
+
+      background: rgba(255,255,255,0.025);
+
+      border: 1px solid rgba(255,255,255,0.18);
+
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+
+    #musicToggle {
+      border: none;
+
+      background: transparent;
+
+      color: white;
+
+      font-size: 20px;
+
+      cursor: pointer;
+    }
+
+    #volumeSlider {
+      width: 90px;
+
+      cursor: pointer;
+    }
+
+    /* =====================================================
+       ANIMATIONS
+       ===================================================== */
+
+    @keyframes holographicWave {
+
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+
+    }
+
+    @keyframes scanMove {
+
+      from {
+        transform:
+          translate(-5%, -5%)
+          rotate(8deg);
+      }
+
+      to {
+        transform:
+          translate(5%, 5%)
+          rotate(8deg);
+      }
+
+    }
+
+    @keyframes pokemonFloat {
+
+      0% {
+        transform:
+          translate(-50%, -50%)
+          rotate(-3deg);
+      }
+
+      50% {
+        transform:
+          translate(-50%, calc(-50% - 12px))
+          rotate(3deg);
+      }
+
+      100% {
+        transform:
+          translate(-50%, -50%)
+          rotate(-3deg);
+      }
+
+    }
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 600px) {
+
+      .page-content {
+        padding:
+          70px
+          15px
+          40px;
+      }
+
+      h1 {
+        letter-spacing: 4px;
+      }
+
+      .choice-button {
+        padding: 19px;
+        font-size: 19px;
+      }
+
+      .back-button {
+        top: 12px;
+        left: 12px;
+      }
+
+      .volume-control {
+        right: 12px;
+        bottom: 12px;
+      }
+
+      #volumeSlider {
+        width: 75px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
-  <!-- FOND -->
-  <div
-    class="background-pokemon"
-    id="pokemonBackground"
-  ></div>
+  <!-- Fond Pokémon -->
+  <div id="pokemonBackground"></div>
 
+  <!-- Retour accueil -->
+  <button
+    class="back-button"
+    id="backHome"
+  >
+    ← Accueil
+  </button>
 
-  <!-- CONTENU -->
-
-  <main class="home">
+  <!-- Contenu -->
+  <main class="page-content">
 
     <h1>HOENN</h1>
 
@@ -45,97 +412,57 @@
       Choisis ton Pokédex
     </p>
 
-
-    <div class="region-list">
-
+    <div class="choices">
 
       <button
-        class="region-card"
-        onclick="window.location.href='regional/'"
+        class="choice-button"
+        data-link="regional/"
       >
-
-        <span>
-          Pokédex régional
-        </span>
-
-        <small>
-          Pokémon de Hoenn
-        </small>
-
+        Pokédex régional
       </button>
-
 
       <button
-        class="region-card"
-        onclick="window.location.href='megadex/'"
+        class="choice-button"
+        data-link="megadex/"
       >
-
-        <span>
-          Mégadex
-        </span>
-
-        <small>
-          Méga-Évolutions de Hoenn
-        </small>
-
+        Mégadex
       </button>
-
 
       <button
-        class="region-card"
-        onclick="window.location.href='national/'"
+        class="choice-button"
+        data-link="national/"
       >
-
-        <span>
-          Pokédex national
-        </span>
-
-        <small>
-          Pokédex national de ROSA
-        </small>
-
+        Pokédex national
       </button>
-
-
-      <button
-        class="region-card"
-        onclick="window.location.href='../../index.html'"
-      >
-
-        <span>
-          ← Retour à l'accueil
-        </span>
-
-        <small>
-          Choisir une autre région
-        </small>
-
-      </button>
-
 
     </div>
 
   </main>
 
+  <!-- Volume -->
+  <div class="volume-control">
 
-  <script src="../../accueil.js"></script>
+    <button
+      id="musicToggle"
+      aria-label="Activer ou couper la musique"
+    >
+      🔊
+    </button>
 
+    <input
+      id="volumeSlider"
+      type="range"
+      min="0"
+      max="1"
+      step="0.01"
+      value="0.35"
+    >
 
-  <script>
+  </div>
 
-    /*
-     * IMPORTANT :
-     * on demande au même générateur que l'accueil
-     * d'utiliser uniquement Hoenn.
-     */
+  <script src="../../musique.js"></script>
+  <script src="index.js"></script>
 
-    createPokemonBackground("hoenn");
-
-  </script>
-  
-<script src="../../musique.js"></script>
-<script src="hoenn-fond.js"></script>
-  
 </body>
 
 </html>
