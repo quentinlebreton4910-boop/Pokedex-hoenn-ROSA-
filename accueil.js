@@ -1,91 +1,60 @@
 const pokemonBackground = document.getElementById("pokemonBackground");
 
-/*
- * Pokémon affichés sur la page d'accueil.
- * On pourra ajouter toutes les régions ici.
- */
+/* =========================================================
+   LISTES DE POKÉMON
+   ========================================================= */
 
+/*
+ * Pokémon disponibles pour l'accueil.
+ * On utilise beaucoup d'espèces différentes afin que
+ * le fond change à chaque ouverture.
+ */
 const regions = {
 
-  all: [
-    1, 4, 7, 25, 39, 52, 54, 58, 63, 66,
-    74, 81, 95, 104, 111, 120, 129, 133,
-    152, 155, 158, 175, 179, 194, 200,
-    252, 255, 258, 263, 280, 285, 304, 309,
-    320, 333, 343, 349, 361, 371, 387, 390,
-    393, 396, 403, 406, 415, 418, 427, 443,
-    447, 459, 495, 498, 501, 504, 506, 509,
-    519, 522, 524, 529, 535, 540, 543, 546,
-    551, 554, 557, 562, 570, 574, 577, 580,
-    585, 588, 592, 599, 602, 607, 610, 613,
-    650, 653, 656, 659, 661, 664, 667, 670,
-    674, 677, 679, 682, 685, 688, 690, 692,
-    694, 696, 698, 701, 704, 707, 710, 712,
-    714, 722, 725, 728, 731, 734, 736, 739,
-    742, 744, 747, 749, 752, 755, 757, 759,
-    761, 764, 766, 768, 774, 777, 779, 782,
-    785, 789, 791, 793, 803, 808, 810, 813,
-    816, 819, 822, 825, 828, 831, 834, 837,
-    840, 843, 846, 848, 850, 852, 854, 856,
-    859, 868, 870, 872, 874, 877, 880, 882,
-    885, 888, 890, 894, 896, 899
-  ],
+  all: Array.from({ length: 1025 }, (_, i) => ({
+    id: i + 1,
+    mega: false
+  })),
 
-  hoenn: [
-    252, 253, 254,
-    255, 256, 257,
-    258, 259, 260,
-    261, 262, 263, 264,
-    265, 266, 267, 268, 269, 270,
-    271, 272, 273, 274, 275,
-    276, 277, 278, 279, 280,
-    281, 282, 283, 284, 285,
-    286, 287, 288, 289, 290,
-    291, 292, 293, 294, 295,
-    296, 297, 298, 299, 300,
-    301, 302, 303, 304, 305,
-    306, 307, 308, 309, 310,
-    311, 312, 313, 314, 315,
-    316, 317, 318, 319, 320,
-    321, 322, 323, 324, 325,
-    326, 327, 328, 329, 330,
-    331, 332, 333, 334, 335,
-    336, 337, 338, 339, 340,
-    341, 342, 343, 344, 345,
-    346, 347, 348, 349, 350,
-    351, 352, 353, 354, 355,
-    356, 357, 358, 359, 360,
-    361, 362, 363, 364, 365,
-    366, 367, 368, 369, 370,
-    371, 372, 373, 374, 375,
-    376, 377, 378, 379, 380,
-    381, 382, 383, 384, 385,
-    386, 387, 388, 389, 390,
-    391, 392, 393, 394, 395,
-    396, 397, 398, 399, 400,
-    401, 402, 403, 404, 405,
-    406, 407, 408, 409, 410,
-    411, 412, 413, 414, 415,
-    416, 417, 418, 419, 420,
-    421, 422, 423, 424, 425,
-    426, 427, 428, 429, 430,
-    431, 432, 433, 434, 435,
-    436, 437, 438, 439, 440,
-    441, 442, 443, 444, 445,
-    446, 447, 448, 449, 450,
-    451, 452, 453, 454, 455,
-    456, 457, 458, 459, 460,
-    461, 462, 463, 464, 465,
-    466, 467, 468, 469, 470,
-    471, 472, 473, 474, 475,
-    476, 477, 478, 479, 480,
-    481, 482, 483, 484, 485
-  ]
+  hoenn: Array.from({ length: 135 }, (_, i) => ({
+    id: i + 252,
+    mega: false
+  }))
 
 };
 
 
-/* Mélange aléatoire */
+/*
+ * Méga-Évolutions de Pokémon de Hoenn.
+ *
+ * On utilise ici les IDs des Pokémon de base.
+ * Le sprite Méga sera recherché séparément.
+ */
+const megaHoenn = [
+  254, // Jungko
+  257, // Braségali
+  260, // Laggron
+  282, // Gardevoir
+  302, // Ténéfix
+  303, // Mysdibule
+  306, // Galeking
+  308, // Charmina
+  310, // Élecsprint
+  319, // Sharpedo
+  323, // Camérupt
+  334, // Altaria
+  359, // Absol
+  362, // Oniglali
+  373, // Drattak
+  376, // Métalosse
+  380, // Latias
+  381  // Latios
+];
+
+
+/* =========================================================
+   MÉLANGE
+   ========================================================= */
 
 function shuffle(array) {
 
@@ -96,278 +65,296 @@ function shuffle(array) {
     const j = Math.floor(Math.random() * (i + 1));
 
     [copy[i], copy[j]] = [copy[j], copy[i]];
+
   }
 
   return copy;
-}
 
-
-/*
- * Génère le fond.
- *
- * Important :
- * on utilise Set pour garantir qu'un même Pokémon
- * ne puisse jamais apparaître deux fois.
- */
-
-function shuffle(array) {
-  return [...array].sort(() => Math.random() - 0.5);
 }
 
 
 /* =========================================================
-   FOND POKÉMON
+   SPRITE
    ========================================================= */
 
-function createPokemonBackground(region = "all") {
-
-  const container = document.getElementById("pokemonBackground");
-
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  let pool;
-
-  if (region === "hoenn") {
+function getPokemonSprite(pokemon, shiny) {
 
   /*
-   * Pokémon de Hoenn
+   * Pour les Pokémon normaux :
+   * sprite HOME de PokeAPI.
    */
-  pool = Array.from(
-    { length: 135 },
-    (_, i) => ({
-      id: i + 252,
-      mega: false
-    })
-  );
+  if (!pokemon.mega) {
 
+    if (shiny) {
 
-  /*
-   * Méga-Évolutions de Pokémon de Hoenn
-   */
-  const megaHoenn = [
+      return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/${pokemon.id}.png`;
 
-    254, // Méga-Jungko
-    257, // Méga-Braségali
-    260, // Méga-Laggron
+    }
 
-    282, // Méga-Gardevoir
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png`;
 
-    302, // Méga-Ténéfix
-    303, // Méga-Galeking
-    306, // Méga-Galeking
-    308, // Méga-Charmina
-    310, // Méga-Élecsprint
-
-    319, // Méga-Sharpedo
-    323, // Méga-Camérupt
-
-    334, // Méga-Altaria
-    359, // Méga-Absol
-    362, // Méga-Oniglali
-
-    373, // Méga-Drattak
-    376, // Méga-Métalosse
-
-    380, // Méga-Latias
-    381  // Méga-Latios
-
-  ];
-
-
-  megaHoenn.forEach(id => {
-
-    pool.push({
-      id: id,
-      mega: true
-    });
-
-  });
-
-} else {
-
-  pool = Array.from(
-    { length: 1025 },
-    (_, i) => ({
-      id: i + 1,
-      mega: false
-    })
-  );
-
-} else {
-
-    /*
-     * Beaucoup plus d'espèces disponibles
-     * pour l'accueil.
-     *
-     * 1 à 1025 = Pokémon disponibles
-     * dans PokeAPI.
-     */
-
-    pool = Array.from(
-      { length: 1025 },
-      (_, i) => i + 1
-    );
   }
 
 
   /*
-   * Mélange
+   * Les sprites Méga ne sont pas disponibles
+   * avec la même structure que les sprites normaux
+   * de HOME.
+   *
+   * On utilise donc les sprites Showdown,
+   * qui permettent d'avoir les Méga-Évolutions.
    */
 
-  pool.sort(() => Math.random() - 0.5);
+  const megaName = getMegaName(pokemon.id);
+
+  if (!megaName) {
+
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png`;
+
+  }
+
+
+  if (shiny) {
+
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/${megaName}.gif`;
+
+  }
+
+  return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/${megaName}.gif`;
+
+}
+
+
+/*
+ * Nom utilisé par les sprites Méga.
+ */
+function getMegaName(id) {
+
+  const names = {
+
+    254: "sceptile-mega",
+    257: "blaziken-mega",
+    260: "swampert-mega",
+
+    282: "gardevoir-mega",
+
+    302: "sableye-mega",
+    303: "mawile-mega",
+    306: "aggron-mega",
+    308: "medicham-mega",
+    310: "manectric-mega",
+
+    319: "sharpedo-mega",
+    323: "camerupt-mega",
+
+    334: "altaria-mega",
+    359: "absol-mega",
+    362: "glalie-mega",
+
+    373: "salamence-mega",
+    376: "metagross-mega",
+
+    380: "latias-mega",
+    381: "latios-mega"
+
+  };
+
+  return names[id] || null;
+
+}
+
+
+/* =========================================================
+   POSITION SANS CHEVAUCHEMENT
+   ========================================================= */
+
+function findFreePosition(positions) {
+
+  const MIN_DISTANCE = 10;
+
+  for (let attempt = 0; attempt < 500; attempt++) {
+
+    const x = 4 + Math.random() * 92;
+    const y = 5 + Math.random() * 90;
+
+    let valid = true;
+
+    for (const position of positions) {
+
+      const dx = position.x - x;
+      const dy = position.y - y;
+
+      const distance = Math.sqrt(
+        dx * dx + dy * dy
+      );
+
+      if (distance < MIN_DISTANCE) {
+
+        valid = false;
+        break;
+
+      }
+
+    }
+
+    if (valid) {
+
+      return {
+        x,
+        y
+      };
+
+    }
+
+  }
+
+  return null;
+
+}
+
+
+/* =========================================================
+   CRÉATION DU FOND
+   ========================================================= */
+
+function createPokemonBackground(region = "all") {
+
+  if (!pokemonBackground) return;
+
+  pokemonBackground.innerHTML = "";
+
+  let pool = [];
 
 
   /*
-   * Nombre de Pokémon
+   * Accueil :
+   * tous les Pokémon.
+   */
+
+  if (region === "all") {
+
+    pool = [...regions.all];
+
+  }
+
+
+  /*
+   * Hoenn :
+   * Pokémon 252 → 386
+   * + Méga-Évolutions.
+   */
+
+  if (region === "hoenn") {
+
+    pool = [...regions.hoenn];
+
+    megaHoenn.forEach(id => {
+
+      pool.push({
+        id,
+        mega: true
+      });
+
+    });
+
+  }
+
+
+  /*
+   * Mélange complet.
+   */
+
+  pool = shuffle(pool);
+
+
+  /*
+   * Nombre affiché.
    */
 
   const amount =
     window.innerWidth <= 600
-      ? 35
-      : 65;
+      ? 30
+      : 70;
 
 
   /*
-   * On garde les premiers Pokémon
-   * après mélange.
+   * Sélection sans doublon.
    */
 
-  const selected =
-    pool.slice(0, amount);
+  const selected = pool.slice(0, amount);
 
 
   /*
-   * Positions déjà utilisées
+   * Positions utilisées.
    */
 
   const positions = [];
 
 
-  selected.forEach(id => {
+  selected.forEach(pokemon => {
 
-    let x;
-    let y;
+    const position = findFreePosition(positions);
 
-    let valid = false;
+    if (!position) return;
 
-    let tries = 0;
-
-
-    /*
-     * On cherche une position
-     * qui ne touche pas les autres.
-     */
-
-    while (!valid && tries < 300) {
-
-      x =
-        5 +
-        Math.random() * 90;
-
-      y =
-        5 +
-        Math.random() * 90;
+    positions.push(position);
 
 
-      valid = positions.every(pos => {
+    const img = document.createElement("img");
 
-        const dx =
-          pos.x - x;
-
-        const dy =
-          pos.y - y;
-
-        const distance =
-          Math.sqrt(
-            dx * dx +
-            dy * dy
-          );
-
-        return distance > 10;
-
-      });
-
-
-      tries++;
-
-    }
-
-
-    if (!valid) return;
-
-
-    positions.push({
-      x,
-      y
-    });
-
-
-    const img =
-      document.createElement("img");
-
-
-    img.className =
-      "bg-pokemon";
-
-
-    /*
-     * Chance de shiny
-     */
-
-    const shiny =
-  Math.random() < 0.12;
-
-
-if (pokemon.mega) {
-
-  /*
-   * Sprite Méga
-   */
-
-  img.src = shiny
-
-    ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/${pokemon.id}-mega.png`
-
-    : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}-mega.png`;
-
-} else {
-
-  /*
-   * Sprite normal
-   */
-
-  img.src = shiny
-
-    ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokemon.id}.png`
-
-    : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
-
-}
-
+    img.className = "bg-pokemon";
 
     img.draggable = false;
 
 
     /*
-     * Position
+     * Chance de shiny :
+     * environ 12 %.
      */
 
-    img.style.left =
-      `${x}%`;
-
-    img.style.top =
-      `${y}%`;
+    const shiny = Math.random() < 0.12;
 
 
     /*
-     * Taille
+     * Image.
+     */
+
+    img.src = getPokemonSprite(
+      pokemon,
+      shiny
+    );
+
+
+    /*
+     * Si une image ne fonctionne pas,
+     * on la supprime au lieu d'afficher
+     * un carré vide.
+     */
+
+    img.onerror = function () {
+
+      this.remove();
+
+    };
+
+
+    /*
+     * Position.
+     */
+
+    img.style.left =
+      `${position.x}%`;
+
+    img.style.top =
+      `${position.y}%`;
+
+
+    /*
+     * Taille aléatoire.
      */
 
     const size =
-      45 +
-      Math.random() * 35;
+      45 + Math.random() * 30;
 
     img.style.width =
       `${size}px`;
@@ -377,7 +364,7 @@ if (pokemon.mega) {
 
 
     /*
-     * Animation
+     * Animation individuelle.
      */
 
     img.style.setProperty(
@@ -391,37 +378,41 @@ if (pokemon.mega) {
     );
 
 
-    container.appendChild(img);
+    /*
+     * Rotation aléatoire.
+     */
+
+    img.style.setProperty(
+      "--rotation",
+      `${-8 + Math.random() * 16}deg`
+    );
+
+
+    pokemonBackground.appendChild(img);
 
   });
 
 }
 
-/*
- * Page d'accueil :
- * Pokémon de toutes les régions.
- */
+
+/* =========================================================
+   FOND DE L'ACCUEIL
+   ========================================================= */
 
 createPokemonBackground("all");
 
 
-/*
- * Quand on clique sur Hoenn :
- *
- * Pour l'instant on envoie vers :
- * pokedex/hoenn/
- *
- * La page Hoenn pourra ensuite proposer :
- * - Pokédex régional
- * - Mégadex
- * - Pokédex national
- */
+/* =========================================================
+   BOUTONS DES RÉGIONS
+   ========================================================= */
 
 document.querySelectorAll(".region-card").forEach(button => {
 
   button.addEventListener("click", () => {
 
-    const region = button.dataset.region;
+    const region =
+      button.dataset.region;
+
 
     if (region === "hoenn") {
 
