@@ -213,41 +213,31 @@ h1 {
 /* Bouton région */
 
 .region-card {
-  width: 100%;
 
-  padding: 25px 30px;
+  background:
+    rgba(255, 255, 255, .055);
 
-  border: 1px solid rgba(255,255,255,0.45);
-  border-radius: 20px;
+  border:
+    1px solid
+    rgba(255, 255, 255, .28);
 
-  background: rgba(255,255,255,0.12);
+  backdrop-filter:
+    blur(4px);
 
-  backdrop-filter: blur(10px);
-
-  color: white;
-
-  cursor: pointer;
-
-  text-align: left;
+  -webkit-backdrop-filter:
+    blur(4px);
 
   box-shadow:
-    0 8px 30px rgba(0,0,0,0.25),
-    inset 0 0 20px rgba(255,255,255,0.05);
+    0 8px 30px
+    rgba(0, 0, 0, .12);
 
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease,
-    box-shadow 0.2s ease;
 }
 
 .region-card:hover {
-  transform: translateY(-4px) scale(1.01);
 
-  background: rgba(255,255,255,0.2);
+  background:
+    rgba(255, 255, 255, .10);
 
-  box-shadow:
-    0 12px 35px rgba(0,0,0,0.3),
-    0 0 25px rgba(0,190,255,0.35);
 }
 
 .region-card:active {
