@@ -1,3 +1,7 @@
+/* =========================================================
+   BASE
+   ========================================================= */
+
 * {
   box-sizing: border-box;
 }
@@ -11,8 +15,18 @@ body {
 }
 
 body {
+
   min-height: 100vh;
+
   overflow-x: hidden;
+
+  position: relative;
+
+  color: white;
+
+  /*
+   * Fond bleu digital holographique.
+   */
 
   background:
     linear-gradient(
@@ -25,41 +39,51 @@ body {
     );
 
   background-size: 400% 400%;
-  animation: holographicWave 12s ease infinite;
 
-  position: relative;
+  animation:
+    holographicWave
+    12s ease infinite;
+
 }
 
-/* Effet holographique */
+
+/* =========================================================
+   EFFET DIGITAL
+   ========================================================= */
 
 body::before {
+
   content: "";
+
   position: fixed;
+
   inset: -50%;
+
   pointer-events: none;
+
+  z-index: 0;
 
   background:
     repeating-linear-gradient(
       120deg,
-      rgba(255,255,255,0.05) 0px,
-      rgba(255,255,255,0.05) 2px,
+      rgba(255,255,255,.045) 0px,
+      rgba(255,255,255,.045) 2px,
       transparent 2px,
       transparent 35px
     );
 
   transform: rotate(8deg);
-  animation: scanMove 8s linear infinite;
+
+  animation:
+    scanMove
+    8s linear infinite;
+
 }
 
-/* Pokémon en arrière-plan */
 
-.background-pokemon {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
-}
+/* =========================================================
+   FOND POKÉMON
+   ========================================================= */
 
 .background-pokemon {
 
@@ -74,31 +98,40 @@ body::before {
 
   pointer-events: none;
 
-  z-index: 0;
+  z-index: 1;
+
 }
 
+
+/* =========================================================
+   POKÉMON
+   ========================================================= */
 
 .bg-pokemon {
 
   position: absolute;
 
-  transform:
-    translate(-50%, -50%)
-    rotate(var(--rotation));
+  display: block;
 
   object-fit: contain;
-
-  opacity: .24;
 
   pointer-events: none;
 
   user-select: none;
+
+  opacity: .30;
+
+  z-index: 1;
 
   filter:
     drop-shadow(
       0 0 8px
       rgba(255,255,255,.35)
     );
+
+  transform:
+    translate(-50%, -50%)
+    rotate(var(--rotation));
 
   animation:
     pokemonFloat
@@ -113,18 +146,17 @@ body::before {
 }
 
 
+/* =========================================================
+   ANIMATION DES POKÉMON
+   ========================================================= */
+
 @keyframes pokemonFloat {
 
   0% {
 
     transform:
-      translate(
-        -50%,
-        -50%
-      )
-      rotate(
-        var(--rotation)
-      );
+      translate(-50%, -50%)
+      rotate(var(--rotation));
 
   }
 
@@ -133,10 +165,10 @@ body::before {
     transform:
       translate(
         -50%,
-        calc(-50% - 13px)
+        calc(-50% - 14px)
       )
       rotate(
-        calc(var(--rotation) + 5deg)
+        calc(var(--rotation) + 4deg)
       );
 
   }
@@ -144,126 +176,236 @@ body::before {
   100% {
 
     transform:
-      translate(
-        -50%,
-        -50%
-      )
-      rotate(
-        var(--rotation)
-      );
+      translate(-50%, -50%)
+      rotate(var(--rotation));
 
   }
 
 }
 
-.home {
-  position: relative;
-  z-index: 2;
-}
-/* Contenu */
+
+/* =========================================================
+   CONTENU
+   ========================================================= */
 
 .home {
+
   position: relative;
-  z-index: 5;
+
+  z-index: 10;
 
   min-height: 100vh;
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
 
   padding: 60px 20px;
+
 }
 
+
+/* =========================================================
+   TITRE
+   ========================================================= */
+
 h1 {
+
   margin: 0;
 
   color: white;
 
-  font-size: clamp(42px, 10vw, 80px);
+  font-size:
+    clamp(
+      42px,
+      10vw,
+      80px
+    );
+
   font-weight: 900;
+
   letter-spacing: 8px;
 
   text-align: center;
 
   text-shadow:
-    0 0 10px rgba(255,255,255,0.8),
-    0 0 25px rgba(0,180,255,0.9);
+    0 0 10px
+    rgba(255,255,255,.8),
+
+    0 0 25px
+    rgba(0,180,255,.9);
+
 }
+
+
+/* =========================================================
+   SOUS-TITRE
+   ========================================================= */
 
 .subtitle {
-  margin: 10px 0 40px;
 
-  color: rgba(255,255,255,0.9);
+  margin:
+    10px 0 40px;
+
+  color:
+    rgba(255,255,255,.9);
 
   font-size: 18px;
+
 }
 
-/* Liste des régions */
+
+/* =========================================================
+   LISTE
+   ========================================================= */
 
 .region-list {
+
+  position: relative;
+
+  z-index: 20;
+
   width: 100%;
+
   max-width: 600px;
 
   display: flex;
+
   flex-direction: column;
+
   gap: 18px;
+
 }
 
-/* Bouton région */
+
+/* =========================================================
+   BOUTONS
+   ========================================================= */
 
 .region-card {
 
-  background:
-    rgba(255, 255, 255, .055);
+  position: relative;
+
+  z-index: 30;
+
+  width: 100%;
+
+  padding: 22px;
+
+  border-radius: 18px;
 
   border:
     1px solid
-    rgba(255, 255, 255, .28);
+    rgba(255,255,255,.16);
+
+  /*
+   * Très transparent pour voir
+   * les Pokémon derrière.
+   */
+
+  background:
+    rgba(255,255,255,.025);
 
   backdrop-filter:
-    blur(4px);
+    blur(1px);
 
   -webkit-backdrop-filter:
-    blur(4px);
+    blur(1px);
 
   box-shadow:
-    0 8px 30px
-    rgba(0, 0, 0, .12);
+    0 4px 20px
+    rgba(0,0,0,.05);
+
+  color: white;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  transition:
+    background .2s ease,
+    transform .2s ease,
+    border-color .2s ease;
+
+  pointer-events: auto;
 
 }
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
 
 .region-card:hover {
 
   background:
-    rgba(255, 255, 255, .10);
+    rgba(255,255,255,.045);
+
+  border-color:
+    rgba(255,255,255,.25);
+
+  transform:
+    translateY(-3px);
 
 }
+
+
+/* =========================================================
+   CLIC
+   ========================================================= */
 
 .region-card:active {
-  transform: scale(0.98);
+
+  background:
+    rgba(255,255,255,.065);
+
+  transform:
+    scale(.98);
+
 }
 
+
+/* =========================================================
+   NOM RÉGION
+   ========================================================= */
+
 .region-card span {
+
   display: block;
 
   font-size: 28px;
+
   font-weight: 800;
+
 }
 
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
 .region-card small {
+
   display: block;
 
   margin-top: 6px;
 
-  color: rgba(255,255,255,0.75);
+  color:
+    rgba(255,255,255,.75);
 
   font-size: 14px;
+
 }
 
-/* Animations */
+
+/* =========================================================
+   FOND HOLOGRAPHIQUE
+   ========================================================= */
 
 @keyframes holographicWave {
+
   0% {
     background-position: 0% 50%;
   }
@@ -275,209 +417,82 @@ h1 {
   100% {
     background-position: 0% 50%;
   }
+
 }
+
+
+/* =========================================================
+   SCAN DIGITAL
+   ========================================================= */
 
 @keyframes scanMove {
+
   from {
-    transform: translate(-5%, -5%) rotate(8deg);
+
+    transform:
+      translate(-5%, -5%)
+      rotate(8deg);
+
   }
 
   to {
-    transform: translate(5%, 5%) rotate(8deg);
+
+    transform:
+      translate(5%, 5%)
+      rotate(8deg);
+
   }
+
 }
 
-@keyframes pokemonFloat {
-  from {
-    transform:
-      translateY(0)
-      rotate(-4deg);
-  }
 
-  to {
-    transform:
-      translateY(-25px)
-      rotate(4deg);
-  }
-}
-
-/* Téléphone */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 600px) {
 
   .home {
-    padding: 45px 15px;
+
+    padding:
+      45px 15px;
+
   }
+
 
   h1 {
+
     letter-spacing: 5px;
+
   }
+
 
   .region-card {
+
     padding: 20px;
+
   }
+
 
   .region-card span {
+
     font-size: 24px;
+
   }
+
 
   .bg-pokemon {
-    width: 65px;
-    height: 65px;
-  }
-}
 
-.background-pokemon {
-  position: fixed;
-  inset: 0;
+    /*
+     * Les Pokémon restent visibles
+     * mais ne prennent pas trop de place
+     * sur téléphone.
+     */
 
-  width: 100%;
-  height: 100%;
+    min-width: 45px;
 
-  overflow: hidden;
-
-  pointer-events: none;
-
-  z-index: 0;
-}
-
-
-.home {
-  position: relative;
-
-  z-index: 10;
-}
-
-
-.region-list {
-  position: relative;
-
-  z-index: 20;
-}
-
-
-.region-card {
-  position: relative;
-
-  z-index: 30;
-
-  pointer-events: auto;
-}
-
-.region-card {
-
-  background: rgba(255, 255, 255, 0.035) !important;
-
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.22) !important;
-
-  backdrop-filter:
-    blur(2px) !important;
-
-  -webkit-backdrop-filter:
-    blur(2px) !important;
-
-  box-shadow:
-    0 6px 25px
-    rgba(0, 0, 0, 0.08) !important;
-
-  color: white;
-
-}
-
-
-.region-card:hover {
-
-  background:
-    rgba(255, 255, 255, 0.075) !important;
-
-}
-
-
-.region-card:active {
-
-  background:
-    rgba(255, 255, 255, 0.10) !important;
-
-}
-
-.bg-pokemon {
-
-  position: absolute;
-
-  transform:
-    translate(-50%, -50%);
-
-  object-fit: contain;
-
-  opacity: 0.28;
-
-  pointer-events: none;
-
-  user-select: none;
-
-  z-index: 1;
-
-  filter:
-    drop-shadow(
-      0 0 8px
-      rgba(255, 255, 255, 0.35)
-    );
-
-  animation:
-    pokemonFloat
-    var(--duration)
-    ease-in-out
-    var(--delay)
-    infinite;
-
-}
-
-
-@keyframes pokemonFloat {
-
-  0% {
-
-    transform:
-      translate(-50%, -50%)
-      rotate(-3deg);
+    min-height: 45px;
 
   }
 
-  50% {
-
-    transform:
-      translate(-50%, calc(-50% - 12px))
-      rotate(3deg);
-
-  }
-
-  100% {
-
-    transform:
-      translate(-50%, -50%)
-      rotate(-3deg);
-
-  }
-
-}
-
-.region-card {
-  background: rgba(255, 255, 255, 0.015) !important;
-
-  border: 1px solid rgba(255, 255, 255, 0.16) !important;
-
-  backdrop-filter: blur(1px) !important;
-  -webkit-backdrop-filter: blur(1px) !important;
-
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
-}
-
-.region-card:hover {
-  background: rgba(255, 255, 255, 0.045) !important;
-}
-
-.region-card:active {
-  background: rgba(255, 255, 255, 0.065) !important;
 }
