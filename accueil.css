@@ -1,7 +1,3 @@
-/* =========================================================
-   BASE
-   ========================================================= */
-
 * {
   box-sizing: border-box;
 }
@@ -24,10 +20,6 @@ body {
 
   color: white;
 
-  /*
-   * Fond bleu digital holographique.
-   */
-
   background:
     linear-gradient(
       135deg,
@@ -42,13 +34,15 @@ body {
 
   animation:
     holographicWave
-    12s ease infinite;
+    12s
+    ease
+    infinite;
 
 }
 
 
 /* =========================================================
-   EFFET DIGITAL
+   EFFET DIGITAL HOLOGRAPHIQUE
    ========================================================= */
 
 body::before {
@@ -76,13 +70,15 @@ body::before {
 
   animation:
     scanMove
-    8s linear infinite;
+    8s
+    linear
+    infinite;
 
 }
 
 
 /* =========================================================
-   FOND POKÉMON
+   CONTENEUR DES POKÉMON
    ========================================================= */
 
 .background-pokemon {
@@ -111,27 +107,25 @@ body::before {
 
   position: absolute;
 
-  display: block;
-
   object-fit: contain;
 
   pointer-events: none;
 
   user-select: none;
 
-  opacity: .30;
+  opacity: .28;
 
   z-index: 1;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(var(--rotation));
 
   filter:
     drop-shadow(
       0 0 8px
       rgba(255,255,255,.35)
     );
-
-  transform:
-    translate(-50%, -50%)
-    rotate(var(--rotation));
 
   animation:
     pokemonFloat
@@ -142,44 +136,6 @@ body::before {
 
   will-change:
     transform;
-
-}
-
-
-/* =========================================================
-   ANIMATION DES POKÉMON
-   ========================================================= */
-
-@keyframes pokemonFloat {
-
-  0% {
-
-    transform:
-      translate(-50%, -50%)
-      rotate(var(--rotation));
-
-  }
-
-  50% {
-
-    transform:
-      translate(
-        -50%,
-        calc(-50% - 14px)
-      )
-      rotate(
-        calc(var(--rotation) + 4deg)
-      );
-
-  }
-
-  100% {
-
-    transform:
-      translate(-50%, -50%)
-      rotate(var(--rotation));
-
-  }
 
 }
 
@@ -202,7 +158,8 @@ body::before {
 
   align-items: center;
 
-  padding: 60px 20px;
+  padding:
+    60px 20px;
 
 }
 
@@ -258,7 +215,7 @@ h1 {
 
 
 /* =========================================================
-   LISTE
+   LISTE DES RÉGIONS
    ========================================================= */
 
 .region-list {
@@ -298,15 +255,10 @@ h1 {
 
   border:
     1px solid
-    rgba(255,255,255,.16);
-
-  /*
-   * Très transparent pour voir
-   * les Pokémon derrière.
-   */
+    rgba(255,255,255,.14);
 
   background:
-    rgba(255,255,255,.025);
+    rgba(255,255,255,.018);
 
   backdrop-filter:
     blur(1px);
@@ -322,29 +274,21 @@ h1 {
 
   cursor: pointer;
 
-  font-family: inherit;
+  pointer-events: auto;
 
   transition:
     background .2s ease,
-    transform .2s ease,
-    border-color .2s ease;
-
-  pointer-events: auto;
+    transform .2s ease;
 
 }
 
 
-/* =========================================================
-   HOVER
-   ========================================================= */
+/* Survol */
 
 .region-card:hover {
 
   background:
-    rgba(255,255,255,.045);
-
-  border-color:
-    rgba(255,255,255,.25);
+    rgba(255,255,255,.04);
 
   transform:
     translateY(-3px);
@@ -352,14 +296,12 @@ h1 {
 }
 
 
-/* =========================================================
-   CLIC
-   ========================================================= */
+/* Clic */
 
 .region-card:active {
 
   background:
-    rgba(255,255,255,.065);
+    rgba(255,255,255,.06);
 
   transform:
     scale(.98);
@@ -368,7 +310,7 @@ h1 {
 
 
 /* =========================================================
-   NOM RÉGION
+   NOM DE LA RÉGION
    ========================================================= */
 
 .region-card span {
@@ -393,7 +335,7 @@ h1 {
   margin-top: 6px;
 
   color:
-    rgba(255,255,255,.75);
+    rgba(255,255,255,.72);
 
   font-size: 14px;
 
@@ -401,28 +343,31 @@ h1 {
 
 
 /* =========================================================
-   FOND HOLOGRAPHIQUE
+   ANIMATION DU FOND
    ========================================================= */
 
 @keyframes holographicWave {
 
   0% {
-    background-position: 0% 50%;
+    background-position:
+      0% 50%;
   }
 
   50% {
-    background-position: 100% 50%;
+    background-position:
+      100% 50%;
   }
 
   100% {
-    background-position: 0% 50%;
+    background-position:
+      0% 50%;
   }
 
 }
 
 
 /* =========================================================
-   SCAN DIGITAL
+   LIGNES DIGITALES
    ========================================================= */
 
 @keyframes scanMove {
@@ -430,7 +375,7 @@ h1 {
   from {
 
     transform:
-      translate(-5%, -5%)
+      translate(-5%,-5%)
       rotate(8deg);
 
   }
@@ -438,8 +383,48 @@ h1 {
   to {
 
     transform:
-      translate(5%, 5%)
+      translate(5%,5%)
       rotate(8deg);
+
+  }
+
+}
+
+
+/* =========================================================
+   FLOTTEMENT DES POKÉMON
+   ========================================================= */
+
+@keyframes pokemonFloat {
+
+  0% {
+
+    transform:
+      translate(-50%,-50%)
+      rotate(var(--rotation));
+
+  }
+
+  50% {
+
+    transform:
+      translate(
+        -50%,
+        calc(-50% - 13px)
+      )
+      rotate(
+        calc(
+          var(--rotation) + 5deg
+        )
+      );
+
+  }
+
+  100% {
+
+    transform:
+      translate(-50%,-50%)
+      rotate(var(--rotation));
 
   }
 
@@ -483,111 +468,7 @@ h1 {
 
   .bg-pokemon {
 
-    /*
-     * Les Pokémon restent visibles
-     * mais ne prennent pas trop de place
-     * sur téléphone.
-     */
-
-    min-width: 45px;
-
-    min-height: 45px;
-
-  }
-
-   }
-
-
-/* =========================================================
-   CONTRÔLE MUSIQUE
-   ========================================================= */
-
-#musicControl {
-
-  position: fixed;
-
-  right: 18px;
-
-  bottom: 18px;
-
-  z-index: 1000;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 8px;
-
-  padding: 7px 10px;
-
-  border-radius: 30px;
-
-  background:
-    rgba(255,255,255,.035);
-
-  border:
-    1px solid
-    rgba(255,255,255,.18);
-
-  backdrop-filter:
-    blur(5px);
-
-  -webkit-backdrop-filter:
-    blur(5px);
-
-}
-
-
-#musicButton {
-
-  width: 38px;
-
-  height: 38px;
-
-  padding: 0;
-
-  border: none;
-
-  border-radius: 50%;
-
-  background:
-    rgba(255,255,255,.08);
-
-  color: white;
-
-  font-size: 18px;
-
-  cursor: pointer;
-
-}
-
-
-#musicButton:hover {
-
-  background:
-    rgba(255,255,255,.16);
-
-}
-
-
-#volumeSlider {
-
-  width: 80px;
-
-  cursor: pointer;
-
-}
-
-
-/* Mobile */
-
-@media (max-width:600px) {
-
-  #musicControl {
-
-    right: 12px;
-
-    bottom: 12px;
+    opacity: .26;
 
   }
 
