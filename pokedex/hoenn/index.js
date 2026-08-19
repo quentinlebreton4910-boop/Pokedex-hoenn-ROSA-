@@ -1,6 +1,5 @@
 /* =========================================================
-   POKÉDEX HOENN
-   Fond Pokémon + navigation
+   FOND POKÉDEX HOENN
    ========================================================= */
 
 const pokemonBackground =
@@ -8,20 +7,18 @@ const pokemonBackground =
 
 
 /* =========================================================
-   POKÉMON HOENN
+   POKÉMON DE HOENN
    ========================================================= */
 
 const hoennPokemon = [];
 
-/*
- * 252 à 386 = Pokémon de Hoenn
- */
 
 for (let id = 252; id <= 386; id++) {
 
   hoennPokemon.push({
     id: id,
-    mega: false
+    mega: false,
+    unique: `normal-${id}`
   });
 
 }
@@ -36,26 +33,19 @@ const megaHoenn = [
   254, // Méga-Jungko
   257, // Méga-Braségali
   260, // Méga-Laggron
-
   282, // Méga-Gardevoir
-
   302, // Méga-Ténéfix
-  303, // Méga-Ténéfix
   306, // Méga-Galeking
   308, // Méga-Charmina
   310, // Méga-Élecsprint
-
   319, // Méga-Sharpedo
   323, // Méga-Camérupt
-
   334, // Méga-Altaria
   354, // Méga-Banette
   359, // Méga-Absol
   362, // Méga-Oniglali
-
   373, // Méga-Drattak
   376, // Méga-Métalosse
-
   380, // Méga-Latias
   381  // Méga-Latios
 
@@ -65,8 +55,13 @@ const megaHoenn = [
 megaHoenn.forEach(id => {
 
   hoennPokemon.push({
+
     id: id,
-    mega: true
+
+    mega: true,
+
+    unique: `mega-${id}`
+
   });
 
 });
@@ -107,7 +102,7 @@ function shuffle(array) {
 
 
 /* =========================================================
-   FOND
+   CRÉATION DU FOND
    ========================================================= */
 
 function createPokemonBackground() {
@@ -117,27 +112,25 @@ function createPokemonBackground() {
   pokemonBackground.innerHTML = "";
 
 
-  const shuffled =
+  const pool =
     shuffle(hoennPokemon);
 
 
   /*
-   * Nombre affiché
+   * On affiche moins de Pokémon
+   * sur téléphone pour éviter de
+   * surcharger l'écran.
    */
 
   const amount =
     window.innerWidth <= 600
-      ? 30
-      : 55;
+      ? 28
+      : 50;
 
 
   const selected =
-    shuffled.slice(0, amount);
+    pool.slice(0, amount);
 
-
-  /*
-   * Positions déjà utilisées
-   */
 
   const positions = [];
 
@@ -152,10 +145,9 @@ function createPokemonBackground() {
     let tries = 0;
 
 
-    /*
-     * Recherche d'une position
-     * suffisamment éloignée
-     */
+    /* =====================================================
+       POSITION SANS CHEVAUCHEMENT
+       ===================================================== */
 
     while (
       !valid &&
@@ -188,7 +180,7 @@ function createPokemonBackground() {
             );
 
 
-          return distance > 10;
+          return distance > 11;
 
         });
 
@@ -215,45 +207,54 @@ function createPokemonBackground() {
       "bg-pokemon";
 
 
-    /*
-     * 12 % de chance de shiny
-     */
+    img.draggable = false;
+
+
+    /* =====================================================
+       SHINY
+       ===================================================== */
 
     const shiny =
       Math.random() < 0.12;
 
 
     /* =====================================================
-       SPRITE NORMAL / SHINY / MÉGA
+       SPRITE
        ===================================================== */
 
     if (pokemon.mega) {
 
-      const megaNormal =
-        `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}-mega.png`;
-
-      const megaShiny =
-        `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/${pokemon.id}-mega.png`;
+      /*
+       * IMPORTANT :
+       *
+       * Les Méga sont dans :
+       *
+       * other/home/mega/
+       *
+       * et non :
+       *
+       * other/home/xxx-mega.png
+       */
 
       img.src =
         shiny
-          ? megaShiny
-          : megaNormal;
+          ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/mega/${pokemon.id}.png`
+          : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/mega/${pokemon.id}.png`;
 
 
       /*
-       * Si le sprite Méga n'existe pas,
-       * on utilise le sprite normal.
+       * Il n'existe pas forcément
+       * de sprite shiny Mega dans
+       * cette source.
+       *
+       * On ne remplace surtout PAS
+       * par le Pokémon normal.
        */
 
       img.onerror = () => {
 
-        img.onerror = null;
-
-        img.src =
-          shiny
-            ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokemon.id}.png`
-            : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
+        img.style.display =
+          "none";
 
       };
 
@@ -264,10 +265,15 @@ function createPokemonBackground() {
           ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokemon.id}.png`
           : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
 
+
+      img.onerror = () => {
+
+        img.style.display =
+          "none";
+
+      };
+
     }
-
-
-    img.draggable = false;
 
 
     /* =====================================================
@@ -306,6 +312,7 @@ function createPokemonBackground() {
       `${7 + Math.random() * 7}s`
     );
 
+
     img.style.setProperty(
       "--delay",
       `${Math.random() * -10}s`
@@ -320,14 +327,14 @@ function createPokemonBackground() {
 
 
 /* =========================================================
-   GÉNÉRATION DU FOND
+   LANCEMENT
    ========================================================= */
 
 createPokemonBackground();
 
 
 /* =========================================================
-   BOUTON ACCUEIL
+   RETOUR ACCUEIL
    ========================================================= */
 
 const backHome =
@@ -340,8 +347,22 @@ if (backHome) {
     "click",
     () => {
 
-      window.location.href =
-        "../../";
+      if (
+        typeof playButtonSound ===
+        "function"
+      ) {
+
+        playButtonSound();
+
+      }
+
+
+      setTimeout(() => {
+
+        window.location.href =
+          "../../";
+
+      }, 120);
 
     }
   );
@@ -350,7 +371,7 @@ if (backHome) {
 
 
 /* =========================================================
-   BOUTONS DES POKÉDEX
+   BOUTONS POKÉDEX
    ========================================================= */
 
 document
@@ -368,11 +389,6 @@ document
         if (!link) return;
 
 
-        /*
-         * Petit délai pour permettre
-         * au son de clic de jouer.
-         */
-
         if (
           typeof playButtonSound ===
           "function"
@@ -388,7 +404,7 @@ document
           window.location.href =
             link;
 
-        }, 100);
+        }, 120);
 
       }
     );
