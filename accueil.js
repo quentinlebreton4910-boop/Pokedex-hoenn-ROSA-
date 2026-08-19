@@ -1,39 +1,490 @@
-const pokemonBackground = document.getElementById("pokemonBackground");
+const const pokemonBackground = document.getElementById("pokemonBackground");
 
 const SPRITE =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon";
 
-const HOME =
-  `${SPRITE}/other/home`;
+/*
+=========================================================
+POKÉMON NORMAUX
+=========================================================
+*/
 
-const SHINY =
-  `${HOME}/shiny`;
+const normalPokemon = [
+
+  // Kanto
+  1, 4, 7, 25, 39, 52, 54, 58, 63, 66,
+  74, 81, 95, 104, 111, 120, 129, 133,
+
+  // Johto
+  152, 155, 158, 175, 179, 194, 200,
+
+  // Hoenn
+  252, 255, 258, 261, 263, 265, 270, 273,
+  276, 280, 283, 285, 287, 290, 293, 296,
+  299, 300, 302, 304, 307, 309, 311, 313,
+  315, 318, 320, 322, 325, 327, 328, 331,
+  333, 335, 336, 339, 341, 343, 345, 347,
+  349, 351, 353, 355, 357, 359, 361, 363,
+  366, 369, 371, 374, 377, 380, 382, 384,
+
+  // Autres régions
+  387, 390, 393, 396, 403, 406, 415, 418,
+  427, 443, 447, 459,
+
+  495, 498, 501, 504, 506, 509, 519, 522,
+  524, 529, 535, 540, 543, 546, 551, 554,
+  557, 562, 570, 574, 577, 580, 585, 588,
+  592, 599, 602, 607, 610, 613,
+
+  650, 653, 656, 659, 661, 664, 667, 670,
+  674, 677, 679, 682, 685, 688, 690, 692,
+  694, 696, 698, 701, 704, 707, 710, 712,
+  714, 722, 725, 728, 731, 734, 736, 739,
+  742, 744, 747, 749, 752, 755, 757, 759,
+  761, 764, 766, 768, 774, 777, 779, 782,
+  785, 789, 791, 793, 803, 808, 810, 813,
+  816, 819, 822, 825, 828, 831, 834, 837,
+  840, 843, 846, 848, 850, 852, 854, 856,
+  859, 868, 870, 872, 874, 877, 880, 882,
+  885, 888, 890, 894, 896, 899
+];
 
 
-/* =========================================================
-   POKÉMON NORMAUX
-   ========================================================= */
+/*
+=========================================================
+MÉGA-ÉVOLUTIONS
+=========================================================
 
-const normalPokemon = Array.from(
-  { length: 1025 },
-  (_, i) => ({
-    speciesId: i + 1,
-    name: `Pokémon ${i + 1}`,
-    normal: `${SPRITE}/${i + 1}.png`,
-    shiny: `${SPRITE}/shiny/${i + 1}.png`,
-    mega: false
-  })
-);
+IMPORTANT :
+On utilise directement les IDs de FORMES PokeAPI.
 
+La structure reste exactement :
 
-/* =========================================================
-   MÉGA-ÉVOLUTIONS
-   Les IDs utilisés ici sont les IDs de FORMES PokéAPI.
-   ========================================================= */
+speciesId
+name
+normal
+shiny
+mega
+*/
 
 const megaPokemon = [
 
-  /* KANTO */
+  /*
+=========================================================
+FORMES SPÉCIALES
+=========================================================
+
+Chaque entrée possède exactement :
+
+speciesId
+name
+normal
+shiny
+mega
+*/
+
+const specialForms = [
+
+  /* =====================================================
+     DEOXYS
+     ===================================================== */
+
+  {
+    speciesId: 386,
+    name: "Deoxys — Forme Attaque",
+    normal:
+      `${SPRITE}/386-attack.png`,
+    shiny:
+      `${SPRITE}/shiny/386-attack.png`,
+    mega: false
+  },
+
+  {
+    speciesId: 386,
+    name: "Deoxys — Forme Défense",
+    normal:
+      `${SPRITE}/386-defense.png`,
+    shiny:
+      `${SPRITE}/shiny/386-defense.png`,
+    mega: false
+  },
+
+  {
+    speciesId: 386,
+    name: "Deoxys — Forme Vitesse",
+    normal:
+      `${SPRITE}/386-speed.png`,
+    shiny:
+      `${SPRITE}/shiny/386-speed.png`,
+    mega: false
+  },
+
+
+  /* =====================================================
+     SHAYMIN
+     ===================================================== */
+
+  {
+    speciesId: 492,
+    name: "Shaymin — Forme Céleste",
+    normal:
+      `${SPRITE}/492-sky.png`,
+    shiny:
+      `${SPRITE}/shiny/492-sky.png`,
+    mega: false
+  },
+
+
+  /* =====================================================
+     GIRATINA
+     ===================================================== */
+
+  {
+    speciesId: 487,
+    name: "Giratina — Forme Originelle",
+    normal:
+      `${SPRITE}/487-origin.png`,
+    shiny:
+      `${SPRITE}/shiny/487-origin.png`,
+    mega: false
+  },
+
+
+  /* =====================================================
+     SHAYMIN / KELDEO
+     ===================================================== */
+
+  {
+    speciesId: 647,
+    name: "Keldeo — Forme Décidée",
+    normal:
+      `${SPRITE}/647-resolute.png`,
+    shiny:
+      `${SPRITE}/shiny/647-resolute.png`,
+    mega: false
+  },
+
+
+  /* =====================================================
+     MELOETTA
+     ===================================================== */
+
+  {
+    speciesId: 648,
+    name: "Meloetta — Forme Danse",
+    normal:
+      `${SPRITE}/648-pirouette.png`,
+    shiny:
+      `${SPRITE}/shiny/648-pirouette.png`,
+    mega: false
+  },
+
+
+  /* =====================================================
+     KYUREM
+     ===================================================== */
+
+  {
+    speciesId: 646,
+    name: "Kyurem Noir",
+    normal:
+      `${SPRITE}/646-black.png`,
+    shiny:
+      `${SPRITE}/shiny/646-black.png`,
+    mega: false
+  },
+
+  {
+    speciesId: 646,
+    name: "Kyurem Blanc",
+    normal:
+      `${SPRITE}/646-white.png`,
+    shiny:
+      `${SPRITE}/shiny/646-white.png`,
+    mega: false
+  },
+
+
+  /* =====================================================
+     NECROZMA
+     ===================================================== */
+
+  {
+    speciesId: 800,
+    name: "Necrozma — Crinière du Couchant",
+    normal:
+      `${SPRITE}/800-dusk-mane.png`,
+    shiny:
+      `${SPRITE}/shiny/800-dusk-mane.png`,
+    mega: false
+  },
+
+  {
+    speciesId: 800,
+    name: "Necrozma — Ailes de l'Aurore",
+    normal:
+      `${SPRITE}/800-dawn-wings.png`,
+    shiny:
+      `${SPRITE}/shiny/800-dawn-wings.png`,
+    mega: false
+  },
+
+  {
+    speciesId: 800,
+    name: "Ultra-Necrozma",
+    normal:
+      `${SPRITE}/800-ultra.png`,
+    shiny:
+      `${SPRITE}/shiny/800-ultra.png`,
+    mega: false
+  },
+
+
+  /* =====================================================
+     ZYGARDE
+     ===================================================== */
+
+  {
+    speciesId: 718,
+    name: "Zygarde — Forme 10%",
+    normal:
+      `${SPRITE}/718-10.png`,
+    shiny:
+      `${SPRITE}/shiny/718-10.png`,
+    mega: false
+  },
+
+  {
+    speciesId: 718,
+    name: "Zygarde — Forme Parfaite",
+    normal:
+      `${SPRITE}/718-complete.png`,
+    shiny:
+      `${SPRITE}/shiny/718-complete.png`,
+    mega: false
+  },
+
+
+  /* =====================================================
+     HOOPA
+     ===================================================== */
+
+  {
+    speciesId: 720,
+    name: "Hoopa — Forme Déchaînée",
+    normal:
+      `${SPRITE}/720-unbound.png`,
+    shiny:
+      `${SPRITE}/shiny/720-unbound.png`,
+    mega: false
+  },
+
+
+  /* =====================================================
+     AEGISLASH
+     ===================================================== */
+
+  {
+    speciesId: 681,
+    name: "Exagide — Forme Lame",
+    normal:
+      `${SPRITE}/681-blade.png`,
+    shiny:
+      `${SPRITE}/shiny/681-blade.png`,
+    mega: false
+  },
+
+
+  /* =====================================================
+     DARMANITAN
+     ===================================================== */
+
+  {
+    speciesId: 555,
+    name: "Darumacho — Mode Transe",
+    normal:
+      `${SPRITE}/555-zen.png`,
+    shiny:
+      `${SPRITE}/shiny/555-zen.png`,
+    mega: false
+  },
+
+
+  /* =====================================================
+     WISHIWASHI
+     ===================================================== */
+
+  {
+    speciesId: 746,
+    name: "Froussardine — Forme Banc",
+    normal:
+      `${SPRITE}/746-school.png`,
+    shiny:
+      `${SPRITE}/shiny/746-school.png`,
+    mega: false
+  },
+
+
+  /* =====================================================
+     MIMIKYU
+     ===================================================== */
+
+  {
+    speciesId: 778,
+    name: "Mimiqui — Forme Buste",
+    normal:
+      `${SPRITE}/778-busted.png`,
+    shiny:
+      `${SPRITE}/shiny/778-busted.png`,
+    mega: false
+  },
+
+
+  /* =====================================================
+     MORPEKO
+     ===================================================== */
+
+  {
+    speciesId: 877,
+    name: "Morpeko — Forme Affamée",
+    normal:
+      `${SPRITE}/877-hangry.png`,
+    shiny:
+      `${SPRITE}/shiny/877-hangry.png`,
+    mega: false
+  },
+
+
+  /* =====================================================
+     URSHIFU
+     ===================================================== */
+
+  {
+    speciesId: 892,
+    name: "Shifours — Style Poing Final",
+    normal:
+      `${SPRITE}/892-single-strike.png`,
+    shiny:
+      `${SPRITE}/shiny/892-single-strike.png`,
+    mega: false
+  },
+
+  {
+    speciesId: 892,
+    name: "Shifours — Style Mille Poings",
+    normal:
+      `${SPRITE}/892-rapid-strike.png`,
+    shiny:
+      `${SPRITE}/shiny/892-rapid-strike.png`,
+    mega: false
+  },
+
+
+  /* =====================================================
+     OGERPON
+     ===================================================== */
+
+  {
+    speciesId: 1017,
+    name: "Ogerpon — Masque Turquoise",
+    normal:
+      `${SPRITE}/1017-teal.png`,
+    shiny:
+      `${SPRITE}/shiny/1017-teal.png`,
+    mega: false
+  },
+
+  {
+    speciesId: 1017,
+    name: "Ogerpon — Masque du Puits",
+    normal:
+      `${SPRITE}/1017-wellspring.png`,
+    shiny:
+      `${SPRITE}/shiny/1017-wellspring.png`,
+    mega: false
+  },
+
+  {
+    speciesId: 1017,
+    name: "Ogerpon — Masque Fournaise",
+    normal:
+      `${SPRITE}/1017-hearthflame.png`,
+    shiny:
+      `${SPRITE}/shiny/1017-hearthflame.png`,
+    mega: false
+  },
+
+  {
+    speciesId: 1017,
+    name: "Ogerpon — Masque Pierre",
+    normal:
+      `${SPRITE}/1017-cornerstone.png`,
+    shiny:
+      `${SPRITE}/shiny/1017-cornerstone.png`,
+    mega: false
+  },
+
+
+  /* =====================================================
+     TERAPAGOS
+     ===================================================== */
+
+  {
+    speciesId: 1024,
+    name: "Terapagos — Forme Téracristal",
+    normal:
+      `${SPRITE}/1024-terastal.png`,
+    shiny:
+      `${SPRITE}/shiny/1024-terastal.png`,
+    mega: false
+  },
+
+  {
+    speciesId: 1024,
+    name: "Terapagos — Forme Stellaire",
+    normal:
+      `${SPRITE}/1024-stellar.png`,
+    shiny:
+      `${SPRITE}/shiny/1024-stellar.png`,
+    mega: false
+  },
+
+
+  /* =====================================================
+     ZACIAN
+     ===================================================== */
+
+  {
+    speciesId: 888,
+    name: "Zacian — Épée Suprême",
+    normal:
+      `${SPRITE}/888-crowned.png`,
+    shiny:
+      `${SPRITE}/shiny/888-crowned.png`,
+    mega: false
+  },
+
+
+  /* =====================================================
+     ZAMAZENTA
+     ===================================================== */
+
+  {
+    speciesId: 889,
+    name: "Zamazenta — Bouclier Suprême",
+    normal:
+      `${SPRITE}/889-crowned.png`,
+    shiny:
+      `${SPRITE}/shiny/889-crowned.png`,
+    mega: false
+  }
+
+];
+
+
+  /* =========================
+     MÉGA KANTO
+     ========================= */
 
   {
     speciesId: 3,
@@ -70,8 +521,8 @@ const megaPokemon = [
   {
     speciesId: 15,
     name: "Méga-Dardargnan",
-    normal: `${SPRITE}/10040.png`,
-    shiny: `${SPRITE}/shiny/10040.png`,
+    normal: `${SPRITE}/10090.png`,
+    shiny: `${SPRITE}/shiny/10090.png`,
     mega: true
   },
 
@@ -83,27 +534,31 @@ const megaPokemon = [
     mega: true
   },
 
+  /* =========================
+     MÉGA JOHTO
+     ========================= */
+
   {
     speciesId: 65,
     name: "Méga-Alakazam",
-    normal: `${SPRITE}/10026.png`,
-    shiny: `${SPRITE}/shiny/10026.png`,
+    normal: `${SPRITE}/10062.png`,
+    shiny: `${SPRITE}/shiny/10062.png`,
     mega: true
   },
 
   {
     speciesId: 80,
     name: "Méga-Flagadoss",
-    normal: `${SPRITE}/10025.png`,
-    shiny: `${SPRITE}/shiny/10025.png`,
+    normal: `${SPRITE}/10071.png`,
+    shiny: `${SPRITE}/shiny/10071.png`,
     mega: true
   },
 
   {
     speciesId: 94,
     name: "Méga-Ectoplasma",
-    normal: `${SPRITE}/10037.png`,
-    shiny: `${SPRITE}/shiny/10037.png`,
+    normal: `${SPRITE}/10038.png`,
+    shiny: `${SPRITE}/shiny/10038.png`,
     mega: true
   },
 
@@ -118,8 +573,8 @@ const megaPokemon = [
   {
     speciesId: 127,
     name: "Méga-Scarabrute",
-    normal: `${SPRITE}/10038.png`,
-    shiny: `${SPRITE}/shiny/10038.png`,
+    normal: `${SPRITE}/10040.png`,
+    shiny: `${SPRITE}/shiny/10040.png`,
     mega: true
   },
 
@@ -140,25 +595,6 @@ const megaPokemon = [
   },
 
   {
-    speciesId: 150,
-    name: "Méga-Mewtwo X",
-    normal: `${SPRITE}/10043.png`,
-    shiny: `${SPRITE}/shiny/10043.png`,
-    mega: true
-  },
-
-  {
-    speciesId: 150,
-    name: "Méga-Mewtwo Y",
-    normal: `${SPRITE}/10044.png`,
-    shiny: `${SPRITE}/shiny/10044.png`,
-    mega: true
-  },
-
-
-  /* JOHTO */
-
-  {
     speciesId: 181,
     name: "Méga-Pharamp",
     normal: `${SPRITE}/10045.png`,
@@ -166,48 +602,9 @@ const megaPokemon = [
     mega: true
   },
 
-  {
-    speciesId: 208,
-    name: "Méga-Steelix",
-    normal: `${SPRITE}/10072.png`,
-    shiny: `${SPRITE}/shiny/10072.png`,
-    mega: true
-  },
-
-  {
-    speciesId: 212,
-    name: "Méga-Cizayox",
-    normal: `${SPRITE}/10046.png`,
-    shiny: `${SPRITE}/shiny/10046.png`,
-    mega: true
-  },
-
-  {
-    speciesId: 214,
-    name: "Méga-Scarhino",
-    normal: `${SPRITE}/10047.png`,
-    shiny: `${SPRITE}/shiny/10047.png`,
-    mega: true
-  },
-
-  {
-    speciesId: 229,
-    name: "Méga-Démolosse",
-    normal: `${SPRITE}/10048.png`,
-    shiny: `${SPRITE}/shiny/10048.png`,
-    mega: true
-  },
-
-  {
-    speciesId: 248,
-    name: "Méga-Tyranocif",
-    normal: `${SPRITE}/10049.png`,
-    shiny: `${SPRITE}/shiny/10049.png`,
-    mega: true
-  },
-
-
-  /* HOENN */
+  /* =========================
+     MÉGA HOENN
+     ========================= */
 
   {
     speciesId: 254,
@@ -220,8 +617,8 @@ const megaPokemon = [
   {
     speciesId: 257,
     name: "Méga-Braségali",
-    normal: `${SPRITE}/10063.png`,
-    shiny: `${SPRITE}/shiny/10063.png`,
+    normal: `${SPRITE}/10061.png`,
+    shiny: `${SPRITE}/shiny/10061.png`,
     mega: true
   },
 
@@ -236,72 +633,72 @@ const megaPokemon = [
   {
     speciesId: 282,
     name: "Méga-Gardevoir",
-    normal: `${SPRITE}/10068.png`,
-    shiny: `${SPRITE}/shiny/10068.png`,
+    normal: `${SPRITE}/10051.png`,
+    shiny: `${SPRITE}/shiny/10051.png`,
     mega: true
   },
 
   {
     speciesId: 302,
     name: "Méga-Ténéfix",
+    normal: `${SPRITE}/10066.png`,
+    shiny: `${SPRITE}/shiny/10066.png`,
+    mega: true
+  },
+
+  {
+    speciesId: 303,
+    name: "Méga-Mysdibule",
+    normal: `${SPRITE}/10052.png`,
+    shiny: `${SPRITE}/shiny/10052.png`,
+    mega: true
+  },
+
+  {
+    speciesId: 306,
+    name: "Méga-Galeking",
     normal: `${SPRITE}/10053.png`,
     shiny: `${SPRITE}/shiny/10053.png`,
     mega: true
   },
 
   {
-    speciesId: 303,
-    name: "Méga-Galeking",
-    normal: `${SPRITE}/10054.png`,
-    shiny: `${SPRITE}/shiny/10054.png`,
-    mega: true
-  },
-
-  {
     speciesId: 308,
     name: "Méga-Charmina",
-    normal: `${SPRITE}/10070.png`,
-    shiny: `${SPRITE}/shiny/10070.png`,
+    normal: `${SPRITE}/10069.png`,
+    shiny: `${SPRITE}/shiny/10069.png`,
     mega: true
   },
 
   {
     speciesId: 310,
     name: "Méga-Élecsprint",
-    normal: `${SPRITE}/10067.png`,
-    shiny: `${SPRITE}/shiny/10067.png`,
+    normal: `${SPRITE}/10055.png`,
+    shiny: `${SPRITE}/shiny/10055.png`,
     mega: true
   },
 
   {
     speciesId: 319,
     name: "Méga-Sharpedo",
-    normal: `${SPRITE}/10050.png`,
-    shiny: `${SPRITE}/shiny/10050.png`,
+    normal: `${SPRITE}/10070.png`,
+    shiny: `${SPRITE}/shiny/10070.png`,
     mega: true
   },
 
   {
     speciesId: 323,
     name: "Méga-Camérupt",
-    normal: `${SPRITE}/10076.png`,
-    shiny: `${SPRITE}/shiny/10076.png`,
+    normal: `${SPRITE}/10078.png`,
+    shiny: `${SPRITE}/shiny/10078.png`,
     mega: true
   },
 
   {
     speciesId: 334,
     name: "Méga-Altaria",
-    normal: `${SPRITE}/10062.png`,
-    shiny: `${SPRITE}/shiny/10062.png`,
-    mega: true
-  },
-
-  {
-    speciesId: 354,
-    name: "Méga-Branette",
-    normal: `${SPRITE}/10056.png`,
-    shiny: `${SPRITE}/shiny/10056.png`,
+    normal: `${SPRITE}/10076.png`,
+    shiny: `${SPRITE}/shiny/10076.png`,
     mega: true
   },
 
@@ -324,32 +721,32 @@ const megaPokemon = [
   {
     speciesId: 373,
     name: "Méga-Drattak",
-    normal: `${SPRITE}/10065.png`,
-    shiny: `${SPRITE}/shiny/10065.png`,
+    normal: `${SPRITE}/10093.png`,
+    shiny: `${SPRITE}/shiny/10093.png`,
     mega: true
   },
 
   {
     speciesId: 376,
     name: "Méga-Métalosse",
-    normal: `${SPRITE}/10063.png`,
-    shiny: `${SPRITE}/shiny/10063.png`,
+    normal: `${SPRITE}/10060.png`,
+    shiny: `${SPRITE}/shiny/10060.png`,
     mega: true
   },
 
   {
     speciesId: 380,
     name: "Méga-Latias",
-    normal: `${SPRITE}/10081.png`,
-    shiny: `${SPRITE}/shiny/10081.png`,
+    normal: `${SPRITE}/10062.png`,
+    shiny: `${SPRITE}/shiny/10062.png`,
     mega: true
   },
 
   {
     speciesId: 381,
     name: "Méga-Latios",
-    normal: `${SPRITE}/10082.png`,
-    shiny: `${SPRITE}/shiny/10082.png`,
+    normal: `${SPRITE}/10063.png`,
+    shiny: `${SPRITE}/shiny/10063.png`,
     mega: true
   },
 
@@ -361,22 +758,15 @@ const megaPokemon = [
     mega: true
   },
 
-
-  /* SINNOH */
-
-  {
-    speciesId: 428,
-    name: "Méga-Lockpin",
-    normal: `${SPRITE}/10069.png`,
-    shiny: `${SPRITE}/shiny/10069.png`,
-    mega: true
-  },
+  /* =========================
+     AUTRES MÉGA
+     ========================= */
 
   {
     speciesId: 445,
     name: "Méga-Carchacrok",
-    normal: `${SPRITE}/10071.png`,
-    shiny: `${SPRITE}/shiny/10071.png`,
+    normal: `${SPRITE}/10088.png`,
+    shiny: `${SPRITE}/shiny/10088.png`,
     mega: true
   },
 
@@ -391,24 +781,26 @@ const megaPokemon = [
   {
     speciesId: 460,
     name: "Méga-Blizzaroi",
-    normal: `${SPRITE}/10060.png`,
-    shiny: `${SPRITE}/shiny/10060.png`,
-    mega: true
-  },
-
-
-  /* UNYS */
-
-  {
-    speciesId: 531,
-    name: "Méga-Roitiflam",
     normal: `${SPRITE}/10061.png`,
     shiny: `${SPRITE}/shiny/10061.png`,
     mega: true
   },
 
+  {
+    speciesId: 475,
+    name: "Méga-Gallame",
+    normal: `${SPRITE}/10068.png`,
+    shiny: `${SPRITE}/shiny/10068.png`,
+    mega: true
+  },
 
-  /* KALOS */
+  {
+    speciesId: 531,
+    name: "Méga-Nanméouïe",
+    normal: `${SPRITE}/10064.png`,
+    shiny: `${SPRITE}/shiny/10064.png`,
+    mega: true
+  },
 
   {
     speciesId: 719,
@@ -421,485 +813,84 @@ const megaPokemon = [
 ];
 
 
-/* =========================================================
-   PRIMO-ÉVOLUTIONS
-   ========================================================= */
+/*
+=========================================================
+CRÉATION DU POOL
+=========================================================
+*/
 
-const primalPokemon = [
+const normalEntries = normalPokemon.map(id => ({
+  speciesId: id,
+  name: "",
+  normal: `${SPRITE}/${id}.png`,
+  shiny: `${SPRITE}/shiny/${id}.png`,
+  mega: false
+}));
 
-  {
-    speciesId: 382,
-    name: "Primo-Kyogre",
-    normal: `${SPRITE}/10077.png`,
-    shiny: `${SPRITE}/shiny/10077.png`,
-    mega: false
-  },
 
-  {
-    speciesId: 383,
-    name: "Primo-Groudon",
-    normal: `${SPRITE}/10078.png`,
-    shiny: `${SPRITE}/shiny/10078.png`,
-    mega: false
-  }
-
+const allPokemon = [
+  ...normalEntries,
+  ...megaPokemon,
+  ...specialForms
 ];
 
 
-/* =========================================================
-   DEOXYS
-   ========================================================= */
-
-const deoxysForms = [
-
-  {
-    speciesId: 386,
-    name: "Deoxys Forme Normale",
-    normal: `${SPRITE}/386.png`,
-    shiny: `${SPRITE}/shiny/386.png`,
-    mega: false
-  },
-
-  {
-    speciesId: 386,
-    name: "Deoxys Forme Attaque",
-    normal: `${SPRITE}/10001.png`,
-    shiny: `${SPRITE}/shiny/10001.png`,
-    mega: false
-  },
-
-  {
-    speciesId: 386,
-    name: "Deoxys Forme Défense",
-    normal: `${SPRITE}/10002.png`,
-    shiny: `${SPRITE}/shiny/10002.png`,
-    mega: false
-  },
-
-  {
-    speciesId: 386,
-    name: "Deoxys Forme Vitesse",
-    normal: `${SPRITE}/10003.png`,
-    shiny: `${SPRITE}/shiny/10003.png`,
-    mega: false
-  }
-
-];
-
-
-/* =========================================================
-   MELOETTA
-   ========================================================= */
-
-const meloettaForms = [
-
-  {
-    speciesId: 648,
-    name: "Meloetta Chant",
-    normal: `${SPRITE}/648.png`,
-    shiny: `${SPRITE}/shiny/648.png`,
-    mega: false
-  },
-
-  {
-    speciesId: 648,
-    name: "Meloetta Danse",
-    normal: `${SPRITE}/10018.png`,
-    shiny: `${SPRITE}/shiny/10018.png`,
-    mega: false
-  }
-
-];
-
-
-/* =========================================================
-   KYUREM
-   ========================================================= */
-
-const kyuremForms = [
-
-  {
-    speciesId: 646,
-    name: "Kyurem",
-    normal: `${SPRITE}/646.png`,
-    shiny: `${SPRITE}/shiny/646.png`,
-    mega: false
-  },
-
-  {
-    speciesId: 646,
-    name: "Kyurem Noir",
-    normal: `${SPRITE}/10022.png`,
-    shiny: `${SPRITE}/shiny/10022.png`,
-    mega: false
-  },
-
-  {
-    speciesId: 646,
-    name: "Kyurem Blanc",
-    normal: `${SPRITE}/10023.png`,
-    shiny: `${SPRITE}/shiny/10023.png`,
-    mega: false
-  }
-
-];
-
-
-/* =========================================================
-   NECROZMA
-   ========================================================= */
-
-const necrozmaForms = [
-
-  {
-    speciesId: 800,
-    name: "Necrozma",
-    normal: `${SPRITE}/800.png`,
-    shiny: `${SPRITE}/shiny/800.png`,
-    mega: false
-  },
-
-  {
-    speciesId: 800,
-    name: "Necrozma Crinière du Couchant",
-    normal: `${SPRITE}/10047.png`,
-    shiny: `${SPRITE}/shiny/10047.png`,
-    mega: false
-  },
-
-  {
-    speciesId: 800,
-    name: "Necrozma Ailes de l'Aurore",
-    normal: `${SPRITE}/10048.png`,
-    shiny: `${SPRITE}/shiny/10048.png`,
-    mega: false
-  },
-
-  {
-    speciesId: 800,
-    name: "Ultra-Necrozma",
-    normal: `${SPRITE}/10049.png`,
-    shiny: `${SPRITE}/shiny/10049.png`,
-    mega: false
-  }
-
-];
-
-
-/* =========================================================
-   ZYGARDE
-   ========================================================= */
-
-const zygardeForms = [
-
-  {
-    speciesId: 718,
-    name: "Zygarde 10%",
-    normal: `${SPRITE}/10118.png`,
-    shiny: `${SPRITE}/shiny/10118.png`,
-    mega: false
-  },
-
-  {
-    speciesId: 718,
-    name: "Zygarde 50%",
-    normal: `${SPRITE}/718.png`,
-    shiny: `${SPRITE}/shiny/718.png`,
-    mega: false
-  },
-
-  {
-    speciesId: 718,
-    name: "Zygarde Parfait",
-    normal: `${SPRITE}/10119.png`,
-    shiny: `${SPRITE}/shiny/10119.png`,
-    mega: false
-  }
-
-];
-
-
-/* =========================================================
-   POKEMON ZA
-   ========================================================= */
-
-const zaForms = [
-{
-  speciesId: 807,
-  name: "Méga-Zeraora",
-  normal:
-    `${SPRITE}/10271.png`,
-  shiny:
-    `${SPRITE}/shiny/10271.png`,
-  mega: true
-},
-
-{
-  speciesId: 718,
-  name: "Méga-Zygarde",
-  normal:
-    `${SPRITE}/10272.png`,
-  shiny:
-    `${SPRITE}/shiny/10272.png`,
-  mega: true
-},
-
-{
-  speciesId: 359,
-  name: "Méga-Absol Z",
-  normal:
-    `${SPRITE}/10273.png`,
-  shiny:
-    `${SPRITE}/shiny/10273.png`,
-  mega: true
-},
-
-{
-  speciesId: 448,
-  name: "Méga-Lucario Z",
-  normal:
-    `${SPRITE}/10274.png`,
-  shiny:
-    `${SPRITE}/shiny/10274.png`,
-  mega: true
-},
-
-{
-  speciesId: 445,
-  name: "Méga-Carchacrok Z",
-  normal:
-    `${SPRITE}/10275.png`,
-  shiny:
-    `${SPRITE}/shiny/10275.png`,
-  mega: true
-}
-
-/* =========================================================
-   ZACIAN / ZAMAZENTA
-   ========================================================= */
-
-const legendaryForms = [
-
-  {
-    speciesId: 888,
-    name: "Zacian Épée Suprême",
-    normal: `${SPRITE}/10270.png`,
-    shiny: `${SPRITE}/shiny/10270.png`,
-    mega: false
-  },
-
-  {
-    speciesId: 889,
-    name: "Zamazenta Bouclier Suprême",
-    normal: `${SPRITE}/10271.png`,
-    shiny: `${SPRITE}/shiny/10271.png`,
-    mega: false
-  }
-
-];
-
-
-/* =========================================================
-   TOUTES LES FORMES SPÉCIALES
-   ========================================================= */
-
-const specialPokemon = [
-
-  ...primalPokemon,
-  ...deoxysForms,
-  ...meloettaForms,
-  ...kyuremForms,
-  ...necrozmaForms,
-  ...zygardeForms,
-  ...legendaryForms
-
-];
-
-
-/* =========================================================
-   HOENN UNIQUEMENT
-   ========================================================= */
-
-const hoennPokemon = [
-
-  ...Array.from(
-    { length: 135 },
-    (_, i) => normalPokemon[i + 251]
-  ),
-
-  ...megaPokemon.filter(p =>
-    [
-      254,
-      257,
-      260,
-      282,
-      302,
-      303,
-      308,
-      310,
-      319,
-      323,
-      334,
-      354,
-      359,
-      362,
-      373,
-      376,
-      380,
-      381,
-      384
-    ].includes(p.speciesId)
-  ),
-
-  ...primalPokemon,
-
-  ...deoxysForms
-
-];
-
-
-/* =========================================================
-   MÉLANGE
-   ========================================================= */
+/*
+=========================================================
+MÉLANGE
+=========================================================
+*/
 
 function shuffle(array) {
 
   const copy = [...array];
 
-  for (
-    let i = copy.length - 1;
-    i > 0;
-    i--
-  ) {
+  for (let i = copy.length - 1; i > 0; i--) {
 
     const j =
-      Math.floor(
-        Math.random() * (i + 1)
-      );
+      Math.floor(Math.random() * (i + 1));
 
-    [
-      copy[i],
-      copy[j]
-    ] = [
-      copy[j],
-      copy[i]
-    ];
-
+    [copy[i], copy[j]] =
+      [copy[j], copy[i]];
   }
 
   return copy;
-
 }
 
 
-/* =========================================================
-   CRÉATION DU FOND
-   ========================================================= */
+/*
+=========================================================
+FOND POKÉMON
+=========================================================
+*/
 
-function createPokemonBackground(
-  region = "all"
-) {
+function createPokemonBackground() {
 
-  const container =
-    document.getElementById(
-      "pokemonBackground"
-    );
+  if (!pokemonBackground) return;
 
-  if (!container) return;
+  pokemonBackground.innerHTML = "";
 
-
-  container.innerHTML = "";
-
-
-  let pool;
-
-
-  if (region === "hoenn") {
-
-    pool = [
-      ...hoennPokemon
-    ];
-
-  } else {
-
-    pool = [
-      ...normalPokemon,
-      ...megaPokemon,
-      ...specialPokemon
-    ];
-
-  }
-
-
-  pool =
-    shuffle(pool);
-
-
-  /*
-   * Nombre de Pokémon
-   */
+  const pool =
+    shuffle(allPokemon);
 
   const amount =
     window.innerWidth <= 600
-      ? 42
-      : 75;
+      ? 30
+      : 55;
 
-
-  /*
-   * Évite les doublons exacts
-   */
-
-  const selected = [];
-
-  const used = new Set();
-
-
-  for (const pokemon of pool) {
-
-    const key =
-      `${pokemon.speciesId}-${pokemon.name}`;
-
-
-    if (used.has(key)) {
-      continue;
-    }
-
-
-    used.add(key);
-
-    selected.push(pokemon);
-
-
-    if (
-      selected.length >= amount
-    ) {
-      break;
-    }
-
-  }
-
-
-  /*
-   * Positions
-   */
+  const selected =
+    pool.slice(0, amount);
 
   const positions = [];
-
 
   selected.forEach(pokemon => {
 
     let x;
     let y;
-
     let valid = false;
-
     let tries = 0;
 
-
-    while (
-      !valid &&
-      tries < 500
-    ) {
+    while (!valid && tries < 500) {
 
       x =
         4 +
@@ -909,68 +900,46 @@ function createPokemonBackground(
         4 +
         Math.random() * 92;
 
-
       valid =
-        positions.every(pos => {
+        positions.every(position => {
 
           const dx =
-            pos.x - x;
+            position.x - x;
 
           const dy =
-            pos.y - y;
+            position.y - y;
 
-
-          const distance =
-            Math.sqrt(
-              dx * dx +
-              dy * dy
-            );
-
-
-          return distance > 11;
+          return Math.sqrt(
+            dx * dx +
+            dy * dy
+          ) > 11;
 
         });
 
-
       tries++;
-
     }
-
 
     if (!valid) return;
 
-
-    positions.push({
-      x,
-      y
-    });
-
-
-    /*
-     * Shiny : 12 %
-     */
-
-    const isShiny =
-      Math.random() < 0.12;
+    positions.push({ x, y });
 
 
     const img =
-      document.createElement(
-        "img"
-      );
-
+      document.createElement("img");
 
     img.className =
       "bg-pokemon";
 
 
-    img.draggable =
-      false;
-
-
     /*
-     * Sprite
-     */
+    ================================================
+    SHINY
+    ================================================
+    */
+
+    const isShiny =
+      Math.random() < 0.12;
+
 
     img.src =
       isShiny
@@ -979,20 +948,30 @@ function createPokemonBackground(
 
 
     /*
-     * Si le sprite n'existe pas,
-     * on supprime l'image.
-     */
+    ================================================
+    SI LE SPRITE N'EXISTE PAS
+    ================================================
+    */
 
     img.onerror = () => {
+
+      /*
+       * Pour éviter les carrés/images cassées
+       */
 
       img.remove();
 
     };
 
 
+    img.draggable = false;
+
+
     /*
-     * Position
-     */
+    ================================================
+    POSITION
+    ================================================
+    */
 
     img.style.left =
       `${x}%`;
@@ -1002,13 +981,14 @@ function createPokemonBackground(
 
 
     /*
-     * Taille
-     */
+    ================================================
+    TAILLE
+    ================================================
+    */
 
     const size =
-      48 +
-      Math.random() * 38;
-
+      45 +
+      Math.random() * 30;
 
     img.style.width =
       `${size}px`;
@@ -1018,24 +998,27 @@ function createPokemonBackground(
 
 
     /*
-     * Rotation
-     */
+    ================================================
+    ROTATION
+    ================================================
+    */
 
     img.style.setProperty(
       "--rotation",
-      `${-8 + Math.random() * 16}deg`
+      `${-6 + Math.random() * 12}deg`
     );
 
 
     /*
-     * Animation
-     */
+    ================================================
+    ANIMATION
+    ================================================
+    */
 
     img.style.setProperty(
       "--duration",
-      `${7 + Math.random() * 8}s`
+      `${7 + Math.random() * 7}s`
     );
-
 
     img.style.setProperty(
       "--delay",
@@ -1043,27 +1026,27 @@ function createPokemonBackground(
     );
 
 
-    container.appendChild(
-      img
-    );
+    pokemonBackground.appendChild(img);
 
   });
 
 }
 
 
-/* =========================================================
-   FOND ACCUEIL
-   ========================================================= */
+/*
+=========================================================
+LANCEMENT DU FOND
+=========================================================
+*/
 
-createPokemonBackground(
-  "all"
-);
+createPokemonBackground();
 
 
-/* =========================================================
-   BOUTON HOENN
-   ========================================================= */
+/*
+=========================================================
+BOUTON HOENN
+=========================================================
+*/
 
 document
   .querySelectorAll(".region-card")
@@ -1076,10 +1059,7 @@ document
         const region =
           button.dataset.region;
 
-
-        if (
-          region === "hoenn"
-        ) {
+        if (region === "hoenn") {
 
           window.location.href =
             "pokedex/hoenn/";
@@ -1090,3 +1070,19 @@ document
     );
 
   });
+
+
+/*
+=========================================================
+RECHARGER LE FOND À CHAQUE OUVERTURE
+=========================================================
+*/
+
+window.addEventListener(
+  "pageshow",
+  () => {
+
+    createPokemonBackground();
+
+  }
+);
