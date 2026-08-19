@@ -1,25 +1,18 @@
 /* =========================================================
-   MUSIQUE + SONS DE L'APPLICATION
+   MUSIQUE + SONS
    ========================================================= */
 
-/*
- * La musique est générée directement par le navigateur.
- * Aucun fichier MP3 n'est nécessaire.
- *
- * Cela évite les problèmes de fichiers audio manquants.
- */
-
 let audioContext = null;
-
 let musicGain = null;
 
 let musicStarted = false;
-
 let musicMuted = false;
+
+let musicTimer = null;
 
 
 /* =========================================================
-   INITIALISATION
+   INITIALISATION AUDIO
    ========================================================= */
 
 function initAudio() {
@@ -50,10 +43,10 @@ function initAudio() {
 
 
 /* =========================================================
-   PETITE MUSIQUE AMBIANTE
+   DÉMARRAGE AUDIO
    ========================================================= */
 
-function startMusic() {
+function unlockAudio() {
 
   initAudio();
 
@@ -67,33 +60,44 @@ function startMusic() {
 
   }
 
+}
+
+
+/* =========================================================
+   MUSIQUE
+   ========================================================= */
+
+function startMusic() {
+
+  unlockAudio();
+
 
   if (musicStarted) return;
 
   musicStarted = true;
 
 
-  /*
-   * Notes douces style
-   * ambiance électronique.
-   */
-
   const notes = [
+
     261.63,
     329.63,
     392.00,
-    523.25,
-    392.00,
-    329.63
+    329.63,
+
+    293.66,
+    349.23,
+    440.00,
+    349.23
+
   ];
 
 
   let index = 0;
 
 
-  function playNote() {
+  function playNextNote() {
 
-    if (!audioContext) return;
+    if (!musicStarted) return;
 
 
     const oscillator =
@@ -112,9 +116,13 @@ function startMusic() {
       notes[index];
 
 
+    const now =
+      audioContext.currentTime;
+
+
     gain.gain.setValueAtTime(
       0,
-      audioContext.currentTime
+      now
     );
 
 
@@ -122,13 +130,13 @@ function startMusic() {
       musicMuted
         ? 0
         : 0.035,
-      audioContext.currentTime + 0.15
+      now + 0.12
     );
 
 
     gain.gain.linearRampToValueAtTime(
       0,
-      audioContext.currentTime + 1.4
+      now + 1.3
     );
 
 
@@ -137,10 +145,10 @@ function startMusic() {
     gain.connect(musicGain);
 
 
-    oscillator.start();
+    oscillator.start(now);
 
     oscillator.stop(
-      audioContext.currentTime + 1.5
+      now + 1.35
     );
 
 
@@ -149,36 +157,27 @@ function startMusic() {
       notes.length;
 
 
-    setTimeout(
-      playNote,
-      1000
-    );
+    musicTimer =
+      setTimeout(
+        playNextNote,
+        950
+      );
 
   }
 
 
-  playNote();
+  playNextNote();
 
 }
 
 
 /* =========================================================
-   SON DE CLIC
+   SON DE BOUTON
    ========================================================= */
 
 function playButtonSound() {
 
-  initAudio();
-
-
-  if (
-    audioContext.state ===
-    "suspended"
-  ) {
-
-    audioContext.resume();
-
-  }
+  unlockAudio();
 
 
   const oscillator =
@@ -193,27 +192,31 @@ function playButtonSound() {
     "sine";
 
 
+  const now =
+    audioContext.currentTime;
+
+
   oscillator.frequency.setValueAtTime(
-    520,
-    audioContext.currentTime
+    500,
+    now
   );
 
 
   oscillator.frequency.exponentialRampToValueAtTime(
     760,
-    audioContext.currentTime + 0.08
+    now + 0.08
   );
 
 
   gain.gain.setValueAtTime(
-    0.06,
-    audioContext.currentTime
+    0.055,
+    now
   );
 
 
   gain.gain.exponentialRampToValueAtTime(
     0.001,
-    audioContext.currentTime + 0.12
+    now + 0.12
   );
 
 
@@ -224,17 +227,17 @@ function playButtonSound() {
   );
 
 
-  oscillator.start();
+  oscillator.start(now);
 
   oscillator.stop(
-    audioContext.currentTime + 0.12
+    now + 0.13
   );
 
 }
 
 
 /* =========================================================
-   CONTRÔLE DU VOLUME
+   VOLUME
    ========================================================= */
 
 function setupVolumeControl() {
@@ -254,27 +257,23 @@ function setupVolumeControl() {
   if (!slider || !toggle) return;
 
 
-  /*
-   * Volume initial
-   */
-
-  const savedVolume =
+  const saved =
     localStorage.getItem(
       "pokedexVolume"
     );
 
 
-  if (savedVolume !== null) {
+  if (saved !== null) {
 
     slider.value =
-      savedVolume;
+      saved;
 
   }
 
 
   function updateVolume() {
 
-    initAudio();
+    unlockAudio();
 
 
     const value =
@@ -303,9 +302,12 @@ function setupVolumeControl() {
 
   toggle.addEventListener(
     "click",
-    () => {
+    event => {
 
-      initAudio();
+      event.stopPropagation();
+
+
+      unlockAudio();
 
 
       musicMuted =
@@ -332,21 +334,60 @@ function setupVolumeControl() {
 
 
   /*
-   * La musique démarre après
-   * le premier clic de l'utilisateur.
+   * Le navigateur autorise l'audio
+   * après une vraie interaction.
+   *
+   * On écoute plusieurs types
+   * d'interaction pour éviter que
+   * le son ne reste bloqué.
    */
 
-  document.addEventListener(
-    "click",
+  const startAfterInteraction =
     () => {
 
-      if (!musicStarted) {
+      unlockAudio();
 
-        startMusic();
+      startMusic();
 
-      }
+      document.removeEventListener(
+        "pointerdown",
+        startAfterInteraction
+      );
 
-    },
+      document.removeEventListener(
+        "touchstart",
+        startAfterInteraction
+      );
+
+      document.removeEventListener(
+        "keydown",
+        startAfterInteraction
+      );
+
+    };
+
+
+  document.addEventListener(
+    "pointerdown",
+    startAfterInteraction,
+    {
+      once: true
+    }
+  );
+
+
+  document.addEventListener(
+    "touchstart",
+    startAfterInteraction,
+    {
+      once: true
+    }
+  );
+
+
+  document.addEventListener(
+    "keydown",
+    startAfterInteraction,
     {
       once: true
     }
@@ -357,10 +398,6 @@ function setupVolumeControl() {
 
 }
 
-
-/* =========================================================
-   INITIALISATION
-   ========================================================= */
 
 document.addEventListener(
   "DOMContentLoaded",
