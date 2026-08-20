@@ -1,14 +1,27 @@
 /* =========================================================
    FOND HOENN
-   Pokémon Hoenn + Méga-Évolutions + Primo + Deoxys
+   Pokémon de Hoenn
+   + Méga-Évolutions
+   + Primo-Résurgences
+   + Méga-Rayquaza
+   + Formes de Deoxys
+   + Shiny
    ========================================================= */
-
-const SPRITE =
-  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon";
 
 
 /* =========================================================
-   CONTENEUR
+   URL DES SPRITES
+   ========================================================= */
+
+const POKEAPI =
+  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon";
+
+const SHOWDOWN =
+  "https://play.pokemonshowdown.com/sprites";
+
+
+/* =========================================================
+   CONTENEUR DU FOND
    ========================================================= */
 
 let hoennBackground =
@@ -33,7 +46,7 @@ if (!hoennBackground) {
 
 
 /* =========================================================
-   POKÉMON DE HOENN
+   135 POKÉMON DE HOENN
    252 → 386
    ========================================================= */
 
@@ -48,13 +61,13 @@ const hoennPokemon =
 
         speciesId: id,
 
-        name: `Hoenn ${id}`,
+        name: `Pokémon ${id}`,
 
         normal:
-          `${SPRITE}/other/home/${id}.png`,
+          `${POKEAPI}/other/home/${id}.png`,
 
         shiny:
-          `${SPRITE}/other/home/shiny/${id}.png`,
+          `${POKEAPI}/other/home/shiny/${id}.png`,
 
         mega: false
 
@@ -73,260 +86,200 @@ const hoennMega = [
   {
     speciesId: 254,
     name: "Méga-Jungko",
-
     normal:
-      `${SPRITE}/other/home/10065.png`,
-
+      `${SHOWDOWN}/gen7/mega-sceptile.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10065.png`,
-
+      `${SHOWDOWN}/gen7/mega-sceptile-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 257,
     name: "Méga-Braségali",
-
     normal:
-      `${SPRITE}/other/home/10050.png`,
-
+      `${SHOWDOWN}/gen7/mega-blaziken.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10050.png`,
-
+      `${SHOWDOWN}/gen7/mega-blaziken-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 260,
     name: "Méga-Laggron",
-
     normal:
-      `${SPRITE}/other/home/10089.png`,
-
+      `${SHOWDOWN}/gen7/mega-swampert.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10089.png`,
-
+      `${SHOWDOWN}/gen7/mega-swampert-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 282,
     name: "Méga-Gardevoir",
-
     normal:
-      `${SPRITE}/other/home/10068.png`,
-
+      `${SHOWDOWN}/gen7/mega-gardevoir.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10068.png`,
-
+      `${SHOWDOWN}/gen7/mega-gardevoir-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 302,
     name: "Méga-Ténéfix",
-
     normal:
-      `${SPRITE}/other/home/10066.png`,
-
+      `${SHOWDOWN}/gen7/mega-sableye.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10066.png`,
-
+      `${SHOWDOWN}/gen7/mega-sableye-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 303,
     name: "Méga-Mysdibule",
-
     normal:
-      `${SPRITE}/other/home/10052.png`,
-
+      `${SHOWDOWN}/gen7/mega-mawile.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10052.png`,
-
+      `${SHOWDOWN}/gen7/mega-mawile-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 306,
     name: "Méga-Galeking",
-
     normal:
-      `${SPRITE}/other/home/10054.png`,
-
+      `${SHOWDOWN}/gen7/mega-aggron.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10054.png`,
-
+      `${SHOWDOWN}/gen7/mega-aggron-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 308,
     name: "Méga-Charmina",
-
     normal:
-      `${SPRITE}/other/home/10076.png`,
-
+      `${SHOWDOWN}/gen7/mega-medicham.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10076.png`,
-
+      `${SHOWDOWN}/gen7/mega-medicham-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 310,
     name: "Méga-Élecsprint",
-
     normal:
-      `${SPRITE}/other/home/10055.png`,
-
+      `${SHOWDOWN}/gen7/mega-manectric.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10055.png`,
-
+      `${SHOWDOWN}/gen7/mega-manectric-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 319,
     name: "Méga-Sharpedo",
-
     normal:
-      `${SPRITE}/other/home/10073.png`,
-
+      `${SHOWDOWN}/gen7/mega-sharpedo.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10073.png`,
-
+      `${SHOWDOWN}/gen7/mega-sharpedo-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 323,
     name: "Méga-Camérupt",
-
     normal:
-      `${SPRITE}/other/home/10075.png`,
-
+      `${SHOWDOWN}/gen7/mega-camerupt.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10075.png`,
-
+      `${SHOWDOWN}/gen7/mega-camerupt-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 334,
     name: "Méga-Altaria",
-
     normal:
-      `${SPRITE}/other/home/10067.png`,
-
+      `${SHOWDOWN}/gen7/mega-altaria.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10067.png`,
-
+      `${SHOWDOWN}/gen7/mega-altaria-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 354,
     name: "Méga-Branette",
-
     normal:
-      `${SPRITE}/other/home/10056.png`,
-
+      `${SHOWDOWN}/gen7/mega-banette.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10056.png`,
-
+      `${SHOWDOWN}/gen7/mega-banette-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 359,
     name: "Méga-Absol",
-
     normal:
-      `${SPRITE}/other/home/10057.png`,
-
+      `${SHOWDOWN}/gen7/mega-absol.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10057.png`,
-
+      `${SHOWDOWN}/gen7/mega-absol-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 362,
     name: "Méga-Oniglali",
-
     normal:
-      `${SPRITE}/other/home/10059.png`,
-
+      `${SHOWDOWN}/gen7/mega-glalie.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10059.png`,
-
+      `${SHOWDOWN}/gen7/mega-glalie-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 373,
     name: "Méga-Drattak",
-
     normal:
-      `${SPRITE}/other/home/10089.png`,
-
+      `${SHOWDOWN}/gen7/mega-salamence.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10089.png`,
-
+      `${SHOWDOWN}/gen7/mega-salamence-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 376,
     name: "Méga-Métalosse",
-
     normal:
-      `${SPRITE}/other/home/10060.png`,
-
+      `${SHOWDOWN}/gen7/mega-metagross.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10060.png`,
-
+      `${SHOWDOWN}/gen7/mega-metagross-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 380,
     name: "Méga-Latias",
-
     normal:
-      `${SPRITE}/other/home/10062.png`,
-
+      `${SHOWDOWN}/gen7/mega-latias.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10062.png`,
-
+      `${SHOWDOWN}/gen7/mega-latias-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 381,
     name: "Méga-Latios",
-
     normal:
-      `${SPRITE}/other/home/10061.png`,
-
+      `${SHOWDOWN}/gen7/mega-latios.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10061.png`,
-
+      `${SHOWDOWN}/gen7/mega-latios-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 384,
     name: "Méga-Rayquaza",
-
     normal:
-      `${SPRITE}/other/home/10079.png`,
-
+      `${SHOWDOWN}/gen7/mega-rayquaza.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10079.png`,
-
+      `${SHOWDOWN}/gen7/mega-rayquaza-shiny.png`,
     mega: true
   }
 
@@ -342,26 +295,20 @@ const hoennPrimal = [
   {
     speciesId: 382,
     name: "Primo-Kyogre",
-
     normal:
-      `${SPRITE}/other/home/10077.png`,
-
+      `${SHOWDOWN}/gen7/primal-kyogre.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10077.png`,
-
+      `${SHOWDOWN}/gen7/primal-kyogre-shiny.png`,
     mega: true
   },
 
   {
     speciesId: 383,
     name: "Primo-Groudon",
-
     normal:
-      `${SPRITE}/other/home/10078.png`,
-
+      `${SHOWDOWN}/gen7/primal-groudon.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10078.png`,
-
+      `${SHOWDOWN}/gen7/primal-groudon-shiny.png`,
     mega: true
   }
 
@@ -369,60 +316,48 @@ const hoennPrimal = [
 
 
 /* =========================================================
-   DEOXYS
+   FORMES DE DEOXYS
    ========================================================= */
 
 const deoxysForms = [
 
   {
     speciesId: 386,
-    name: "Deoxys Normal",
-
+    name: "Deoxys",
     normal:
-      `${SPRITE}/other/home/386.png`,
-
+      `${POKEAPI}/other/home/386.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/386.png`,
-
+      `${POKEAPI}/other/home/shiny/386.png`,
     mega: false
   },
 
   {
     speciesId: 386,
     name: "Deoxys Attaque",
-
     normal:
-      `${SPRITE}/other/home/10001.png`,
-
+      `${SHOWDOWN}/gen7/deoxys-attack.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10001.png`,
-
+      `${SHOWDOWN}/gen7/deoxys-attack-shiny.png`,
     mega: false
   },
 
   {
     speciesId: 386,
     name: "Deoxys Défense",
-
     normal:
-      `${SPRITE}/other/home/10002.png`,
-
+      `${SHOWDOWN}/gen7/deoxys-defense.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10002.png`,
-
+      `${SHOWDOWN}/gen7/deoxys-defense-shiny.png`,
     mega: false
   },
 
   {
     speciesId: 386,
     name: "Deoxys Vitesse",
-
     normal:
-      `${SPRITE}/other/home/10003.png`,
-
+      `${SHOWDOWN}/gen7/deoxys-speed.png`,
     shiny:
-      `${SPRITE}/other/home/shiny/10003.png`,
-
+      `${SHOWDOWN}/gen7/deoxys-speed-shiny.png`,
     mega: false
   }
 
@@ -447,7 +382,7 @@ const hoennPool = [
 
 
 /* =========================================================
-   MÉLANGE
+   MÉLANGE ALÉATOIRE
    ========================================================= */
 
 function shuffleHoenn(array) {
@@ -488,11 +423,16 @@ function createHoennBackground() {
 
   hoennBackground.innerHTML = "";
 
+
   const pool =
     shuffleHoenn(
       hoennPool
     );
 
+
+  /*
+   * Nombre de Pokémon
+   */
 
   const amount =
     window.innerWidth <= 600
@@ -500,12 +440,21 @@ function createHoennBackground() {
       : 55;
 
 
+  /*
+   * Positions déjà utilisées
+   */
+
   const positions = [];
 
+
+  /*
+   * Tirage
+   */
 
   for (
     const pokemon of pool
   ) {
+
 
     if (
       positions.length >= amount
@@ -526,7 +475,7 @@ function createHoennBackground() {
 
     /*
      * Recherche d'une position
-     * suffisamment éloignée.
+     * qui ne touche pas les autres.
      */
 
     while (
@@ -590,12 +539,18 @@ function createHoennBackground() {
        ================================================= */
 
     const img =
-      document.createElement("img");
+      document.createElement(
+        "img"
+      );
 
 
     img.className =
       "bg-pokemon";
 
+
+    /*
+     * Classe spéciale
+     */
 
     if (pokemon.mega) {
 
@@ -618,53 +573,64 @@ function createHoennBackground() {
        SHINY
        ================================================= */
 
-    const shiny =
+    const isShiny =
       Math.random() < 0.12;
 
 
     img.src =
-      shiny
+      isShiny
         ? pokemon.shiny
         : pokemon.normal;
 
 
     /* =================================================
-       FALLBACK
+       ERREUR DE CHARGEMENT
        ================================================= */
+
+    let fallbackUsed =
+      false;
+
 
     img.onerror = () => {
 
+
       /*
-       * On tente le sprite
-       * classique du Pokémon
-       * avant de supprimer.
+       * IMPORTANT :
+       * une Méga ne doit JAMAIS
+       * être remplacée par son
+       * Pokémon normal.
        */
 
-      const fallback =
-        `${SPRITE}/${pokemon.speciesId}.png`;
-
-
-      if (
-        img.src !== fallback
-      ) {
-
-        img.src =
-          fallback;
-
-      }
-
-      else {
-
-        /*
-         * Si même le fallback
-         * ne fonctionne pas,
-         * on retire seulement
-         * cette image.
-         */
+      if (pokemon.mega) {
 
         img.remove();
 
+        return;
+
       }
+
+
+      /*
+       * Pour les Pokémon normaux,
+       * on utilise le sprite PokeAPI
+       * classique en secours.
+       */
+
+      if (!fallbackUsed) {
+
+        fallbackUsed = true;
+
+        img.src =
+          isShiny
+            ? `${POKEAPI}/shiny/${pokemon.speciesId}.png`
+            : `${POKEAPI}/${pokemon.speciesId}.png`;
+
+        return;
+
+      }
+
+
+      img.remove();
 
     };
 
@@ -722,6 +688,10 @@ function createHoennBackground() {
     );
 
 
+    /*
+     * Ajout au fond
+     */
+
     hoennBackground.appendChild(
       img
     );
@@ -752,7 +722,8 @@ document
 
         if (
           window.pokedexSound &&
-          typeof window.pokedexSound.click === "function"
+          typeof window.pokedexSound.click ===
+          "function"
         ) {
 
           window.pokedexSound.click();
