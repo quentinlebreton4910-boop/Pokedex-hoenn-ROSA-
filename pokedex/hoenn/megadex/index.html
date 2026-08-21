@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#0b7cff"
+  >
+
+  <title>Mégadex Hoenn</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+
+<body>
+
+  <!-- =====================================================
+       FOND
+       ===================================================== -->
+
+  <div
+    id="pokemonBackground"
+    class="background-pokemon"
+  ></div>
+
+
+  <!-- =====================================================
+       CONTENU
+       ===================================================== -->
+
+  <main class="megadex">
+
+    <header class="header">
+
+      <button
+        class="back-button"
+        onclick="window.location.href='../'"
+      >
+        ← Accueil Hoenn
+      </button>
+
+
+      <h1>MÉGADEX</h1>
+
+      <p>
+        Méga-Évolutions et formes spéciales de Hoenn
+      </p>
+
+    </header>
+
+
+    <!-- =================================================
+         PROGRESSION
+         ================================================= -->
+
+    <section class="progress-box">
+
+      <div class="progress-text">
+
+        <span id="progressText">
+          0 / 23
+        </span>
+
+        <span id="progressPercent">
+          0%
+        </span>
+
+      </div>
+
+
+      <div class="progress-bar">
+
+        <div
+          id="progressBar"
+          class="progress-fill"
+        ></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         RECHERCHE
+         ================================================= -->
+
+    <div class="search-box">
+
+      <input
+        type="search"
+        id="search"
+        placeholder="Rechercher une forme..."
+        autocomplete="off"
+      >
+
+    </div>
+
+
+    <!-- =================================================
+         FILTRES
+         ================================================= -->
+
+    <div class="filters">
+
+      <button
+        class="filter active"
+        data-filter="all"
+      >
+        Toutes
+      </button>
+
+      <button
+        class="filter"
+        data-filter="mega"
+      >
+        Méga
+      </button>
+
+      <button
+        class="filter"
+        data-filter="primal"
+      >
+        Primo
+      </button>
+
+      <button
+        class="filter"
+        data-filter="obtained"
+      >
+        Obtenues
+      </button>
+
+    </div>
+
+
+    <!-- =================================================
+         LISTE
+         ================================================= -->
+
+    <section
+      id="pokemonList"
+      class="pokemon-list"
+    ></section>
+
+  </main>
+
+
+  <!-- =====================================================
+       SCRIPT
+       ===================================================== -->
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
